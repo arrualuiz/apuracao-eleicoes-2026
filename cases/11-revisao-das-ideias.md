@@ -48,4 +48,6 @@ Consultas no banco `dados/apuracao.sqlite`: placar e "quanto precisa" na coleta 
 - **Palpite:** o 47% do Flávio ficou plausível; o 42% do Lula já ficou para trás.
 
 ## Desfecho
+**Checagem 20:14 (89,1%, `analise/revisao.py`):** Flávio 48,14% x Lula 43,86%, diferença 4,53 mi. O último lote (2,5 mi de válidos) foi o mais favorável ao Lula da noite: 52,0% x 41,1%. **Em 7 dos 8 maiores estados desse lote, os votos novos vieram mais Lula que o acumulado** (SP −4, RJ −3, MG −3, BA −5, CE −3, PE −6, GO −4 p.p.). O viés da projeção cresceu: nos 8 maiores estados, desde 19:14, previa um saldo de 488 mil para o Lula e o real foi de 1,14 mi (erro de 650 mil a favor do Flávio).
+
 _comparar no fim: placar final x projeção das 18:18, das 19:14 e das 20:10_
