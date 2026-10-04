@@ -19,7 +19,7 @@ O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são 
 
 ```
 coleta/    coletar.py · prints.js · status.py      → busca os dados e cuida da coleta
-analise/   analisar.py · variacao.py · banco.py    → compara leituras e monta o banco
+analise/   analisar.py · variacao.py · revisao.py · banco.py → compara leituras e monta o banco
 painel/    painel.py · template.html               → gera painel/painel.html
 R/         01-explorar-apuracao.R                   → análise em R (dplyr + ggplot2)
 cases/     uma análise por dúvida da noite          → base do site final
@@ -35,6 +35,7 @@ notas.md   diário da apuração
 | `coleta/status.py` | Saúde da coleta: processo vivo, intervalo entre coletas, pastas completas |
 | `analise/analisar.py` | Análise no terminal: tendência, quanto falta, projeção |
 | `analise/variacao.py` | Estado a estado: o que entrou entre duas leituras, tendência do lote e saldo esperado do que falta |
+| `analise/revisao.py` | Confere as ideias da noite (os cases) contra a coleta mais recente |
 | `analise/banco.py` | Monta o banco SQLite `dados/apuracao.sqlite` a partir dos JSON brutos (incremental) |
 | `painel/painel.py` + `painel/template.html` | Gera o `painel/painel.html` a partir dos dados |
 | `R/01-explorar-apuracao.R` | Exemplo em R: placar, saldo por lote, por estado e por região |
@@ -62,6 +63,7 @@ python3 coleta/coletar.py --a-cada 180 --print  # coleta contínua com prints
 python3 coleta/status.py                     # está tudo ok?
 python3 analise/analisar.py                  # análise no terminal
 python3 analise/variacao.py                  # o que mudou por estado entre as 2 últimas coletas
+python3 analise/revisao.py                   # as ideias da noite ainda se confirmam?
 python3 analise/variacao.py --todas SP       # evolução de um estado em todas as coletas
 xdg-open painel/painel.html                  # painel (recarrega a cada minuto)
 ```
