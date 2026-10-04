@@ -217,8 +217,9 @@ def main():
             c = {x["num"]: x["vp"] for x in p["ca"]}
             if 22 in c and 13 in c:
                 ev26.append([p["sap"], c[22], c[13]])
-    if not ev26:
-        ev26 = [[f(l["urnas_pct"]), f(l["flavio_pct"]), f(l["lula_pct"])] for l in snaps.values()]
+    # completa com o nosso histórico (soma das UFs), que vai além da série do UOL
+    ev26 += [[h["urnas"], h["real_f"], h["real_l"]] for h in historico]
+    ev26.sort(key=lambda p: p[0])
     uol22 = ler_json(PASTA / "uol-historico-2022.json")
     if uol22:
         i = uol22["tuple"]

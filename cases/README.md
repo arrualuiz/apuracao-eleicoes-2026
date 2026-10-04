@@ -36,3 +36,4 @@ status: aberto | fechado
 | 11 | [Revisão às 20h10: o que se confirmou e o que mudou](11-revisao-das-ideias.md) | 20:10 | análise |
 | 12 | [As linhas vão se cruzar, como em 2022?](12-as-linhas-vao-se-cruzar.md) | 20:14 | análise |
 | 13 | [47 x 44: o palpite ajustado](13-47-x-44.md) | 20:27 | análise |
+| 14 | [2018, 2022, 2026: a forma das curvas](14-curvas-2018-2022-2026.md) | 20:30 | análise |
