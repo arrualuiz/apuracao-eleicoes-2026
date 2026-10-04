@@ -40,6 +40,7 @@ notas.md   diário da apuração
 | `analise/variacao.py` | Estado a estado: o que entrou entre duas leituras, tendência do lote e saldo esperado do que falta |
 | `analise/revisao.py` | Confere as ideias da noite (os cases) contra a coleta mais recente |
 | `analise/exportar.py` | Exporta o banco para `dados/export/*.csv` (R, Python, Power BI…) e `site/dados.js` |
+| `analise/historico_tse.py` | Histórico oficial 2002–2022 (abstenção, votos por turno) a partir dos dados abertos do TSE |
 | `analise/banco.py` | Monta o banco SQLite `dados/apuracao.sqlite` a partir dos JSON brutos (incremental) |
 | `painel/painel.py` + `painel/template.html` | Gera o `painel/painel.html` a partir dos dados |
 | `R/01-explorar-apuracao.R` | Exemplo em R: placar, saldo por lote, por estado e por região |
