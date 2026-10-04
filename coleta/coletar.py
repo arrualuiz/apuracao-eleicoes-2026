@@ -24,8 +24,10 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-BASE = "https://resultados.tse.jus.br/oficial/ele2026/6257/dados"
-ELEICAO = "006257"
+# 6257 = Presidente 1º turno; 6258 = Presidente 2º turno (ver resultados.tse.jus.br/oficial/comum/config/ele-c.json)
+CODIGO = "6257"
+BASE = f"https://resultados.tse.jus.br/oficial/ele2026/{CODIGO}/dados"
+ELEICAO = CODIGO.zfill(6)
 UFS = ["br", "ac", "al", "am", "ap", "ba", "ce", "df", "es", "go", "ma", "mg", "ms", "mt",
        "pa", "pb", "pe", "pi", "pr", "rj", "rn", "ro", "rr", "rs", "sc", "se", "sp", "to", "zz"]
 UOL_EV_2026 = "https://stc.eleicoes2026.uol.com/2026/1turno/br/br-c1-ev.json"
@@ -179,7 +181,11 @@ def main():
     p = argparse.ArgumentParser(description="Coleta a apuração direto do TSE")
     p.add_argument("--a-cada", type=int, default=0, help="segundos entre coletas (0 = só uma)")
     p.add_argument("--print", action="store_true", help="salva print da página do g1 em cada coleta")
+    p.add_argument("--eleicao", default=CODIGO, help="código TSE da eleição (6257 = 1º turno, 6258 = 2º turno)")
     a = p.parse_args()
+    global BASE, ELEICAO
+    BASE = f"https://resultados.tse.jus.br/oficial/ele2026/{a.eleicao}/dados"
+    ELEICAO = a.eleicao.zfill(6)
     while True:
         try:
             coletar(a.print)
