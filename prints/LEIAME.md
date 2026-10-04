@@ -17,5 +17,7 @@ Prints que tirei dos sites durante a apuração e colei na conversa. A hora é a
 | `2016-uol-evolucao-2022x2026.png` | UOL | Evolução com ~90%: as linhas vão se cruzar? | case 12 |
 | `2016-uol-placar-89,58.png` | UOL | Placar com 89,58%: 48,10% x 43,91% | case 12 |
 | `2027-uol-placar-91,06.png` | UOL | Placar com 91,06%: 47,98% x 44,05% ("47 x 44 se confirmando") | case 13 |
+| `2018-t2-g1-grafico-evolucao.png` | g1 | 2º turno de 2018: gráfico da evolução (Bolsonaro na frente aos 10 min) | case 15 |
+| `2018-t2-g1-tabela-minuto-a-minuto.png` | g1 | 2º turno de 2018: tabela minuto a minuto (transcrita em `dados/historico/2018-t2-g1-minuto.csv`) | case 15 |
 
 Os prints automáticos de cada coleta (placar e mapa do g1) ficam em `dados/brutos/<horário>/`.

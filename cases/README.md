@@ -37,3 +37,4 @@ status: aberto | fechado
 | 12 | [As linhas vão se cruzar, como em 2022?](12-as-linhas-vao-se-cruzar.md) | 20:14 | análise |
 | 13 | [47 x 44: o palpite ajustado](13-47-x-44.md) | 20:27 | análise |
 | 14 | [2018, 2022, 2026: a forma das curvas](14-curvas-2018-2022-2026.md) | 20:30 | análise |
+| 15 | [Quatro apurações: 2018, 2022 (dois turnos) e 2026](15-quatro-curvas.md) | 20:35 | análise |
