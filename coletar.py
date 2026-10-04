@@ -101,10 +101,18 @@ def coletar(com_print=False):
     horario = agora.strftime("%Y-%m-%d %H:%M")
 
     ab = baixar(f"{BASE}/br/br-e{ELEICAO}-ab.json")
-    u_br = baixar(f"{BASE}/br/br-c0001-e{ELEICAO}-u.json")
+    # baixa tudo antes de decidir: os arquivos dos estados andam na frente do nacional
+    arquivos = {}
+    for uf in UFS:
+        try:
+            arquivos[uf] = baixar(f"{BASE}/{uf}/{uf}-c0001-e{ELEICAO}-u.json")
+        except Exception as e:
+            print(f"  ! falha em {uf}: {e}")
+    u_br = arquivos["br"]
     versao_tse = f"{u_br['dg']} {u_br['hg']}"
-    if ULTIMA.exists() and ULTIMA.read_text().strip() == versao_tse:
-        print(f"{horario} | TSE sem atualização desde {versao_tse}, nada gravado")
+    assinatura = "|".join(f"{uf}:{u['dg']} {u['hg']}" for uf, u in sorted(arquivos.items()))
+    if ULTIMA.exists() and ULTIMA.read_text().strip() == assinatura:
+        print(f"{horario} | TSE sem atualização (nacional {versao_tse}), nada gravado")
         return
 
     pasta_bruta = PASTA / "brutos" / agora.strftime("%Y%m%d-%H%M%S")
@@ -115,10 +123,8 @@ def coletar(com_print=False):
     nacional = None
 
     for uf in UFS:
-        try:
-            u = u_br if uf == "br" else baixar(f"{BASE}/{uf}/{uf}-c0001-e{ELEICAO}-u.json")
-        except Exception as e:
-            print(f"  ! falha em {uf}: {e}")
+        u = arquivos.get(uf)
+        if not u:
             continue
         (pasta_bruta / f"{uf}-u.json").write_text(json.dumps(u, ensure_ascii=False), encoding="utf-8")
         cands = candidatos(u)
@@ -137,13 +143,25 @@ def coletar(com_print=False):
             linhas_estados.append([horario, uf.upper(), urnas, eleitorado,
                                    flavio["pct"] if flavio else "", lula["pct"] if lula else "", "tse"])
 
-    urnas, lula, flavio = nacional
+    # nacional = soma das UFs + exterior (o arquivo nacional do TSE às vezes atrasa em relação aos estados)
+    ufs_u = [u for uf, u in arquivos.items() if uf != "br"]
+    if len(ufs_u) == len(UFS) - 1:
+        vv = sum(int(u["v"]["vv"]) for u in ufs_u)
+        soma = {}
+        for u in ufs_u:
+            for c in candidatos(u):
+                soma[c["numero"]] = soma.get(c["numero"], 0) + c["votos"]
+        urnas = sum(int(u["s"]["st"]) for u in ufs_u) / sum(int(u["s"]["ts"]) for u in ufs_u) * 100
+        flavio = {"votos": soma["22"], "pct": soma["22"] / vv * 100}
+        lula = {"votos": soma["13"], "pct": soma["13"] / vv * 100}
+    else:
+        urnas, lula, flavio = nacional
     anexar(SNAPSHOTS, ["horario", "urnas_pct", "lula_pct", "flavio_pct", "lula_votos", "flavio_votos", "nota"],
            [[horario, round(urnas, 2), round(lula["pct"], 2), round(flavio["pct"], 2),
-             lula["votos"], flavio["votos"], f"TSE {versao_tse}"]])
+             lula["votos"], flavio["votos"], f"TSE {versao_tse} (soma UFs)"]])
     anexar(ESTADOS, ["horario", "uf", "urnas_pct", "eleitorado", "flavio_pct", "lula_pct", "fonte"], linhas_estados)
     anexar(CANDIDATOS, ["horario", "abrangencia", "numero", "candidato", "votos", "pct"], linhas_cand)
-    ULTIMA.write_text(versao_tse)
+    ULTIMA.write_text(assinatura)
 
     msg = f"✔ {horario} | {urnas:.2f}% urnas | Flávio {flavio['pct']:.2f}% x Lula {lula['pct']:.2f}% | TSE {versao_tse}"
     baixar_uol()
