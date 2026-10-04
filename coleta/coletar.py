@@ -91,7 +91,7 @@ def baixar_uol():
 
 
 def gerar_painel():
-    for script in ("painel/painel.py", "analise/banco.py"):  # painel.html + banco SQLite
+    for script in ("painel/painel.py", "analise/banco.py", "analise/exportar.py"):  # painel, banco, exportação
         try:
             subprocess.run([sys.executable, str(RAIZ / script)], timeout=60, capture_output=True)
         except Exception as e:
