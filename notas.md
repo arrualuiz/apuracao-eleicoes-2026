@@ -40,3 +40,10 @@
 - Diferença atual: Flávio +5,56 mi → projetada no fim: Flávio +4,15 mi.
 - **SP:** cada lote novo vem menos Flávio que o acumulado (lotes de 55x35 → 51x39). Se continuar, o saldo de SP para o Flávio fica abaixo do 1,2 mi projetado.
 - Na maioria dos estados, os lotes recentes vieram mais favoráveis ao Lula que o acumulado (PI −6, GO −5, AM −11, MA −4).
+
+## 20:06 — 85,4% apurado · o nacional do TSE alcança os estados
+- O arquivo nacional do TSE ficou parado de 19:14:08 a 20:04:39 (50 min). Os estados publicaram até ~19:32 e depois também pararam.
+- Às 20:04 o nacional voltou com 84,96%, igual à nossa soma dos estados das 19:41 (84,93%). Confirma o case 10.
+- Placar (soma UFs, 20:06): **Flávio 48,44% x Lula 43,51%**. Projeção por estado: 47,6% x 44,5%.
+- variacao.py: diferença atual Flávio +5,0 mi; o que falta soma Lula +2,85 mi x Flávio +1,21 mi; projetado no fim Flávio +3,4 mi.
+- Organização: projeto em pastas (coleta/, analise/, painel/, legado/) e repositório renomeado para noite-da-apuracao-2026.
