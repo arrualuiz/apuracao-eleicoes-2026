@@ -33,3 +33,4 @@ status: aberto | fechado
 | 08 | [Onde ainda faltam votos e para quem pesam](08-onde-faltam-votos.md) | 19:14 | análise |
 | 09 | [Cada atualização favoreceu quem, e por quanto](09-cada-atualizacao.md) | 19:28 | análise |
 | 10 | [Os estados andam na frente do nacional](10-estados-na-frente.md) | 19:28 | bastidor |
+| 11 | [Revisão às 20h10: o que se confirmou e o que mudou](11-revisao-das-ideias.md) | 20:10 | análise |

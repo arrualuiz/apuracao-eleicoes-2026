@@ -30,4 +30,6 @@ Para cada UF: votos do candidato ÷ fração do eleitorado já apurado. Somo as 
 Uma correção simples, só por estado, antecipou em mais de uma hora o que o placar mostraria depois. Limitação: diferenças **dentro** do estado (capital x interior) não entram na conta. Em SP, por exemplo, os lotes tardios vieram menos favoráveis ao Flávio (case 08).
 
 ## Desfecho
+**Checagem parcial (20:10, 87%):** placar 48,31%. A projeção das 18:18 (49,0%) errou 0,7 p.p.; o placar das 18:18 (51,1%), 2,8 p.p. Mas a própria projeção caiu para 47,4%: o voto tardio dentro dos estados veio mais Lula (case 11).
+
 _comparar projeção das 18:18 com o resultado final_

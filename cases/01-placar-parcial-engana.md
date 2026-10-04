@@ -31,4 +31,6 @@ No começo foi manual: prints do UOL e do g1, com o % por estado estimado pela l
 O placar com 12% mostrava sobretudo **quais regiões foram apuradas primeiro**, não o resultado. Em 2022 aconteceu o mesmo: o Bolsonaro liderou até ~67% das urnas e o Lula passou quando o Nordeste entrou.
 
 ## Desfecho
+**Checagem parcial (20:10, 87%):** Flávio caiu de 51,09% para 48,31%. Confirmado.
+
 _a preencher no fim da apuração_

@@ -37,4 +37,6 @@ Diferença de votos entre coletas consecutivas, com o nacional calculado como so
 "Favorecer" tem dois sentidos: **saldo de votos** (quem ganhou mais no lote) e **efeito no percentual** (o lote veio acima ou abaixo da média). Durante quase toda a noite os lotes deram saldo ao Flávio e, ao mesmo tempo, reduziram a vantagem percentual dele.
 
 ## Desfecho
+**Checagem parcial (20:10, 87%):** desde 19:14 a fase mudou. A maioria dos lotes passou a dar saldo ao **Lula** (o de 19:30, por exemplo, teve 10,8 mi de válidos com 45,3% x 47,0%).
+
 _a preencher_

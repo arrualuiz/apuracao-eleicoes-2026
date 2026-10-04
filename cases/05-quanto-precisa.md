@@ -32,4 +32,6 @@ Válidos finais estimados = válidos atuais ÷ fração do eleitorado apurado. N
 Olhar **o lote** em vez do acumulado mostrou a virada de tendência antes do placar: o acumulado ainda dizia 50,4% quando os lotes novos já vinham abaixo da linha.
 
 ## Desfecho
+**Checagem parcial (20:10, 87%):** de 11 lotes desde 18:46, 10 ficaram abaixo dos 49,7%. Agora ele precisaria de 60,7% do restante. 1º turno praticamente descartado.
+
 _a preencher_

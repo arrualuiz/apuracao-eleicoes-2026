@@ -40,4 +40,6 @@ Na maioria dos estados, os lotes recentes vieram mais favoráveis ao Lula que o 
 O "quanto falta" sozinho engana. O que importa é **quanto falta × a margem local**. E a tendência **dentro** do estado (SP cada vez menos Flávio) indica que a projeção por estado ainda era um pouco otimista para ele.
 
 ## Desfecho
+**Checagem parcial (20:10, 87%):** a tendência de SP se confirmou. Nos votos que entraram depois das 19:14, a margem do Flávio em SP foi +9,8 p.p. (previsto +15,4): 548 mil de saldo em vez de 866 mil. BA, CE e PE deram ainda mais ao Lula que o previsto.
+
 _conferir o saldo real de BA e SP no fim_

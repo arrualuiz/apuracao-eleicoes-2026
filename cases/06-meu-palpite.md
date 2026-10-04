@@ -29,4 +29,6 @@ Mesma conta do case 05, com o alvo de cada candidato no lugar dos 50%. Registro 
 O palpite acertou a **direção** (queda do Flávio, 2º turno). Os números exatos pediam uma queda dele mais forte que a dos lotes. Se o Flávio caísse mais, os votos tenderiam a ir para o Lula, não para os outros candidatos.
 
 ## Desfecho
+**Checagem parcial (20:10, 87%):** Flávio 48,31% x Lula 43,66%. Para o Flávio fechar em 47% bastam 38,7% do restante (os lotes recentes deram 36–45%), então ficou plausível. Para o Lula fechar em 42% ele precisaria de só 31,5% do restante, e vem fazendo 47–58%: não deve acontecer.
+
 _resultado final: Flávio __% x Lula __%. Distância do palpite: ___
