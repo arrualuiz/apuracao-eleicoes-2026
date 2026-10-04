@@ -29,4 +29,9 @@ O coletor só gravava quando o arquivo **nacional** mudava, e por isso perdia as
 O TSE publica cada estado primeiro e consolida o nacional depois. Somar os estados dá um placar **mais atual que o dos sites** (g1 e UOL mostram o nacional). Depois da correção, entre 19:30 e 19:41 entraram 4 coletas novas com o nacional ainda parado.
 
 ## Desfecho
-Fechado. Por isso os números do painel ficam um pouco à frente do g1 e do UOL.
+**Confirmado às 20:04.** O arquivo nacional ficou parado em 19:14:08 (64,81%) por 50 minutos. Quando voltou, às 20:04:39, marcou **84,96%**, praticamente o que a soma dos estados já mostrava desde 19:41 (84,93%). Ou seja, durante 50 minutos quem olhava só o nacional (g1, UOL) via um placar ~20 pontos de apuração atrasado.
+
+| Hora | Soma das UFs (nosso) | Nacional do TSE (sites) |
+|---|---|---|
+| 19:41 | 84,93% | 64,81% (parado desde 19:14) |
+| 20:06 | 85,40% | 84,96% (publicado às 20:04:39) |
