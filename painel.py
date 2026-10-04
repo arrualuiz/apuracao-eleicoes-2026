@@ -69,8 +69,36 @@ def resumo_tse(u):
         "validos": int(v["vv"]),
         "brancos": int(v["vb"]),
         "nulos": int(v["tvn"]),
+        "secoes": int(s["st"]),
+        "secoes_total": int(s["ts"]),
         "cands": cands,
     }
+
+
+def somar(resumos):
+    """Nacional como soma das UFs + exterior (o arquivo nacional do TSE atrasa em relação aos estados)."""
+    tot = {k: sum(r[k] for r in resumos) for k in
+           ("eleitorado", "eleitorado_apurado", "comparecimento", "abstencao", "total", "validos", "brancos", "nulos", "secoes", "secoes_total")}
+    votos, nomes = {}, {}
+    for r in resumos:
+        for c in r["cands"]:
+            votos[c["num"]] = votos.get(c["num"], 0) + c["votos"]
+            nomes[c["num"]] = c["nome"]
+    tot["cands"] = sorted(({"num": n, "nome": nomes[n], "votos": v, "pct": v / tot["validos"] * 100}
+                           for n, v in votos.items()), key=lambda c: -c["votos"])
+    tot["secoes_pct"] = tot["secoes"] / tot["secoes_total"] * 100
+    return tot
+
+
+def resumos_coleta(pasta):
+    """{UF: resumo} de uma pasta bruta, só se estiver completa."""
+    out = {}
+    for uf in NOMES:
+        u = ler_json(pasta / f"{uf.lower()}-u.json")
+        if not u:
+            return None
+        out[uf] = resumo_tse(u)
+    return out
 
 
 def projecao(por_uf):
@@ -97,8 +125,9 @@ def main():
         return
     ultima = brutos[-1].parent
     u_br = ler_json(ultima / "br-u.json")
-    br = resumo_tse(u_br)
-    atualizado = f"{u_br['dg']} {u_br['hg']}"
+    res_ultima = resumos_coleta(ultima)
+    br = somar(res_ultima.values()) if res_ultima else resumo_tse(u_br)
+    atualizado = f"{ultima.name[6:8]}/{ultima.name[4:6]} {ultima.name[9:11]}:{ultima.name[11:13]} (soma dos estados)"
 
     # ---- estados (coleta mais recente) ----
     ufs = []
@@ -140,32 +169,47 @@ def main():
     faltam = validos_final - br["validos"]
     precisa = (validos_final / 2 - fl_br["votos"]) / faltam * 100 if faltam > 0 else None
 
-    # ---- histórico da projeção: recalculado de cada coleta bruta, mesmo método da projeção atual ----
-    snaps = {l["horario"]: l for l in ler_csv("snapshots.csv")}
-    hora_por_versao = {l["nota"][4:]: l["horario"] for l in snaps.values() if l["nota"].startswith("TSE")}
-    historico = []
+    # ---- histórico + lotes: recalculados de cada coleta bruta ----
+    historico, lotes, ant = [], [], None
     for arq in brutos:
-        u0 = ler_json(arq)
-        h = hora_por_versao.get(f"{u0['dg']} {u0['hg']}")
-        if not h:
+        res = resumos_coleta(arq.parent)
+        if not res:
             continue
-        r0 = resumo_tse(u0)
+        h = f"{arq.parent.name[9:11]}:{arq.parent.name[11:13]}"
+        nac = somar(res.values())
+        c0 = {c["num"]: c for c in nac["cands"]}
         por_uf = {}
-        for uf in NOMES:
-            u = ler_json(arq.parent / f"{uf.lower()}-u.json")
-            if not u:
-                continue
-            r = resumo_tse(u)
+        for uf, r in res.items():
             num = {c["num"]: c["votos"] for c in r["cands"]}
             frac = r["eleitorado_apurado"] / r["eleitorado"] if r["eleitorado"] else 0
             por_uf[uf] = (frac, num.get("22", 0), num.get("13", 0), r["validos"])
         p = projecao(por_uf)
-        c0 = {c["num"]: c["pct"] for c in r0["cands"]}
         if p:
-            historico.append({"h": h[11:], "urnas": r0["secoes_pct"], "proj_f": p["flavio"], "proj_l": p["lula"],
-                              "real_f": c0["22"], "real_l": c0["13"]})
+            historico.append({"h": h, "urnas": nac["secoes_pct"], "proj_f": p["flavio"], "proj_l": p["lula"],
+                              "real_f": c0["22"]["pct"], "real_l": c0["13"]["pct"]})
+        atual = {"BR": (c0["22"]["votos"], c0["13"]["votos"], nac["validos"], nac["secoes_pct"])}
+        for uf, (frac, vf, vl, vv) in por_uf.items():
+            atual[uf] = (vf, vl, vv, res[uf]["secoes_pct"])
+        if ant:
+            lote = {"h": h, "de": ant[0], "ufs": {}}
+            for k, (vf, vl, vv, sec) in atual.items():
+                af, al, avv, asec = ant[1][k]
+                dv = vv - avv
+                if dv <= 0:
+                    continue
+                reg = {"f": vf - af, "l": vl - al, "o": dv - (vf - af) - (vl - al), "v": dv,
+                       "sec0": asec, "sec1": sec, "pf_antes": af / avv * 100 if avv else None,
+                       "pl_antes": al / avv * 100 if avv else None}
+                if k == "BR":
+                    lote.update(reg)
+                else:
+                    lote["ufs"][k] = reg
+            if "v" in lote:
+                lotes.append(lote)
+        ant = (h, atual)
 
     # ---- evolução 2026 x 2022 (UOL); se faltar, usa nossos snapshots ----
+    snaps = {l["horario"]: l for l in ler_csv("snapshots.csv")}
     ev26, ev22 = [], []
     uol26 = ler_json(PASTA / "uol-evolucao-2026.json")
     if uol26:
@@ -185,7 +229,7 @@ def main():
         "atualizado": atualizado, "pasta": ultima.name,
         "br": br, "ufs": ufs, "regioes": regioes,
         "projecao": proj_atual, "precisa": precisa,
-        "historico": historico, "ev26": ev26, "ev22": ev22,
+        "historico": historico, "lotes": lotes, "ev26": ev26, "ev22": ev22,
         "n_coletas": len(snaps),
     }
     topo = (PASTA / "br-estados.topo.json").read_text(encoding="utf-8")

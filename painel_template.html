@@ -109,6 +109,16 @@ details.mais summary { cursor: pointer; color: var(--accent); font-size: 13px; f
 .tooltip .row { display: flex; align-items: center; gap: 6px; }
 .tooltip .row b { margin-left: auto; padding-left: 12px; }
 
+/* lotes */
+.multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px 20px; }
+.mini h3 { margin: 0; font-size: 14px; }
+.mini .resumo { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+.bar-label { font-size: 11px; fill: var(--text-secondary); }
+.zero { stroke: var(--text-muted); stroke-width: 1; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 10px; }
+.seg button { background: none; border: 0; padding: 5px 12px; font: inherit; font-size: 13px; color: var(--text-secondary); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--neutral); color: var(--text-primary); font-weight: 600; }
+
 /* andamento */
 .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
 .tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 14px; font: inherit;
@@ -178,6 +188,23 @@ footer { color: var(--text-muted); font-size: 12px; margin-top: 24px; }
       <div class="callout" id="proj-callout"></div>
     </div>
 
+    <div class="card span-12">
+      <h2>Cada atualização: quem ela favoreceu e por quanto</h2>
+      <p class="sub">Cada barra é uma entrada de dados do TSE. Acima da linha = o lote deu mais votos ao Flávio; abaixo = mais votos ao Lula. Passe o mouse para ver o detalhe.</p>
+      <div class="seg" role="group" aria-label="Visualização">
+        <button type="button" data-modo="saldo" aria-pressed="true">Saldo do lote</button>
+        <button type="button" data-modo="votos" aria-pressed="false">Votos novos por candidato</button>
+      </div>
+      <div class="legend" id="leg-lotes"></div>
+      <div class="chart" id="chart-lotes"></div>
+    </div>
+
+    <div class="card span-12">
+      <h2>O mesmo, por estado</h2>
+      <p class="sub">Saldo de cada atualização nos estados onde mais entraram votos. Mesma escala em todos os quadros, então o tamanho da barra é comparável entre estados.</p>
+      <div class="multiples" id="multiples"></div>
+    </div>
+
     <div class="card span-6">
       <h2>Mapa por estado</h2>
       <p class="sub">Cor = vantagem de quem lidera no estado (pontos percentuais)</p>
@@ -229,7 +256,7 @@ const fl = D.br.cands.find(c => c.num === '22');
 const lu = D.br.cands.find(c => c.num === '13');
 
 document.getElementById('h-secoes').textContent = pct(D.br.secoes_pct);
-document.getElementById('h-atualizado').textContent = 'TSE ' + D.atualizado + ' · atualiza sozinho a cada minuto';
+document.getElementById('h-atualizado').textContent = 'coleta ' + D.atualizado + ' · atualiza sozinho a cada minuto';
 
 // ---------- tiles ----------
 function tiles() {
@@ -380,6 +407,126 @@ function projecaoHist() {
   }
 }
 
+// ---------- lotes: quem cada atualização favoreceu ----------
+const mil = v => Math.abs(v) >= 1e6 ? br(v / 1e6, Number.isInteger(v / 1e6) ? 0 : 2) + ' mi' : br(v / 1e3, 0) + ' mil';
+let modoLotes = 'saldo';
+
+function tipLote(l, nome) {
+  const pf = l.f / l.v * 100, pl = l.l / l.v * 100;
+  const efeito = l.pf_antes != null ? (pf - pl) - (l.pf_antes - l.pl_antes) : null;
+  const saldo = l.f - l.l;
+  return `<div class="t">${nome ? nome + ' · ' : ''}${l.de} → ${l.h_ || ''}</div>
+    <div class="row">válidos novos<b>${br(l.v)}</b></div>
+    <div class="row"><span class="swatch" style="background:var(--flavio)"></span>Flávio<b>+${br(l.f)} (${br(pf, 1)}%)</b></div>
+    <div class="row"><span class="swatch" style="background:var(--lula)"></span>Lula<b>+${br(l.l)} (${br(pl, 1)}%)</b></div>
+    <div class="row"><b style="margin-left:0;padding-left:0">Saldo: ${saldo >= 0 ? 'Flávio' : 'Lula'} +${br(Math.abs(saldo))}</b></div>
+    ${l.sec0 != null ? `<div class="row" style="color:var(--text-muted)">apurado<b>${br(l.sec0, 1)}% → ${br(l.sec1, 1)}%</b></div>` : ''}
+    ${efeito != null ? `<div class="row" style="color:var(--text-muted)">lote veio mais ${efeito < 0 ? 'Lula' : 'Flávio'} que o acumulado<b>${br(Math.abs(efeito), 1)} p.p.</b></div>` : ''}`;
+}
+
+function barras(el, itens, { height = 260, yMax, mini = false, modo = 'saldo' }) {
+  // itens: [{x: rótulo, f, l, tip}]
+  el.innerHTML = '';
+  const W = el.clientWidth || 600, H = height;
+  const m = mini ? { t: 14, r: 6, b: 22, l: 6 } : { t: 22, r: 12, b: 30, l: 56 };
+  const x = d3.scaleBand().domain(itens.map(d => d.x)).range([m.l, W - m.r]).padding(mini ? .25 : .3);
+  const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img');
+  const tip = d3.select(el).append('div').attr('class', 'tooltip');
+  const fFlavio = css('--flavio'), fLula = css('--lula');
+  let y;
+  if (modo === 'saldo') {
+    const ext = yMax || d3.max(itens, d => Math.abs(d.f - d.l)) || 1;
+    y = d3.scaleLinear().domain([-ext, ext]).range([H - m.b, m.t]).nice();
+  } else {
+    y = d3.scaleLinear().domain([0, yMax || d3.max(itens, d => Math.max(d.f, d.l)) || 1]).range([H - m.b, m.t]).nice();
+  }
+  if (!mini) {
+    svg.append('g').selectAll('line').data(y.ticks(5)).join('line').attr('class', 'gridline')
+      .attr('x1', m.l).attr('x2', W - m.r).attr('y1', d => y(d)).attr('y2', d => y(d));
+    svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`)
+      .call(d3.axisLeft(y).ticks(5).tickFormat(v => (modo === 'saldo' && v > 0 ? '+' : '') + mil(v)).tickSize(0))
+      .call(g => g.select('.domain').remove());
+  }
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`)
+    .call(d3.axisBottom(x).tickSize(0).tickPadding(6)).call(g => g.select('.domain').remove())
+    .selectAll('text').style('font-size', mini ? '9px' : '11px');
+  const r = 3;
+  const barPath = (x0, w, y0, y1) => {  // canto arredondado só na ponta do dado
+    const up = y1 < y0, h = Math.abs(y1 - y0), rr = Math.min(r, h, w / 2);
+    if (h < .5) return '';
+    return up
+      ? `M${x0},${y0}V${y1 + rr}Q${x0},${y1} ${x0 + rr},${y1}H${x0 + w - rr}Q${x0 + w},${y1} ${x0 + w},${y1 + rr}V${y0}Z`
+      : `M${x0},${y0}V${y1 - rr}Q${x0},${y1} ${x0 + rr},${y1}H${x0 + w - rr}Q${x0 + w},${y1} ${x0 + w},${y1 - rr}V${y0}Z`;
+  };
+  const g = svg.append('g');
+  for (const d of itens) {
+    const x0 = x(d.x), bw = x.bandwidth();
+    if (modo === 'saldo') {
+      const v = d.f - d.l;
+      g.append('path').attr('d', barPath(x0, bw, y(0), y(v))).attr('fill', v >= 0 ? fFlavio : fLula);
+      if (!mini || Math.abs(y(v) - y(0)) > 0) {
+        if (!mini) g.append('text').attr('class', 'bar-label').attr('x', x0 + bw / 2)
+          .attr('y', v >= 0 ? y(v) - 5 : y(v) + 13).attr('text-anchor', 'middle').text((v >= 0 ? 'F +' : 'L +') + mil(Math.abs(v)));
+      }
+    } else {
+      const half = (bw - 2) / 2;  // 2px de respiro entre as barras do par
+      g.append('path').attr('d', barPath(x0, half, y(0), y(d.f))).attr('fill', fFlavio);
+      g.append('path').attr('d', barPath(x0 + half + 2, half, y(0), y(d.l))).attr('fill', fLula);
+    }
+    // área de hover maior que a barra
+    g.append('rect').attr('x', x0 - x.step() * x.padding() / 2).attr('width', x.step()).attr('y', m.t).attr('height', H - m.t - m.b)
+      .attr('fill', 'transparent')
+      .on('mousemove', ev => {
+        const [mx, my] = d3.pointer(ev, el);
+        tip.html(d.tip).style('opacity', 1);
+        const tw = tip.node().offsetWidth;
+        tip.style('left', (mx + 14 + tw > el.clientWidth ? mx - tw - 14 : mx + 14) + 'px').style('top', Math.max(0, my - 40) + 'px');
+      })
+      .on('mouseleave', () => tip.style('opacity', 0));
+  }
+  svg.append('line').attr('class', 'zero').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0));
+}
+
+function lotes() {
+  const L = D.lotes || [];
+  const el = document.getElementById('chart-lotes');
+  const leg = document.getElementById('leg-lotes');
+  leg.innerHTML = `<span class="k"><span class="swatch" style="background:var(--flavio)"></span>${modoLotes === 'saldo' ? 'saldo para o Flávio' : 'Flávio'}</span>
+    <span class="k"><span class="swatch" style="background:var(--lula)"></span>${modoLotes === 'saldo' ? 'saldo para o Lula' : 'Lula'}</span>`;
+  if (!L.length) { el.innerHTML = '<p class="sub">Aguardando mais coletas…</p>'; return; }
+  barras(el, L.map(l => ({ x: l.h, f: l.f, l: l.l, tip: tipLote({ ...l, h_: l.h }) })), { height: 280, modo: modoLotes });
+
+  // por estado: estados com mais votos novos no total da noite
+  const tot = {};
+  for (const l of L) for (const [uf, r] of Object.entries(l.ufs)) tot[uf] = (tot[uf] || 0) + r.v;
+  const top = Object.entries(tot).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([uf]) => uf);
+  const yMax = d3.max(L.flatMap(l => top.map(uf => l.ufs[uf] ? Math.abs(l.ufs[uf].f - l.ufs[uf].l) : 0))) || 1;
+  const nomes = Object.fromEntries(D.ufs.map(u => [u.uf, u.nome]));
+  const box = document.getElementById('multiples');
+  box.innerHTML = '';
+  for (const uf of top) {
+    const saldoNoite = L.reduce((a, l) => a + (l.ufs[uf] ? l.ufs[uf].f - l.ufs[uf].l : 0), 0);
+    const ultimo = [...L].reverse().find(l => l.ufs[uf]);
+    const ul = ultimo ? ultimo.ufs[uf] : null;
+    const div = document.createElement('div');
+    div.className = 'mini';
+    div.innerHTML = `<h3>${nomes[uf] || uf}</h3>
+      <div class="resumo">noite: ${saldoNoite >= 0 ? 'Flávio' : 'Lula'} +${mil(Math.abs(saldoNoite))}${ul ? ` · último lote ${br(ul.f / ul.v * 100, 0)} x ${br(ul.l / ul.v * 100, 0)}` : ''}</div>
+      <div class="chart"></div>`;
+    box.appendChild(div);
+    const itens = L.map(l => {
+      const r = l.ufs[uf] || { f: 0, l: 0, v: 0 };
+      return { x: l.h, f: r.f, l: r.l, tip: r.v ? tipLote({ ...r, de: l.de, h_: l.h }, nomes[uf]) : `<div class="t">${nomes[uf]} · ${l.de} → ${l.h}</div>sem votos novos` };
+    });
+    barras(div.querySelector('.chart'), itens, { height: 130, yMax, mini: true, modo: 'saldo' });
+  }
+}
+document.querySelectorAll('.seg button').forEach(b => b.onclick = () => {
+  modoLotes = b.dataset.modo;
+  document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  lotes();
+});
+
 // ---------- mapa ----------
 function mapa() {
   const el = document.getElementById('mapa');
@@ -471,7 +618,7 @@ document.getElementById('rodape').innerHTML =
   `Fontes: TSE (resultados.tse.jus.br, eleição 6257) para placar, estados e projeção; UOL para a curva de evolução 2026/2022.
    ${D.n_coletas} leituras registradas · coleta ${D.pasta}. Projeções são estimativas simples, não previsões oficiais.`;
 
-function desenhar() { tiles(); placar(); evolucao(); projecaoHist(); mapa(); andamento(); tabela(); }
+function desenhar() { tiles(); placar(); evolucao(); projecaoHist(); lotes(); mapa(); andamento(); tabela(); }
 desenhar();
 let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(desenhar, 150); });
 </script>
