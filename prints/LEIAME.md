@@ -19,5 +19,6 @@ Prints que tirei dos sites durante a apuração e colei na conversa. A hora é a
 | `2027-uol-placar-91,06.png` | UOL | Placar com 91,06%: 47,98% x 44,05% ("47 x 44 se confirmando") | case 13 |
 | `2018-t2-g1-grafico-evolucao.png` | g1 | 2º turno de 2018: gráfico da evolução (Bolsonaro na frente aos 10 min) | case 15 |
 | `2018-t2-g1-tabela-minuto-a-minuto.png` | g1 | 2º turno de 2018: tabela minuto a minuto (transcrita em `dados/historico/2018-t2-g1-minuto.csv`) | case 15 |
+| `2100-g1-mapa-minas-gerais-94,07-segundo-turno.png` | g1 | Minas com 94,07%: Flávio 48,63% x Lula 42,83%, já com o selo "2º Turno" | cases 18 e 19 |
 
 Os prints automáticos de cada coleta (placar e mapa do g1) ficam em `dados/brutos/<horário>/`.

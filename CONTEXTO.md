@@ -32,6 +32,7 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 | 20:10 | 87,1% | Revisão das ideias: a projeção erra sistematicamente a favor do Flávio |
 | 20:14 | 89,1% | Lote mais favorável ao Lula da noite (52,0% x 41,1%). Linhas não devem se cruzar |
 | 20:21 | 90,5% | Flávio 48,03% x Lula 43,99% |
+| **20:57** | **97,2%** | **TSE marca a eleição como matematicamente definida (`md = s`): 2º turno Flávio x Lula** |
 
 \* % das seções pela soma das UFs (ver §5).
 
