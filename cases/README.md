@@ -38,3 +38,4 @@ status: aberto | fechado
 | 13 | [47 x 44: o palpite ajustado](13-47-x-44.md) | 20:27 | análise |
 | 14 | [2018, 2022, 2026: a forma das curvas](14-curvas-2018-2022-2026.md) | 20:30 | análise |
 | 15 | [Quatro apurações: 2018, 2022 (dois turnos) e 2026](15-quatro-curvas.md) | 20:35 | análise |
+| 16 | [Abstenção e 2º turno: quem cresce de um turno para o outro](16-abstencao-e-segundo-turno.md) | 20:45 | análise |
