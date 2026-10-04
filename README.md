@@ -23,6 +23,7 @@ O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são 
 | `painel.py` + `painel_template.html` | Gera o `painel.html` a partir dos dados |
 | `analisar.py` | Análise no terminal: tendência, quanto falta, projeção |
 | `status.py` | Saúde da coleta: processo vivo, intervalo entre coletas, pastas completas |
+| `variacao.py` | Estado a estado: o que entrou entre duas leituras, tendência do lote e saldo esperado do que falta |
 | `prints.js` | Prints recortados com Puppeteer |
 | `registrar.py`, `registrar_estado.py` | Registro manual, usado antes da coleta automática |
 | `dados/*.csv` | Histórico coletado na noite |
@@ -48,6 +49,8 @@ python3 coletar.py                           # uma coleta
 python3 coletar.py --a-cada 180 --print      # coleta contínua com prints
 python3 status.py                            # está tudo ok?
 python3 analisar.py                          # análise no terminal
+python3 variacao.py                          # o que mudou por estado entre as 2 últimas coletas
+python3 variacao.py --todas SP               # evolução de um estado em todas as coletas
 xdg-open painel.html                         # painel (recarrega a cada minuto)
 ```
 
