@@ -25,6 +25,8 @@ O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são 
 | `status.py` | Saúde da coleta: processo vivo, intervalo entre coletas, pastas completas |
 | `variacao.py` | Estado a estado: o que entrou entre duas leituras, tendência do lote e saldo esperado do que falta |
 | `prints.js` | Prints recortados com Puppeteer |
+| `banco.py` | Monta o banco SQLite `dados/apuracao.sqlite` a partir dos JSON brutos (incremental) |
+| `R/01-explorar-apuracao.R` | Exemplo em R: placar, saldo por lote, por estado e por região (dplyr + ggplot2) |
 | `registrar.py`, `registrar_estado.py` | Registro manual, usado antes da coleta automática |
 | `dados/*.csv` | Histórico coletado na noite |
 | `notas.md` | Diário da apuração |
@@ -64,6 +66,27 @@ kill $(cat dados/coleta.pid)                 # parar
 ```
 
 Se o Chrome não estiver em `/usr/bin/google-chrome`, defina `CHROME_PATH`.
+
+## Banco de dados e R
+
+`dados/apuracao.sqlite` é atualizado a cada coleta, em formato longo, pronto para `dplyr`/`ggplot2`:
+
+| Tabela / view | Uma linha por… |
+|---|---|
+| `coletas` | coleta (horário, versão do arquivo nacional do TSE) |
+| `apuracao` | coleta × abrangência (BR, UF, ZZ): seções, eleitorado, válidos, brancos, nulos, abstenção |
+| `votos` | coleta × abrangência × candidato: votos e % dos válidos |
+| `candidatos`, `ufs` | número/nome/partido; UF/nome/região |
+| `v_votos` | votos já com horário, região e nome do candidato |
+| `v_nacional_soma` | nacional pela soma das UFs (mais atual que o arquivo BR do TSE) |
+
+```r
+library(DBI); library(dplyr)
+con <- dbConnect(RSQLite::SQLite(), "dados/apuracao.sqlite")
+tbl(con, "v_votos") |> filter(abrangencia != "BR", numero %in% c(13, 22)) |> collect()
+```
+
+Instalar R no Ubuntu: `sudo apt install r-base r-cran-tidyverse r-cran-rsqlite r-cran-dbi`. Exemplo completo em `R/01-explorar-apuracao.R`.
 
 ## Fontes
 

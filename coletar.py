@@ -6,7 +6,7 @@ Cada coleta:
   - adiciona o placar nacional em dados/snapshots.csv
   - adiciona o andamento de cada UF em dados/estados.csv
   - adiciona todos os candidatos em dados/candidatos.csv
-  - baixa a curva de evolução do UOL (2026 e 2022) e regenera painel.html
+  - baixa a curva de evolução do UOL (2026 e 2022), regenera painel.html e atualiza dados/apuracao.sqlite
   - opcionalmente tira prints recortados do UOL e do g1 (--print, via prints.js)
 
 Uso:
@@ -90,10 +90,11 @@ def baixar_uol():
 
 
 def gerar_painel():
-    try:
-        subprocess.run([sys.executable, str(Path(__file__).parent / "painel.py")], timeout=60, capture_output=True)
-    except Exception as e:
-        print(f"  ! painel: {e}")
+    for script in ("painel.py", "banco.py"):  # painel.html + banco SQLite
+        try:
+            subprocess.run([sys.executable, str(Path(__file__).parent / script)], timeout=60, capture_output=True)
+        except Exception as e:
+            print(f"  ! {script}: {e}")
 
 
 def coletar(com_print=False):
