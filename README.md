@@ -28,6 +28,7 @@ O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são 
 | `registrar.py`, `registrar_estado.py` | Registro manual, usado antes da coleta automática |
 | `dados/*.csv` | Histórico coletado na noite |
 | `notas.md` | Diário da apuração |
+| `cases/` | Pequenas análises feitas durante a noite, uma por dúvida (ver `cases/README.md`) |
 
 ### Dados
 
