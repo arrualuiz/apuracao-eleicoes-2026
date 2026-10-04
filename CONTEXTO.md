@@ -108,7 +108,7 @@ Python usa só a biblioteca padrão. Node + Puppeteer + Chrome só para os print
 | `nacional.csv` | coleta | `secoes_pct`, `validos`, `votos_flavio/lula`, `pct_flavio/lula`, `dif_votos`, `dif_pp`, `proj_flavio/lula` |
 | `lotes.csv` | par de coletas × abrangência | `de`, `ate`, `abrangencia` (`BR` = soma), `validos_novos`, `novos_flavio/lula/outros`, `saldo_flavio_menos_lula`, `pct_lote_flavio/lula`, `margem_acumulada_antes_pp` |
 
-Histórico oficial 2002–2022 (TSE, dados abertos): `dados/historico/presidente_turnos.csv` (ano × turno: aptos, comparecimento, abstenção, brancos, nulos, válidos) e `presidente_votos.csv` (ano × turno × partido: votos, %), gerados por `analise/historico_tse.py`; `dados/historico/2018-t2-g1-minuto.csv` (evolução minuto a minuto do 2º turno de 2018).
+Histórico oficial 2002–2022 (TSE, dados abertos): `dados/historico/presidente_turnos.csv` (ano × turno: aptos, comparecimento, abstenção, brancos, nulos, válidos) `presidente_votos.csv` (ano × turno × partido: votos, %) e `presidente_votos_uf.csv` (ano × turno × UF × partido: votos), gerados por `analise/historico_tse.py`; `dados/historico/2018-t2-g1-minuto.csv` (evolução minuto a minuto do 2º turno de 2018).
 
 Outros: `dados/palpites.csv` (palpites registrados), `dados/apuracao.sqlite` (mesmo conteúdo, com as views `v_votos` e `v_nacional_soma`), `notas.md` (diário), `cases/` (análises).
 

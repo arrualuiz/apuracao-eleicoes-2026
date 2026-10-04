@@ -10,6 +10,7 @@ Baixa (com cache em dados/historico/tse/, fora do git):
 Gera:
   dados/historico/presidente_turnos.csv    ano × turno: aptos, comparecimento, abstenção, brancos, nulos, válidos
   dados/historico/presidente_votos.csv     ano × turno × candidato (partido): votos e % dos válidos
+  dados/historico/presidente_votos_uf.csv  ano × turno × UF × candidato (partido): votos
 """
 import csv
 import io
@@ -85,19 +86,21 @@ def votos(ano):
     url = f"{CDN}/votacao_partido_munzona/votacao_partido_munzona_{ano}.zip"
     z = zipfile.ZipFile(ArquivoRemoto(url))
     nome = next(n for n in z.namelist() if n.endswith("_BR.csv"))
-    tot = defaultdict(int)
+    tot, uf = defaultdict(int), defaultdict(int)
     with z.open(nome) as fh:
         for r in linhas_csv(fh):
             if r["CD_CARGO"] != "1":
                 continue
-            v = r.get("QT_VOTOS_NOMINAIS_VALIDOS") or r.get("QT_VOTOS_NOMINAIS") or 0
-            tot[(int(r["NR_TURNO"]), int(r["NR_PARTIDO"]), r["SG_PARTIDO"])] += int(v)
-    return tot
+            v = int(r.get("QT_VOTOS_NOMINAIS_VALIDOS") or r.get("QT_VOTOS_NOMINAIS") or 0)
+            chave = (int(r["NR_TURNO"]), int(r["NR_PARTIDO"]), r["SG_PARTIDO"])
+            tot[chave] += v
+            uf[(chave[0], r["SG_UF"], chave[1], chave[2])] += v
+    return tot, uf
 
 
 def main():
     CACHE.mkdir(parents=True, exist_ok=True)
-    turnos, cands = [], []
+    turnos, cands, por_uf = [], [], []
     for ano in ANOS:
         d = detalhe(ano)
         for t in sorted(d):
@@ -105,7 +108,8 @@ def main():
             turnos.append([ano, t, x["QT_APTOS"], x["QT_COMPARECIMENTO"], x["QT_ABSTENCOES"],
                            round(x["QT_ABSTENCOES"] / x["QT_APTOS"] * 100, 2),
                            x["QT_VOTOS_BRANCOS"], x["QT_TOTAL_VOTOS_NULOS"], x["QT_TOTAL_VOTOS_VALIDOS"]])
-        v = votos(ano)
+        v, vu = votos(ano)
+        por_uf += [[ano, t, u, num, sg, n] for (t, u, num, sg), n in sorted(vu.items())]
         validos = defaultdict(int)
         for (t, _, _), n in v.items():
             validos[t] += n
@@ -120,7 +124,11 @@ def main():
         w = csv.writer(fh)
         w.writerow(["ano", "turno", "numero", "partido", "votos", "pct_validos"])
         w.writerows(cands)
-    print("histórico: dados/historico/presidente_turnos.csv e presidente_votos.csv")
+    with (SAIDA / "presidente_votos_uf.csv").open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["ano", "turno", "uf", "numero", "partido", "votos"])
+        w.writerows(por_uf)
+    print("histórico: dados/historico/presidente_turnos.csv, presidente_votos.csv e presidente_votos_uf.csv")
 
 
 if __name__ == "__main__":
