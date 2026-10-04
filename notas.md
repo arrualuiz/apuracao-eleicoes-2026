@@ -26,3 +26,17 @@
   - Projeção por estado no mesmo momento: Flávio 48,2% x Lula 43,9%.
   - Para dar 47 x 42, o Flávio precisaria de 44,7% dos válidos restantes (vem fazendo 49–50%) e o Lula de 42,4% (vem fazendo 42–43%).
   - 47 + 42 = 89% deixaria 11% para os outros; hoje eles somam 8,2%.
+
+## 19:14 — 64,81% apurado (TSE) · Flávio cai abaixo de 50%
+- O TSE ficou 25 min sem publicar (versão das 18:48:59 até 19:14:08) e depois soltou um lote grande: 47% → 65% das seções.
+- Lote: 21 milhões de válidos, Flávio 48,0% x Lula 43,9%.
+- Placar: **Flávio 49,58% x Lula 42,25%**. Primeira leitura com o Flávio abaixo de 50%.
+- Agora ele precisa de 50,7% dos válidos restantes para voltar a 50%; o último lote deu 48,0%.
+- Projeção por estado: Flávio 47,7% x Lula 44,3%.
+- O que falta: SP (10,6 mi, Flávio 52,8), RJ (6,5 mi, Flávio 53,5), MG (6,2 mi), BA (6,1 mi, Lula 64,5), CE e PE (~3,5 mi cada, Lula 61–62).
+
+## 19:14 — análise estado a estado (variacao.py, 18:52 → 19:14)
+- Saldo esperado do que falta: Lula +4,63 mi (BA +1,60 mi, CE +0,83, PE +0,81, MA +0,52) x Flávio +3,22 mi (SP +1,20 mi, RJ +0,70, SC +0,36, MG +0,32).
+- Diferença atual: Flávio +5,56 mi → projetada no fim: Flávio +4,15 mi.
+- **SP:** cada lote novo vem menos Flávio que o acumulado (lotes de 55x35 → 51x39). Se continuar, o saldo de SP para o Flávio fica abaixo do 1,2 mi projetado.
+- Na maioria dos estados, os lotes recentes vieram mais favoráveis ao Lula que o acumulado (PI −6, GO −5, AM −11, MA −4).
