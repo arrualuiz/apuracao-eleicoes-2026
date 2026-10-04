@@ -40,3 +40,4 @@ status: aberto | fechado
 | 15 | [Quatro apurações: 2018, 2022 (dois turnos) e 2026](15-quatro-curvas.md) | 20:35 | análise |
 | 16 | [Abstenção e 2º turno: quem cresce de um turno para o outro](16-abstencao-e-segundo-turno.md) | 20:45 | análise |
 | 17 | [Quem ganha o 2º turno? Cenários a partir do 1º](17-quem-ganha-o-segundo-turno.md) | 20:50 | análise |
+| 18 | [Quem ganha em Minas ganha o Brasil?](18-quem-ganha-minas.md) | 20:54 | análise |
