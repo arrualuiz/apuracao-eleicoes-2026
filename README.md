@@ -4,6 +4,8 @@ O desenrolar da noite da apuração do 1º turno para Presidente (04/10/2026), c
 
 O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são o registro real do que foi coletado, e o `notas.md` é o diário das observações feitas no caminho.
 
+**Comece por aqui:** [`CONTEXTO.md`](CONTEXTO.md) tem o projeto inteiro (linha do tempo, achados, métodos, dicionário de dados e como conectar em R, Python, Power BI, Power Automate e Sheets). As análises estão em [`cases/`](cases/) e o rascunho do site em [`site/index.html`](site/index.html).
+
 ![Painel da apuração](docs/painel.png)
 
 ## O que ele faz
@@ -19,11 +21,12 @@ O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são 
 
 ```
 coleta/    coletar.py · prints.js · status.py      → busca os dados e cuida da coleta
-analise/   analisar.py · variacao.py · revisao.py · banco.py → compara leituras e monta o banco
+analise/   analisar.py · variacao.py · revisao.py · banco.py · exportar.py → compara, monta o banco e exporta
 painel/    painel.py · template.html               → gera painel/painel.html
 R/         01-explorar-apuracao.R                   → análise em R (dplyr + ggplot2)
 cases/     uma análise por dúvida da noite          → base do site final
-dados/     CSVs + apuracao.sqlite (+ brutos locais)
+site/      index.html + dados.js                    → rascunho do site de rolagem
+dados/     CSVs + apuracao.sqlite + export/ (+ brutos locais)
 legado/    registrar.py · registrar_estado.py      → registro manual do começo da noite
 notas.md   diário da apuração
 ```
@@ -36,9 +39,11 @@ notas.md   diário da apuração
 | `analise/analisar.py` | Análise no terminal: tendência, quanto falta, projeção |
 | `analise/variacao.py` | Estado a estado: o que entrou entre duas leituras, tendência do lote e saldo esperado do que falta |
 | `analise/revisao.py` | Confere as ideias da noite (os cases) contra a coleta mais recente |
+| `analise/exportar.py` | Exporta o banco para `dados/export/*.csv` (R, Python, Power BI…) e `site/dados.js` |
 | `analise/banco.py` | Monta o banco SQLite `dados/apuracao.sqlite` a partir dos JSON brutos (incremental) |
 | `painel/painel.py` + `painel/template.html` | Gera o `painel/painel.html` a partir dos dados |
 | `R/01-explorar-apuracao.R` | Exemplo em R: placar, saldo por lote, por estado e por região |
+| `site/index.html` | Rascunho do site de rolagem: gráfico fixo que avança com os marcos da noite |
 | `cases/` | Pequenas análises feitas durante a noite, uma por dúvida (ver `cases/README.md`) |
 | `legado/` | Registro manual, usado antes da coleta automática |
 
