@@ -86,8 +86,8 @@ def comparar(a, b):
         tot_l += max(-r["saldo"], 0)
         print(f"{r['uf']:<4}{r['ap1']:>8.0f}%{br(r['rest']):>20}{r['pf']:>8.1f} x {r['pl']:<4.1f}"
               f"{('+' + br(abs(r['saldo'])) + ' ' + quem):>20}")
-    y_br = ler(b, "BR")
-    dif_atual = y_br["f"] - y_br["l"]
+    # diferença atual pela soma das UFs (o arquivo nacional do TSE atrasa)
+    dif_atual = sum(ler(b, uf)["f"] - ler(b, uf)["l"] for uf in UFS)
     final = dif_atual + tot_f - tot_l
     print(f"\nDiferença atual: Flávio +{br(dif_atual)} votos")
     print(f"O que falta soma +{br(tot_f)} para o Flávio e +{br(tot_l)} para o Lula (saldo líquido {'+' if tot_f > tot_l else '−'}{br(abs(tot_f - tot_l))} {'Flávio' if tot_f > tot_l else 'Lula'})")
