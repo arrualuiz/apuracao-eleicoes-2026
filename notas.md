@@ -47,3 +47,9 @@
 - Placar (soma UFs, 20:06): **Flávio 48,44% x Lula 43,51%**. Projeção por estado: 47,6% x 44,5%.
 - variacao.py: diferença atual Flávio +5,0 mi; o que falta soma Lula +2,85 mi x Flávio +1,21 mi; projetado no fim Flávio +3,4 mi.
 - Organização: projeto em pastas (coleta/, analise/, painel/, legado/) e repositório renomeado para noite-da-apuracao-2026.
+
+## 20:14 — 89,1% apurado
+- Flávio 48,14% x Lula 43,86%, diferença 4,53 mi (era 5,0 mi às 20:06).
+- Lote das 20:14 (2,5 mi de válidos): **Lula 52,0% x Flávio 41,1%**, o mais favorável ao Lula da noite.
+- Em 7 dos 8 maiores estados do lote, os votos novos vieram mais Lula que o acumulado: o voto tardio é mais Lula em todo lugar, não só no Nordeste.
+- Projeção por estado 47,4% x 44,7% e caindo; o erro da projeção a favor do Flávio já é de ~650 mil votos desde 19:14.
