@@ -2,8 +2,8 @@
 """Monta o banco SQLite dados/apuracao.sqlite a partir dos JSON brutos do TSE.
 
 Incremental: só insere coletas que ainda não estão no banco.
-Uso: python3 banco.py            (o coletar.py chama a cada coleta)
-     python3 banco.py --recriar  (apaga e reconstrói do zero)
+Uso: python3 analise/banco.py            (o coletar.py chama a cada coleta)
+     python3 analise/banco.py --recriar  (apaga e reconstrói do zero)
 
 Tabelas (formato "longo", pronto para R/dplyr/ggplot):
   coletas     uma linha por coleta (coleta_id, horario, versão do arquivo nacional)
@@ -21,7 +21,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-RAIZ = Path(__file__).parent
+RAIZ = Path(__file__).resolve().parent.parent
 BRUTOS = RAIZ / "dados" / "brutos"
 BANCO = RAIZ / "dados" / "apuracao.sqlite"
 

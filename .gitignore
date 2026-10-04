@@ -3,7 +3,7 @@ node_modules/
 __pycache__/
 
 # gerado a cada coleta
-painel.html
+painel/painel.html
 
 # dados volumosos ou de terceiros (ficam só local)
 dados/brutos/

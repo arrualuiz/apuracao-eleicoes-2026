@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Prints automáticos da apuração (Puppeteer) para o monitor das eleições 2026",
   "scripts": {
-    "prints": "node prints.js"
+    "prints": "node coleta/prints.js"
   },
   "keywords": [],
   "author": "",

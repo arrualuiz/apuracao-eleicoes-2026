@@ -10,9 +10,9 @@ Cada coleta:
   - opcionalmente tira prints recortados do UOL e do g1 (--print, via prints.js)
 
 Uso:
-  python3 coletar.py                 # uma coleta
-  python3 coletar.py --a-cada 180    # repete a cada 180 s até Ctrl+C
-  python3 coletar.py --a-cada 180 --print
+  python3 coleta/coletar.py                 # uma coleta
+  python3 coleta/coletar.py --a-cada 180    # repete a cada 180 s até Ctrl+C
+  python3 coleta/coletar.py --a-cada 180 --print
 """
 import argparse
 import csv
@@ -31,7 +31,8 @@ UFS = ["br", "ac", "al", "am", "ap", "ba", "ce", "df", "es", "go", "ma", "mg", "
 UOL_EV_2026 = "https://stc.eleicoes2026.uol.com/2026/1turno/br/br-c1-ev.json"
 UOL_EV_2022 = "https://stc.eleicoes2026.uol.com/2026/historical/2022/br-c1-t1-ev.json"
 
-PASTA = Path(__file__).parent / "dados"
+RAIZ = Path(__file__).resolve().parent.parent
+PASTA = RAIZ / "dados"
 SNAPSHOTS = PASTA / "snapshots.csv"
 ESTADOS = PASTA / "estados.csv"
 CANDIDATOS = PASTA / "candidatos.csv"
@@ -69,7 +70,7 @@ def candidatos(dados_u):
 def tirar_prints(pasta):
     """Prints recortados (placar/evolução/estados/regiões do UOL e mapa do g1) via prints.js."""
     try:
-        r = subprocess.run(["node", str(Path(__file__).parent / "prints.js"), str(pasta)],
+        r = subprocess.run(["node", str(Path(__file__).resolve().parent / "prints.js"), str(pasta)],
                            timeout=150, capture_output=True, text=True)
         return len(list(pasta.glob("*.png")))
     except Exception:
@@ -90,9 +91,9 @@ def baixar_uol():
 
 
 def gerar_painel():
-    for script in ("painel.py", "banco.py"):  # painel.html + banco SQLite
+    for script in ("painel/painel.py", "analise/banco.py"):  # painel.html + banco SQLite
         try:
-            subprocess.run([sys.executable, str(Path(__file__).parent / script)], timeout=60, capture_output=True)
+            subprocess.run([sys.executable, str(RAIZ / script)], timeout=60, capture_output=True)
         except Exception as e:
             print(f"  ! {script}: {e}")
 

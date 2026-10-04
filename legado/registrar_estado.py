@@ -2,17 +2,17 @@
 """Registra o andamento de um estado em dados/estados.csv.
 
 Uso:
-  python3 registrar_estado.py UF URNAS_PCT ELEITORADO [--flavio PCT] [--lula PCT] [--hora HH:MM] [--fonte TXT]
+  python3 legado/registrar_estado.py UF URNAS_PCT ELEITORADO [--flavio PCT] [--lula PCT] [--hora HH:MM] [--fonte TXT]
 
 Exemplo:
-  python3 registrar_estado.py MG 13.05 14323875 --flavio 49.12 --lula 41.48 --fonte g1
+  python3 legado/registrar_estado.py MG 13.05 14323875 --flavio 49.12 --lula 41.48 --fonte g1
 """
 import argparse
 import csv
 from datetime import datetime
 from pathlib import Path
 
-ARQUIVO = Path(__file__).parent / "dados" / "estados.csv"
+ARQUIVO = Path(__file__).resolve().parent.parent / "dados" / "estados.csv"
 COLUNAS = ["horario", "uf", "urnas_pct", "eleitorado", "flavio_pct", "lula_pct", "fonte"]
 
 

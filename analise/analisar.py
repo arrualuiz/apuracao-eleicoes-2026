@@ -3,8 +3,8 @@
 import csv
 from pathlib import Path
 
-ARQUIVO = Path(__file__).parent / "dados" / "snapshots.csv"
-ESTADOS = Path(__file__).parent / "dados" / "estados.csv"
+ARQUIVO = Path(__file__).resolve().parent.parent / "dados" / "snapshots.csv"
+ESTADOS = Path(__file__).resolve().parent.parent / "dados" / "estados.csv"
 
 
 def num(v):
@@ -13,7 +13,7 @@ def num(v):
 
 def main():
     if not ARQUIVO.exists():
-        print("Nenhum registro ainda. Use: python3 registrar.py URNAS LULA FLAVIO")
+        print("Nenhum registro ainda. Use: python3 coleta/coletar.py")
         return
     with ARQUIVO.open(encoding="utf-8") as f:
         linhas = list(csv.DictReader(f))

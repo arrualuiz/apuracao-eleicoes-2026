@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Gera painel.html a partir dos dados coletados (TSE + evolução do UOL).
 
-Uso: python3 painel.py   (o coletar.py chama isto a cada coleta)
+Uso: python3 painel/painel.py   (o coletar.py chama isto a cada coleta)
 """
 import csv
 import json
 from pathlib import Path
 
-RAIZ = Path(__file__).parent
+RAIZ = Path(__file__).resolve().parent.parent
 PASTA = RAIZ / "dados"
-TEMPLATE = RAIZ / "painel_template.html"
-SAIDA = RAIZ / "painel.html"
+TEMPLATE = Path(__file__).resolve().parent / "template.html"
+SAIDA = Path(__file__).resolve().parent / "painel.html"
 
 NOMES = {
     "AC": "Acre", "AL": "Alagoas", "AM": "Amazonas", "AP": "Amapá", "BA": "Bahia", "CE": "Ceará",

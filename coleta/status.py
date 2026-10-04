@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Mostra se a coleta automática está saudável.
 
-Uso: python3 status.py
+Uso: python3 coleta/status.py
 """
 import csv
 import os
 from datetime import datetime
 from pathlib import Path
 
-PASTA = Path(__file__).parent / "dados"
+PASTA = Path(__file__).resolve().parent.parent / "dados"
 
 
 def main():

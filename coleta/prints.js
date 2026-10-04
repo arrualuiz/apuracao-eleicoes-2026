@@ -1,5 +1,5 @@
 // Tira prints recortados das áreas de interesse do UOL e do g1.
-// Uso: node prints.js <pasta_destino>
+// Uso: node coleta/prints.js <pasta_destino>
 const path = require('path');
 const puppeteer = require('puppeteer-core');
 
@@ -98,7 +98,7 @@ async function g1(browser) {
 (async () => {
   const browser = await puppeteer.launch({
     executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', headless: true,
-    userDataDir: path.join(__dirname, 'dados', '.chrome-puppeteer'),
+    userDataDir: path.join(__dirname, '..', 'dados', '.chrome-puppeteer'),
     args: ['--no-first-run', '--disable-gpu'],
   });
   for (const [nome, fn] of [['uol', uol], ['g1-placar', g1Placar], ['g1-mapa', g1]]) {

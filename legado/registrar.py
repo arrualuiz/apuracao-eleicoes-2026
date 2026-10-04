@@ -2,17 +2,17 @@
 """Registra uma leitura da apuração em dados/snapshots.csv.
 
 Uso:
-  python3 registrar.py URNAS_PCT LULA_PCT FLAVIO_PCT [--lula-votos N] [--flavio-votos N] [--hora HH:MM] [--nota "texto"]
+  python3 legado/registrar.py URNAS_PCT LULA_PCT FLAVIO_PCT [--lula-votos N] [--flavio-votos N] [--hora HH:MM] [--nota "texto"]
 
 Exemplo:
-  python3 registrar.py 12 45.3 48.1 --nota "começo da apuração"
+  python3 legado/registrar.py 12 45.3 48.1 --nota "começo da apuração"
 """
 import argparse
 import csv
 from datetime import datetime
 from pathlib import Path
 
-ARQUIVO = Path(__file__).parent / "dados" / "snapshots.csv"
+ARQUIVO = Path(__file__).resolve().parent.parent / "dados" / "snapshots.csv"
 COLUNAS = ["horario", "urnas_pct", "lula_pct", "flavio_pct", "lula_votos", "flavio_votos", "nota"]
 
 

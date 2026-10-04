@@ -2,15 +2,15 @@
 """O que mudou em cada estado entre duas leituras, e quanto o que falta ainda pesa.
 
 Uso:
-  python3 variacao.py                 # compara as duas últimas coletas
-  python3 variacao.py 18:48 19:14     # compara as coletas mais próximas desses horários
-  python3 variacao.py --todas UF      # evolução de um estado em todas as coletas (ex.: SP)
+  python3 analise/variacao.py                 # compara as duas últimas coletas
+  python3 analise/variacao.py 18:48 19:14     # compara as coletas mais próximas desses horários
+  python3 analise/variacao.py --todas UF      # evolução de um estado em todas as coletas (ex.: SP)
 """
 import json
 import sys
 from pathlib import Path
 
-PASTA = Path(__file__).parent / "dados" / "brutos"
+PASTA = Path(__file__).resolve().parent.parent / "dados" / "brutos"
 UFS = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB",
        "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO", "ZZ"]
 
