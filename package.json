@@ -1,5 +1,5 @@
 {
-  "name": "noite-da-apuracao-2026",
+  "name": "noite-do-primeiro-turno-2026",
   "version": "1.0.0",
   "description": "Prints automáticos da apuração (Puppeteer) para o monitor das eleições 2026",
   "scripts": {

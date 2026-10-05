@@ -44,12 +44,12 @@ python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID e
 
 - **Site:** abrir `site/index.html` no navegador (funciona sem internet, exceto as bibliotecas D3/marked do CDN). Tem a história em rolagem, os prints de cada marco e as 19 análises.
 - **Painel:** `painel/painel.html`, com todos os gráficos da noite.
-- **GitHub:** https://github.com/arrualuiz/noite-da-apuracao-2026. O histórico de commits mostra a construção passo a passo. Os prints não estão lá (são telas de terceiros); o site no GitHub abre sem eles.
+- **GitHub:** https://github.com/arrualuiz/noite-do-primeiro-turno-2026. O histórico de commits mostra a construção passo a passo. Os prints não estão lá (são telas de terceiros); o site no GitHub abre sem eles.
 
 ## Para retomar com o Claude (ou outra IA)
 
 Abra o Claude Code nesta pasta e cole:
 
-> Estou retomando o projeto Noite da Apuração 2026. Leia `RETOMAR.md` e `CONTEXTO.md`, rode `python3 coleta/status.py` e me diga em que pé está. Depois vamos fechar os desfechos dos cases com o resultado final. Mantenha o padrão: cada análise vira um case em `cases/`, e cada etapa um commit com push.
+> Estou retomando o projeto Noite do Primeiro Turno 2026. Leia `RETOMAR.md` e `CONTEXTO.md`, rode `python3 coleta/status.py` e me diga em que pé está. Depois vamos fechar os desfechos dos cases com o resultado final. Mantenha o padrão: cada análise vira um case em `cases/`, e cada etapa um commit com push.
 
 O Claude Code também guarda na memória deste projeto as duas regras de trabalho: cases para cada análise e commit por etapa.

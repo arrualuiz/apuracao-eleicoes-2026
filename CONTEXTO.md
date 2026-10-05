@@ -1,7 +1,7 @@
-# CONTEXTO — Noite da Apuração 2026
+# CONTEXTO — Noite do Primeiro Turno 2026
 
 > Documento de passagem: tudo o que alguém (pessoa ou IA) precisa para entender, avaliar e continuar este projeto sem ter acompanhado a noite.
-> Repositório: https://github.com/arrualuiz/noite-da-apuracao-2026 · Atualizado em 04/10/2026, ~20h20.
+> Repositório: https://github.com/arrualuiz/noite-do-primeiro-turno-2026 · Atualizado em 04/10/2026, ~20h20.
 
 ## 1. O que é
 
@@ -118,12 +118,12 @@ Modelo estrela para BI: `votos` e `apuracao` são fatos; `coletas`, `ufs` e `can
 ## 8. Como conectar
 
 URL base dos arquivos no GitHub (repositório público):
-`https://raw.githubusercontent.com/arrualuiz/noite-da-apuracao-2026/main/dados/export/`
+`https://raw.githubusercontent.com/arrualuiz/noite-do-primeiro-turno-2026/main/dados/export/`
 
 **R**
 ```r
 library(readr); library(dplyr)
-base <- "https://raw.githubusercontent.com/arrualuiz/noite-da-apuracao-2026/main/dados/export/"
+base <- "https://raw.githubusercontent.com/arrualuiz/noite-do-primeiro-turno-2026/main/dados/export/"
 votos <- read_csv(paste0(base, "votos.csv"))
 # ou o banco local: DBI::dbConnect(RSQLite::SQLite(), "dados/apuracao.sqlite")
 ```
@@ -131,7 +131,7 @@ votos <- read_csv(paste0(base, "votos.csv"))
 **Python**
 ```python
 import pandas as pd
-base = "https://raw.githubusercontent.com/arrualuiz/noite-da-apuracao-2026/main/dados/export/"
+base = "https://raw.githubusercontent.com/arrualuiz/noite-do-primeiro-turno-2026/main/dados/export/"
 votos = pd.read_csv(base + "votos.csv")
 lotes = pd.read_csv(base + "lotes.csv")
 # sem pandas: import sqlite3; sqlite3.connect("dados/apuracao.sqlite")
@@ -141,14 +141,14 @@ lotes = pd.read_csv(base + "lotes.csv")
 
 **Power Automate**: ação HTTP (GET) na URL raw do CSV → "Analisar CSV" ou gravar numa tabela do Excel/SharePoint. Gatilho por agendamento ou por push no GitHub (conector GitHub).
 
-**Google Sheets**: `=IMPORTDATA("https://raw.githubusercontent.com/arrualuiz/noite-da-apuracao-2026/main/dados/export/nacional.csv")`. Para automatizar, use Apps Script com `UrlFetchApp.fetch(url)` + `Utilities.parseCsv`.
+**Google Sheets**: `=IMPORTDATA("https://raw.githubusercontent.com/arrualuiz/noite-do-primeiro-turno-2026/main/dados/export/nacional.csv")`. Para automatizar, use Apps Script com `UrlFetchApp.fetch(url)` + `Utilities.parseCsv`.
 
 **Outra IA**: entregue este arquivo + `cases/` + os CSVs de `dados/export/` (ou o link do repositório).
 
 ## 9. Como retomar
 
 ```bash
-git clone https://github.com/arrualuiz/noite-da-apuracao-2026 && cd noite-da-apuracao-2026
+git clone https://github.com/arrualuiz/noite-do-primeiro-turno-2026 && cd noite-do-primeiro-turno-2026
 npm install                                   # só para os prints
 python3 coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # 1º turno (6257); --git commita sozinho, --parar-no-fim desliga no fim
 python3 coleta/coletar.py --a-cada 180 --print --eleicao 6258   # 2º turno
