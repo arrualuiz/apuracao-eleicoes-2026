@@ -80,4 +80,7 @@ Comparando com o que foi estimado ao longo da noite:
 ## Desfecho
 **Checagem às 22:00 (99,74%):** placar **Flávio 47,09% x Lula 45,09%**, exatamente o cenário "mais provável" calculado às 21:32, mas com 0,26% das seções ainda por apurar. Entre 21:32 e 22:00 entraram 451 mil válidos com **Lula 66,3% x Flávio 29,3%**, um pouco mais favoráveis ao Lula que a média dos estados de onde vieram (sobretudo Bahia e Ceará). É o mesmo viés do case 11, em escala pequena. Faltavam 1.286 seções (~305 mil válidos: BA 506, MG 200, CE 194), e a projeção passou a **47,06 x 45,13**.
 
+
+**Checagem às 22:17 (99,86%):** Flávio 47,06% x Lula 45,12%. Faltavam 685 seções (~165 mil válidos: BA 262, CE 123, MG 71, MA 51, AM 40, PI 35). Mais provável no fim: **47,04 x 45,14**; limite teórico (tudo para o Lula): 47,00 x 45,20. O Flávio não fica abaixo de 47%.
+
 _resultado final oficial: Flávio __% x Lula __%_
