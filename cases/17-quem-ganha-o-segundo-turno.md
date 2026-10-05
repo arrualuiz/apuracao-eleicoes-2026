@@ -41,7 +41,7 @@ Base = projeção corrigida do 1º turno. 2º turno = cada finalista + a fatia d
 **Pelo 1º turno, o Flávio é favorito, mas por pouco.**
 - **O que pesa a favor dele:** 5,1 dos 7,9 p.p. dos outros vêm da direita e do centro-direita (Renan Santos, Caiado, Zema), e o líder do 1º turno venceu os seis 2º turnos desde 2002 (case 16).
 - **O que mantém a disputa aberta:** os 65% de que o Lula precisa estão dentro do que já aconteceu (Haddad ficou com ~65% dos votos novos em 2018; Bolsonaro, com ~70% em 2022). E a margem é estreita: ~1,2% do eleitorado mudando de lado empata.
-- **O que os dados não medem:** campanha, debates, alianças, denúncias, mobilização de quem se absteve (21% do eleitorado). Uma variação de ~1–2 p.p., comum ao longo de uma campanha de 2º turno, decide.
+- **O que os dados não medem:** campanha, debates, alianças, denúncias contra qualquer um dos lados, mobilização de quem se absteve (21% do eleitorado). Uma variação de ~1–2 p.p., comum ao longo de uma campanha de 2º turno, decide.
 
 **Leitura honesta:** vantagem leve do Flávio no ponto de partida, disputa competitiva. O próximo dado relevante são as **primeiras pesquisas de 2º turno** e o **apoio declarado** de Cury, Caiado e Renan Santos.
 

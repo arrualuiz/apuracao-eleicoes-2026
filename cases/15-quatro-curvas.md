@@ -3,7 +3,7 @@ numero: 15
 titulo: "Quatro apurações: 2018, 2022 (dois turnos) e 2026"
 hora: "20:35"
 tipo: analise
-manchete: "Em todas as apurações a direita começa inflada e perde terreno até o fim; aplicando a reta final de cada uma a 2026, Flávio termina entre +1,7 e +3,4 p.p."
+manchete: "Em todas as apurações, quem é mais forte no Sul e no Sudeste começa à frente e perde terreno até o fim; aplicando a reta final de cada uma a 2026, Flávio termina entre +1,7 e +3,4 p.p."
 status: aberto
 ---
 
@@ -25,7 +25,7 @@ Achei a evolução minuto a minuto do **2º turno de 2018** num infográfico do 
 | 90% | +11,8 (−1,5) | −2,8 (−2,4) | −1,1 (−0,7) | +4,1 |
 | Final | **+10,3** | **−5,2** | **−1,8** | ? (+3,7 com 92%) |
 
-**O padrão comum:** nas três apurações completas, a direita começa inflada e perde terreno até o fim, sempre na mesma direção. É a ordem regional da apuração (Sul e Sudeste primeiro, Nordeste depois).
+**O padrão comum:** nas três apurações completas, o candidato da direita começa com vantagem maior que a final e perde terreno até o fim, sempre na mesma direção. É a ordem regional da apuração (Sul e Sudeste primeiro, Nordeste depois).
 
 **As formas diferentes:**
 - **2018 e 2022, 2º turno:** a queda é rápida no começo (a maior parte do ajuste acontece até ~20%) e depois a curva fica quase plana.
@@ -47,7 +47,7 @@ Achei a evolução minuto a minuto do **2º turno de 2018** num infográfico do 
 - Para cada %, o ponto mais próximo de cada série (até 3 p.p. de distância).
 
 ## Conclusão
-As curvas parecem diferentes, mas contam a mesma história: **o começo da apuração favorece a direita, e a reta final devolve votos ao PT**. Variam a intensidade e o momento. A faixa para 2026 (de +1,7 a +3,4, centro em ~+2,5) coincide com as projeções do case 12 (~+2,4). Três métodos independentes apontam para o mesmo lugar.
+As curvas parecem diferentes, mas contam a mesma história: **o começo da apuração favorece quem é forte no Sul e no Sudeste, e a reta final favorece quem é forte no Nordeste** (nessas eleições, a direita e o PT, respectivamente). Variam a intensidade e o momento. A faixa para 2026 (de +1,7 a +3,4, centro em ~+2,5) coincide com as projeções do case 12 (~+2,4). Três métodos independentes apontam para o mesmo lugar.
 
 Para o **2º turno de 2026** (25/10), já temos as duas referências de 2º turno (2018 e 2022), com a forma típica: ajuste rápido até ~20% e depois quase plano.
 
