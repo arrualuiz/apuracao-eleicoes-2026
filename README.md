@@ -2,6 +2,8 @@
 
 O desenrolar da noite do primeiro turno da eleição para Presidente (04/10/2026), contado com dados: coleta automática direto da API pública do TSE, com histórico salvo a cada publicação, projeção por estado e um painel HTML que se atualiza sozinho.
 
+**Resultado do 1º turno (100% das seções):** Flávio Bolsonaro 47,03% x Lula 45,16%; 2º turno em 25/10/2026.
+
 O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são o registro real do que foi coletado, e o `notas.md` é o diário das observações feitas no caminho.
 
 **Comece por aqui:** [`RETOMAR.md`](RETOMAR.md) diz onde paramos e o que falta; [`CONTEXTO.md`](CONTEXTO.md) tem o projeto inteiro (linha do tempo, achados, métodos, dicionário de dados e como conectar em R, Python, Power BI, Power Automate e Sheets). As análises estão em [`cases/`](cases/) e o rascunho do site em [`site/index.html`](site/index.html).

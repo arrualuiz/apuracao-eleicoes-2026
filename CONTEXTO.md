@@ -1,7 +1,7 @@
 # CONTEXTO — Noite do Primeiro Turno 2026
 
 > Documento de passagem: tudo o que alguém (pessoa ou IA) precisa para entender, avaliar e continuar este projeto sem ter acompanhado a noite.
-> Repositório: https://github.com/arrualuiz/noite-do-primeiro-turno-2026 · Atualizado em 04/10/2026, ~20h20.
+> Repositório: https://github.com/arrualuiz/noite-do-primeiro-turno-2026 · Atualizado em 05/10/2026, com o resultado final do 1º turno.
 
 ## 1. O que é
 
@@ -33,6 +33,9 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 | 20:14 | 89,1% | Lote mais favorável ao Lula da noite (52,0% x 41,1%). Linhas não devem se cruzar |
 | 20:21 | 90,5% | Flávio 48,03% x Lula 43,99% |
 | **20:57** | **97,2%** | **TSE marca a eleição como matematicamente definida (`md = s`): 2º turno Flávio x Lula** |
+| 21:32 | 99,4% | Reta final: 46 x 45 já não é possível; final esperado ~47,1 x 45,1 (case 20) |
+| 00:38–06:40 | — | Computador suspenso; o coletor retoma ao acordar e grava o resultado final |
+| **02:59** | **100%** | **Última seção totalizada. Resultado final: Flávio 47,03% x Lula 45,16%** |
 
 \* % das seções pela soma das UFs (ver §5).
 
@@ -40,11 +43,12 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 
 1. **O placar parcial engana:** a ordem de apuração regional (Sul primeiro, Nordeste depois) inflou o Flávio no começo. 51,1% às 18:18 → 48,0% às 20:21.
 2. **A projeção por estado antecipou o 2º turno** mais de uma hora antes do placar. Erro de 0,9 p.p., contra 3,0 do placar da mesma hora.
-3. **Mas a projeção erra para o lado do Flávio:** dentro de cada estado, o voto apurado por último é mais Lula (SP: margem prevista +15,4, real +9,8). Nos 8 maiores estados, ~650 mil votos de erro desde 19:14.
+3. **Mas a projeção erra para o lado do Flávio:** dentro de cada estado, o voto apurado por último é mais Lula (SP: margem prevista +15,4, real +9,8). No fim, o erro acumulado desde 19:14 chegou a ~1,9 milhão de votos.
 4. **O que importa é o lote, não o acumulado:** a virada de tendência apareceu nos lotes (18:46) antes do placar (19:14).
 5. **Saldo x percentual:** até 19:14, os lotes davam saldo de votos ao Flávio e, ao mesmo tempo, derrubavam o percentual dele. Depois de 19:14, os lotes passaram a dar saldo ao Lula.
 6. **O TSE publica os estados antes do nacional:** somar as UFs dá um placar mais atual que o dos sites (g1/UOL mostram o arquivo nacional).
-7. **Estimativa da diferença final** (case 12): entre 1,5 e 3 p.p. a favor do Flávio; a melhor estimativa é ~2,4 p.p. (Flávio ~47,3% x Lula ~44,9%). As linhas não devem se cruzar.
+7. **Estimativa da diferença final** (case 12): entre 1,5 e 3 p.p. a favor do Flávio. **Real: +1,87 p.p.** O método mais preciso foi o mais simples, aplicar a reta final de 2022 (+1,50); as projeções com dados de 2026 erraram todas a favor do Flávio.
+8. **Resultado final do 1º turno** (100% das seções, 05/10 02:59): **Flávio Bolsonaro 47,03%** (56.104.503) x **Lula 45,16%** (53.879.538); Cury 2,89%, Renan Santos 2,24%, Caiado 2,18%, Zema 0,27%. Abstenção de **21,08%**, a maior de um 1º turno desde 2002. Da coleta das 19:14 até o fim, o saldo real do Lula foi de 3,26 mi, contra 1,41 mi esperados pela projeção por estado.
 
 Detalhes, números e método de cada um em `cases/` (20 cases).
 

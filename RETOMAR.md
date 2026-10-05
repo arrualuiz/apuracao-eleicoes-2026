@@ -1,11 +1,11 @@
 # RETOMAR — seguir a partir daqui
 
-> Ponto de parada: **04/10/2026, ~21h10**, com 98,5% apurado. Flávio 47,28% x Lula 44,87%. **2º turno confirmado às 20h57.**
+> Ponto de parada: **05/10/2026, manhã. Apuração encerrada** (100% das seções às 02:59). Resultado: **Flávio 47,03% x Lula 45,16%**; 2º turno em 25/10. Coletor encerrado; desfechos dos cases preenchidos.
 > Para o contexto completo do projeto, leia [`CONTEXTO.md`](CONTEXTO.md). Este arquivo diz só **onde paramos e o que falta**.
 
-## O que ficou rodando sozinho
+## Como o coletor funciona (para o 2º turno)
 
-O coletor ficou ligado em segundo plano (não depende do navegador nem do editor aberto):
+No 1º turno, o coletor ficou ligado em segundo plano a noite toda (não depende do navegador nem do editor aberto):
 
 ```bash
 python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID em dados/coleta.pid
@@ -19,17 +19,16 @@ python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID e
 
 ## Checklist ao voltar
 
-1. [ ] `git pull` (se estiver em outro computador) e `python3 coleta/status.py`: a coleta terminou? Chegou a 100%?
-2. [ ] Se não terminou e o PC desligou: rodar o comando acima de novo (ele continua de onde parou).
+1. [x] Coleta encerrada com 100% (o PC suspendeu de 00:38 a 06:40; o coletor gravou o final ao acordar).
 3. [ ] **Mover o projeto para `~/dev/projetos/xx-noite-do-primeiro-turno-2026`** (só com o coletor parado): `bash mover-para-dev.sh --teste` e depois `bash mover-para-dev.sh`. O script (local, fora do git) também leva junto as anotações do assistente de código. Depois, abra a pasta nova no editor e ajuste o número `xx`.
-4. [ ] **Fechar os desfechos dos cases** (`cases/*.md`, seção "Desfecho"), com o resultado final:
+4. [x] **Fechar os desfechos dos cases** (`cases/*.md`, seção "Desfecho"), com o resultado final:
    - 01, 03: placar e projeção das 18:18 x final
    - 05, 06, 13: quanto o Flávio precisava; palpites 47 x 42 e 47 x 44 x final
    - 08, 09, 11: saldo real de BA e SP; viés da projeção no fim
    - 12, 15: qual método de estimativa da diferença final chegou mais perto
-   - 16, 17, 18: deixar para depois do 2º turno (25/10)
-5. [ ] `python3 analise/revisao.py` dá os números para os desfechos.
-6. [ ] Atualizar a linha do tempo do `CONTEXTO.md` com o resultado final.
+   - 16, 17, 18: 1º turno registrado; completar depois do 2º turno (25/10)
+5. [x] `python3 analise/revisao.py` dá os números para os desfechos.
+6. [x] Atualizar a linha do tempo do `CONTEXTO.md` com o resultado final.
 7. [ ] Revisar o texto do último passo do site, se quiser (`site/index.html`, `#passo-final`; o placar já se preenche sozinho).
 8. [ ] Commit + push.
 
