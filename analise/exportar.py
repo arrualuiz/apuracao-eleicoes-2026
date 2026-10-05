@@ -102,7 +102,25 @@ def main():
     SITE.write_text("// gerado por analise/exportar.py — não editar à mão\nwindow.DADOS = "
                     + json.dumps({"serie": serie, "lotes": lotes_br}, ensure_ascii=False) + ";\n", encoding="utf-8")
     con.close()
-    print(f"exportar: {len(coletas)} coletas → dados/export/ (7 CSVs) e site/dados.js")
+    exportar_cases()
+    print(f"exportar: {len(coletas)} coletas → dados/export/ (7 CSVs), site/dados.js e site/cases.js")
+
+
+def exportar_cases():
+    """cases/*.md → site/cases.js (window.CASES), para o site abrir sem servidor."""
+    cases = []
+    for arq in sorted((RAIZ / "cases").glob("[0-9][0-9]-*.md")):
+        texto = arq.read_text(encoding="utf-8")
+        meta, corpo = {}, texto
+        if texto.startswith("---"):
+            _, cab, corpo = texto.split("---", 2)
+            for linha in cab.strip().splitlines():
+                if ":" in linha:
+                    k, v = linha.split(":", 1)
+                    meta[k.strip()] = v.strip().strip('"')
+        cases.append({**meta, "arquivo": arq.name, "md": corpo.strip()})
+    (RAIZ / "site" / "cases.js").write_text("// gerado por analise/exportar.py — não editar à mão\nwindow.CASES = "
+                                           + json.dumps(cases, ensure_ascii=False) + ";\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
