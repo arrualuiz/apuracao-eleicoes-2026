@@ -4,7 +4,7 @@ O desenrolar da noite da apuração do 1º turno para Presidente (04/10/2026), c
 
 O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são o registro real do que foi coletado, e o `notas.md` é o diário das observações feitas no caminho.
 
-**Comece por aqui:** [`CONTEXTO.md`](CONTEXTO.md) tem o projeto inteiro (linha do tempo, achados, métodos, dicionário de dados e como conectar em R, Python, Power BI, Power Automate e Sheets). As análises estão em [`cases/`](cases/) e o rascunho do site em [`site/index.html`](site/index.html).
+**Comece por aqui:** [`RETOMAR.md`](RETOMAR.md) diz onde paramos e o que falta; [`CONTEXTO.md`](CONTEXTO.md) tem o projeto inteiro (linha do tempo, achados, métodos, dicionário de dados e como conectar em R, Python, Power BI, Power Automate e Sheets). As análises estão em [`cases/`](cases/) e o rascunho do site em [`site/index.html`](site/index.html).
 
 ![Painel da apuração](docs/painel.png)
 
@@ -77,7 +77,7 @@ xdg-open painel/painel.html                  # painel (recarrega a cada minuto)
 Para deixar rodando em segundo plano:
 
 ```bash
-nohup python3 -u coleta/coletar.py --a-cada 180 --print >> dados/coleta.log 2>&1 &
+nohup python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim >> dados/coleta.log 2>&1 &
 echo $! > dados/coleta.pid
 kill $(cat dados/coleta.pid)                 # parar
 ```

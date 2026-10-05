@@ -150,7 +150,7 @@ lotes = pd.read_csv(base + "lotes.csv")
 ```bash
 git clone https://github.com/arrualuiz/noite-da-apuracao-2026 && cd noite-da-apuracao-2026
 npm install                                   # só para os prints
-python3 coleta/coletar.py --a-cada 180 --print            # 1º turno (6257)
+python3 coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # 1º turno (6257); --git commita sozinho, --parar-no-fim desliga no fim
 python3 coleta/coletar.py --a-cada 180 --print --eleicao 6258   # 2º turno
 python3 coleta/status.py · python3 analise/revisao.py · xdg-open painel/painel.html
 ```

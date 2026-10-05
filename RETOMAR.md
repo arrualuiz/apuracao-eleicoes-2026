@@ -1,0 +1,55 @@
+# RETOMAR — seguir a partir daqui
+
+> Ponto de parada: **04/10/2026, ~21h10**, com 98,5% apurado. Flávio 47,28% x Lula 44,87%. **2º turno confirmado às 20h57.**
+> Para o contexto completo do projeto, leia [`CONTEXTO.md`](CONTEXTO.md). Este arquivo diz só **onde paramos e o que falta**.
+
+## O que ficou rodando sozinho
+
+O coletor ficou ligado em segundo plano (não depende do navegador nem do Claude):
+
+```bash
+python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID em dados/coleta.pid
+```
+
+- Coleta o TSE a cada 3 min, atualiza CSVs, banco, exportação, painel, `site/dados.js` e prints.
+- **Commita e envia ao GitHub sozinho** a cada 30 min (`Dados: coleta automática…`).
+- **Desliga sozinho** quando o TSE finalizar a totalização (`tf = s`) ou após 1 h sem novidade com ≥ 99,9%, com um commit final.
+- Para se o computador desligar ou suspender. Para conferir: `python3 coleta/status.py` e `tail dados/coleta.log`.
+- Para parar à mão: `kill $(cat dados/coleta.pid)`.
+
+## Checklist ao voltar
+
+1. [ ] `git pull` (se estiver em outro computador) e `python3 coleta/status.py`: a coleta terminou? Chegou a 100%?
+2. [ ] Se não terminou e o PC desligou: rodar o comando acima de novo (ele continua de onde parou).
+3. [ ] **Fechar os desfechos dos cases** (`cases/*.md`, seção "Desfecho"), com o resultado final:
+   - 01, 03: placar e projeção das 18:18 x final
+   - 05, 06, 13: quanto o Flávio precisava; palpites 47 x 42 e 47 x 44 x final
+   - 08, 09, 11: saldo real de BA e SP; viés da projeção no fim
+   - 12, 15: qual método de estimativa da diferença final chegou mais perto
+   - 16, 17, 18: deixar para depois do 2º turno (25/10)
+4. [ ] `python3 analise/revisao.py` dá os números para os desfechos.
+5. [ ] Atualizar a linha do tempo do `CONTEXTO.md` com o resultado final.
+6. [ ] Revisar o texto do último passo do site, se quiser (`site/index.html`, `#passo-final`; o placar já se preenche sozinho).
+7. [ ] Commit + push.
+
+## Ideias pendentes (próximas etapas)
+
+- **1º turno de 2018** (a comparação mais direta com 2026): reconstruir a curva pelos boletins de urna do TSE (hora de recebimento de cada seção). Validar primeiro em 2022, contra a curva do UOL. Ver o case 14.
+- **Projeção por município**, para corrigir o viés "voto tardio mais Lula dentro do estado" (case 11).
+- **2º turno, 25/10/2026**: código TSE **6258**. Antes, separar a pasta de dados por turno e trocar `1turno` → `2turno` nas URLs do UOL em `coleta/coletar.py`. Referências já guardadas: 2º turno de 2018 (`dados/historico/2018-t2-g1-minuto.csv`) e de 2022 (`dados/uol-historico-2022-t2.json`, local).
+- **Pesquisas de 2º turno** e apoios de Cury, Caiado e Renan Santos, para testar os cenários do case 17.
+- **Matéria em R**: instalar o R (`sudo apt install r-base r-cran-tidyverse r-cran-rsqlite r-cran-dbi`), rodar `R/01-explorar-apuracao.R` (ainda não testado) e virar um relatório Quarto.
+
+## Para mostrar (entrevista)
+
+- **Site:** abrir `site/index.html` no navegador (funciona sem internet, exceto as bibliotecas D3/marked do CDN). Tem a história em rolagem, os prints de cada marco e as 19 análises.
+- **Painel:** `painel/painel.html`, com todos os gráficos da noite.
+- **GitHub:** https://github.com/arrualuiz/noite-da-apuracao-2026. O histórico de commits mostra a construção passo a passo. Os prints não estão lá (são telas de terceiros); o site no GitHub abre sem eles.
+
+## Para retomar com o Claude (ou outra IA)
+
+Abra o Claude Code nesta pasta e cole:
+
+> Estou retomando o projeto Noite da Apuração 2026. Leia `RETOMAR.md` e `CONTEXTO.md`, rode `python3 coleta/status.py` e me diga em que pé está. Depois vamos fechar os desfechos dos cases com o resultado final. Mantenha o padrão: cada análise vira um case em `cases/`, e cada etapa um commit com push.
+
+O Claude Code também guarda na memória deste projeto as duas regras de trabalho: cases para cada análise e commit por etapa.
