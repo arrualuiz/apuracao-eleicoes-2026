@@ -117,7 +117,7 @@ def coletar(com_print=False):
     assinatura = "|".join(f"{uf}:{u['dg']} {u['hg']}" for uf, u in sorted(arquivos.items()))
     if ULTIMA.exists() and ULTIMA.read_text().strip() == assinatura:
         print(f"{horario} | TSE sem atualização (nacional {versao_tse}), nada gravado")
-        return
+        return {"gravou": False, "urnas": None, "tf": u_br.get("tf"), "md": u_br.get("md")}
 
     pasta_bruta = PASTA / "brutos" / agora.strftime("%Y%m%d-%H%M%S")
     pasta_bruta.mkdir(parents=True, exist_ok=True)
@@ -175,6 +175,23 @@ def coletar(com_print=False):
         n = tirar_prints(pasta_bruta)
         msg += f" | {n} prints"
     print(msg, flush=True)
+    return {"gravou": True, "urnas": urnas, "tf": u_br.get("tf"), "md": u_br.get("md"), "horario": horario}
+
+
+def git_enviar(mensagem):
+    """Commita e envia os dados ao GitHub (dados/ e site/dados.js). Silencioso se não houver mudança."""
+    raiz = str(RAIZ)
+    try:
+        subprocess.run(["git", "-C", raiz, "add", "-A", "dados/", "site/dados.js"], capture_output=True, timeout=60)
+        r = subprocess.run(["git", "-C", raiz, "commit", "-q", "-m", mensagem, "-m",
+                            "Commit automático do coletor (coleta/coletar.py --git)."],
+                           capture_output=True, text=True, timeout=60)
+        if r.returncode != 0:
+            return "nada a commitar"
+        r = subprocess.run(["git", "-C", raiz, "push", "-q"], capture_output=True, text=True, timeout=120)
+        return "enviado" if r.returncode == 0 else f"push falhou: {r.stderr.strip()[:120]}"
+    except Exception as e:
+        return f"git falhou: {e}"
 
 
 def main():
@@ -182,15 +199,33 @@ def main():
     p.add_argument("--a-cada", type=int, default=0, help="segundos entre coletas (0 = só uma)")
     p.add_argument("--print", action="store_true", help="salva print da página do g1 em cada coleta")
     p.add_argument("--eleicao", default=CODIGO, help="código TSE da eleição (6257 = 1º turno, 6258 = 2º turno)")
+    p.add_argument("--git", action="store_true", help="commita e envia os dados ao GitHub a cada 30 min e no fim")
+    p.add_argument("--parar-no-fim", action="store_true",
+                   help="encerra quando o TSE finalizar a totalização (tf = s) ou após 1 h sem novidade com ≥ 99,9%%")
     a = p.parse_args()
     global BASE, ELEICAO
     BASE = f"https://resultados.tse.jus.br/oficial/ele2026/{a.eleicao}/dados"
     ELEICAO = a.eleicao.zfill(6)
+    ultimo_dado = ultimo_commit = time.time()
+    urnas = 0.0
+    pendente = False
     while True:
+        r = None
         try:
-            coletar(a.print)
+            r = coletar(a.print)
         except Exception as e:
             print(f"{datetime.now():%H:%M} | erro na coleta: {e}", flush=True)
+        if r and r["gravou"]:
+            ultimo_dado, urnas, pendente = time.time(), r["urnas"], True
+        if a.git and pendente and time.time() - ultimo_commit >= 1800:
+            print(f"{datetime.now():%H:%M} | git: {git_enviar(f'Dados: coleta automática até {datetime.now():%H:%M} ({urnas:.2f}% apurado)')}", flush=True)
+            ultimo_commit, pendente = time.time(), False
+        fim = r is not None and (r.get("tf") == "s" or (urnas >= 99.9 and time.time() - ultimo_dado >= 3600))
+        if fim and a.parar_no_fim:
+            if a.git:
+                print(f"{datetime.now():%H:%M} | git: {git_enviar(f'Dados: apuração encerrada ({urnas:.2f}% apurado)')}", flush=True)
+            print(f"{datetime.now():%H:%M} | fim da apuração detectado (tf={r.get('tf')}, {urnas:.2f}%), coletor encerrado", flush=True)
+            break
         if not a.a_cada:
             break
         time.sleep(a.a_cada)
