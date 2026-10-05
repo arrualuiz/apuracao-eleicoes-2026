@@ -35,8 +35,10 @@ def projecao(cid):
 
 
 def precisa(x, k, alvo):
+    """% dos válidos restantes de que o candidato precisa para terminar em `alvo`; None se nada mais falta."""
     final = x["vv"] / x["frac"]
-    return (final * alvo / 100 - x[k]) / (final - x["vv"]) * 100
+    faltam = final - x["vv"]
+    return None if faltam < 1 else (final * alvo / 100 - x[k]) / faltam * 100
 
 
 def br(n):
@@ -73,12 +75,15 @@ linha("01", "placar parcial engana (51,09% c/ 12%)", f"Flávio {pf_a:.2f}% (caiu
 e_proj, e_plac = abs(p18_f - pf_a), abs(x18["f"] / x18["vv"] * 100 - pf_a)
 linha("03", "projeção 18:18 (49,0%) x placar 18:18", f"erro projeção {e_proj:.2f} x placar {e_plac:.2f} p.p.", "✅" if e_proj < e_plac else "❌")
 linha("03b", "a projeção também desce?", f"18:18 {p18_f:.2f}% → agora {proj_f:.2f}%", "⚠️ sim" if proj_f < p18_f - .3 else "estável")
-n50 = precisa(A, "f", 50)
-linha("05", "Flávio precisa de 49,7% p/ 1º turno", f"precisa de {n50:.1f}% do restante", "✅ inviável" if n50 > 55 else "🟡")
-n47 = precisa(A, "f", 47)
-linha("06", "palpite Flávio 47%", f"precisa de {n47:.1f}% do restante", "🟡 plausível" if lote and abs(lote[0] - n47) < 8 else "?")
-n42 = precisa(A, "l", 42)
-linha("06b", "palpite Lula 42%", f"já tem {pl_a:.2f}%; exigiria {n42:.1f}%", "❌" if n42 < 35 else "🟡")
+n50, n47, n42 = precisa(A, "f", 50), precisa(A, "f", 47), precisa(A, "l", 42)
+if n50 is None:  # apuração encerrada: compara direto com o resultado
+    linha("05", "Flávio precisa de 49,7% p/ 1º turno", f"terminou com {pf_a:.2f}%", "✅ 2º turno" if pf_a < 50 else "❌")
+    linha("06", "palpite Flávio 47%", f"terminou com {pf_a:.2f}% (erro {47 - pf_a:+.2f})", "✅" if abs(47 - pf_a) < .5 else "❌")
+    linha("06b", "palpite Lula 42%", f"terminou com {pl_a:.2f}% (erro {42 - pl_a:+.2f})", "✅" if abs(42 - pl_a) < .5 else "❌")
+else:
+    linha("05", "Flávio precisa de 49,7% p/ 1º turno", f"precisa de {n50:.1f}% do restante", "✅ inviável" if n50 > 55 else "🟡")
+    linha("06", "palpite Flávio 47%", f"precisa de {n47:.1f}% do restante", "🟡 plausível" if lote and abs(lote[0] - n47) < 8 else "?")
+    linha("06b", "palpite Lula 42%", f"já tem {pl_a:.2f}%; exigiria {n42:.1f}%", "❌" if n42 < 35 else "🟡")
 x, y = estado(c1914, "SP"), estado(ult, "SP")
 dsp = y["vv"] - x["vv"]
 m_prev = (x["f"] - x["l"]) / x["vv"] * 100
