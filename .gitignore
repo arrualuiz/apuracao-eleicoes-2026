@@ -24,3 +24,7 @@ prints/*.png
 
 # cache dos dados abertos do TSE (zips baixados por analise/historico_tse.py)
 dados/historico/tse/
+
+# arquivos pessoais (só locais)
+privado/
+mover-para-dev.sh

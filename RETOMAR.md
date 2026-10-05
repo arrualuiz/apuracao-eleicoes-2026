@@ -21,16 +21,17 @@ python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID e
 
 1. [ ] `git pull` (se estiver em outro computador) e `python3 coleta/status.py`: a coleta terminou? Chegou a 100%?
 2. [ ] Se não terminou e o PC desligou: rodar o comando acima de novo (ele continua de onde parou).
-3. [ ] **Fechar os desfechos dos cases** (`cases/*.md`, seção "Desfecho"), com o resultado final:
+3. [ ] **Mover o projeto para `~/dev/projetos/xx-noite-do-primeiro-turno-2026`** (só com o coletor parado): `bash mover-para-dev.sh --teste` e depois `bash mover-para-dev.sh`. O script (local, fora do git) também leva junto as anotações do assistente de código. Depois, abra a pasta nova no editor e ajuste o número `xx`.
+4. [ ] **Fechar os desfechos dos cases** (`cases/*.md`, seção "Desfecho"), com o resultado final:
    - 01, 03: placar e projeção das 18:18 x final
    - 05, 06, 13: quanto o Flávio precisava; palpites 47 x 42 e 47 x 44 x final
    - 08, 09, 11: saldo real de BA e SP; viés da projeção no fim
    - 12, 15: qual método de estimativa da diferença final chegou mais perto
    - 16, 17, 18: deixar para depois do 2º turno (25/10)
-4. [ ] `python3 analise/revisao.py` dá os números para os desfechos.
-5. [ ] Atualizar a linha do tempo do `CONTEXTO.md` com o resultado final.
-6. [ ] Revisar o texto do último passo do site, se quiser (`site/index.html`, `#passo-final`; o placar já se preenche sozinho).
-7. [ ] Commit + push.
+5. [ ] `python3 analise/revisao.py` dá os números para os desfechos.
+6. [ ] Atualizar a linha do tempo do `CONTEXTO.md` com o resultado final.
+7. [ ] Revisar o texto do último passo do site, se quiser (`site/index.html`, `#passo-final`; o placar já se preenche sozinho).
+8. [ ] Commit + push.
 
 ## Ideias pendentes (próximas etapas)
 
