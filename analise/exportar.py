@@ -118,6 +118,7 @@ def exportar_cases():
                 if ":" in linha:
                     k, v = linha.split(":", 1)
                     meta[k.strip()] = v.strip().strip('"')
+        corpo = corpo.replace("](graficos/", "](../cases/graficos/")  # no site, o caminho parte de site/
         cases.append({**meta, "arquivo": arq.name, "md": corpo.strip()})
     (RAIZ / "site" / "cases.js").write_text("// gerado por analise/exportar.py — não editar à mão\nwindow.CASES = "
                                            + json.dumps(cases, ensure_ascii=False) + ";\n", encoding="utf-8")

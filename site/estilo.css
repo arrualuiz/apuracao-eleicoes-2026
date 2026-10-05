@@ -72,9 +72,12 @@ body { margin: 0; background: var(--bg); color: var(--text);
 .lbl { font: 600 12px system-ui, sans-serif; fill: var(--text); }
 
 .passo .ref { font: italic 15px system-ui, sans-serif; color: var(--muted); }
-figure.print { margin: 12px 0 16px; }
-figure.print img { display: block; max-width: 100%; max-height: 46vh; border: 1px solid var(--border); border-radius: 8px; }
-figure.print figcaption { font: 13px system-ui, sans-serif; color: var(--muted); margin-top: 6px; }
+figure.print { margin: 10px 0 14px; }
+figure.print img { display: block; max-width: min(100%, 340px); max-height: 20vh; object-fit: cover; object-position: top;
+  border: 1px solid var(--border); border-radius: 6px; opacity: .8; transition: opacity .2s; }
+figure.print a:hover img { opacity: 1; }
+figure.print figcaption { font: 12px system-ui, sans-serif; color: var(--muted); margin-top: 4px; }
+figure.print figcaption span { opacity: .7; }
 .analises { max-width: 900px; margin: 0 auto; padding: 80px 16px 0; }
 .analises h2, .fim h2 { font-size: 32px; margin-bottom: 4px; }
 .sub { color: var(--text-2); font-size: 15px; margin-top: 0; }
@@ -112,3 +115,6 @@ footer { color: var(--muted); font: 13px system-ui, sans-serif; text-align: cent
 .metodo code { font-size: 13px; background: var(--bg); padding: 1px 4px; border-radius: 4px; }
 .metodo .limites { font-size: 15px; color: var(--text-2); margin-top: 20px; border-left: 3px solid var(--accent); padding: 4px 12px; }
 .fim { padding-top: 40px; }
+
+/* gráficos dentro das análises */
+.case-corpo img { display: block; max-width: 100%; height: auto; margin: 12px 0; background: #fcfcfb; border-radius: 8px; padding: 6px; }
