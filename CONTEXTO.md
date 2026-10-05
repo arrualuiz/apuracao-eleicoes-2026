@@ -46,7 +46,7 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 6. **O TSE publica os estados antes do nacional:** somar as UFs dá um placar mais atual que o dos sites (g1/UOL mostram o arquivo nacional).
 7. **Estimativa da diferença final** (case 12): entre 1,5 e 3 p.p. a favor do Flávio; a melhor estimativa é ~2,4 p.p. (Flávio ~47,3% x Lula ~44,9%). As linhas não devem se cruzar.
 
-Detalhes, números e método de cada um em `cases/` (12 cases).
+Detalhes, números e método de cada um em `cases/` (20 cases).
 
 ## 4. Arquitetura
 

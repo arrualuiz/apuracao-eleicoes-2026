@@ -43,7 +43,7 @@ python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID e
 
 ## Para mostrar (entrevista)
 
-- **Site:** abrir `site/index.html` no navegador (funciona sem internet, exceto as bibliotecas D3/marked do CDN). Tem a história em rolagem, os prints de cada marco e as 19 análises.
+- **Site:** abrir `site/index.html` no navegador (funciona sem internet, exceto as bibliotecas D3/marked do CDN). Tem a história em rolagem, os prints de cada marco e as 20 análises.
 - **Painel:** `painel/painel.html`, com todos os gráficos da noite.
 - **GitHub:** https://github.com/arrualuiz/noite-do-primeiro-turno-2026. O histórico de commits mostra a construção passo a passo. Os prints não estão lá (são telas de terceiros); o site no GitHub abre sem eles.
 
