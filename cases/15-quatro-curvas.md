@@ -68,6 +68,8 @@ A faixa para 2026 (de +1,7 a +3,4, com centro em ~+2,5) coincide com as projeç�
 Para o **2º turno de 2026** (25/10), já temos as duas referências de 2º turno (2018 e 2022), com a forma típica: ajuste rápido até ~20% e depois quase plano.
 
 ## Desfecho
-_diferença final de 2026: ___. Qual eleição a reta final de 2026 mais imitou?_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+Com 90% apurado a diferença era +4,1; no fim, +1,87. A reta final andou **−2,2 p.p.**, quase o mesmo que o **1º turno de 2022 (−2,4)**, que previa +1,7. As referências de 2º turno (2018: +2,6; 2022: +3,4) ficaram mais longe, o que faz sentido: a reta final de um 1º turno se parece mais com outro 1º turno.
 
 **Lacuna:** falta o **1º turno de 2018**, que seria a comparação mais direta com 2026. Ver o case 14 para reconstruí-lo pelos boletins de urna.

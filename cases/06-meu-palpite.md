@@ -4,7 +4,7 @@ titulo: "Meu palpite: 47 x 42"
 hora: "18:48"
 tipo: analise
 manchete: "Direção certa (2º turno), mas a soma não fechava: 47 + 42 deixaria 11% para os outros candidatos, que tinham 8%"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -51,4 +51,12 @@ O palpite acertou a **direção** (queda do Flávio, 2º turno) e errou a **comp
 ## Desfecho
 **Checagem parcial (20:10, 87%):** Flávio 48,31% x Lula 43,66%. Para o Flávio fechar em 47% bastam 38,7% do restante (os lotes recentes deram 36–45%), então ficou plausível. Para o Lula fechar em 42% ele precisaria de só 31,5% do restante, e vem fazendo 47–58%: não deve acontecer.
 
-_resultado final: Flávio __% x Lula __%. Distância do palpite: ___
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+| | Palpite (18:48) | Final | Erro |
+|---|---|---|---|
+| Flávio | 47% | 47,03% | −0,03 |
+| Lula | 42% | 45,16% | **−3,16** |
+| Outros | 11% | 7,81% | +3,19 |
+
+O palpite cravou o Flávio e errou o Lula, exatamente pelo motivo apontado na hora: os votos que o Flávio perdeu foram para o Lula, não para os outros candidatos.

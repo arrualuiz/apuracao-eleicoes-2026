@@ -4,7 +4,7 @@ titulo: O placar parcial engana
 hora: "18:13"
 tipo: analise
 manchete: "Com 12% apurado, o Sul e o Centro-Oeste já tinham ~40% contado, o Nordeste ~15% e São Paulo e Rio menos de 8%"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -82,4 +82,6 @@ O placar com 12% (e mesmo com 20%) refletia a **ordem da apuração**, não o re
 ## Desfecho
 **Checagem parcial (20:10, 87%):** Flávio caiu de 51,09% para 48,31%. Confirmado.
 
-_a preencher no fim da apuração_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+Do placar das 18:13 (51,09%) ao final, o Flávio perdeu **4,06 p.p.**; o Lula ganhou 4,45 p.p. O placar parcial superestimava a vantagem dele em mais de 8 pontos de diferença. **Confirmado.**

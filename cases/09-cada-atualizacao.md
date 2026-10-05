@@ -4,7 +4,7 @@ titulo: Cada atualização favoreceu quem, e por quanto
 hora: "19:28"
 tipo: analise
 manchete: "Até 19:14 quase todos os lotes deram mais votos ao Flávio; depois, quase todos ao Lula. E o maior lote da noite deu saldo ao Flávio e mesmo assim derrubou o percentual dele"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -73,4 +73,6 @@ Olhar só o percentual esconde o que acontece em cada atualização. Até 19:14,
 ## Desfecho
 **Checagem parcial (20:10, 87%):** desde 19:14 a fase mudou. A maioria dos lotes passou a dar saldo ao **Lula** (o de 19:30, por exemplo, teve 10,8 mi de válidos com 45,3% x 47,0%).
 
-_a preencher_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+Depois de 19:14, as atualizações somaram um saldo de **Lula +3,26 milhões** de votos: a diferença caiu de Flávio +5,48 mi (19:14, soma das UFs) para +2,22 mi no fim. Os últimos lotes (madrugada) vieram da Bahia e do Ceará, com 60–70% para o Lula.

@@ -64,4 +64,8 @@ Base = projeção corrigida do 1º turno. Para cada cenário: Flávio = 47,26 + 
 **Leitura:** vantagem leve do Flávio no ponto de partida, disputa competitiva. Os próximos dados relevantes são as **primeiras pesquisas de 2º turno** e o **apoio declarado** de Cury, Caiado e Renan Santos.
 
 ## Desfecho
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+**Ponto de partida atualizado com o resultado final:** Flávio 47,03% x Lula 45,16%, outros 7,81% (Cury 2,89, Renan Santos 2,24, Caiado 2,18, Zema 0,27 e os demais 0,23). Com a diferença final menor que a projetada às 20:50, **o Lula empata se ficar com ~62% dos votos dos outros** (e não 65%). O cenário fica mais equilibrado do que parecia na noite.
+
 _2º turno (25/10): Flávio __% x Lula __%. Quanto dos votos dos outros foi para cada um?_

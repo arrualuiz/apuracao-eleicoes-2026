@@ -4,7 +4,7 @@ titulo: "As linhas vão se cruzar, como em 2022?"
 hora: "20:14"
 tipo: analise
 manchete: "Quatro estimativas, uma resposta: as linhas se aproximam, mas não se cruzam. Diferença final entre 1,5 e 3 p.p. a favor do Flávio"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -45,4 +45,13 @@ No gráfico de evolução do UOL, as linhas de 2026 estão se aproximando. Em 20
 As linhas **se aproximam, mas não devem se cruzar**: o Flávio fecha o 1º turno na frente, entre ~47,3% e ~47,6%, e o Lula entre ~44,5% e ~45,3%. A estimativa que considero mais confiável é a **projeção corrigida (+2,4 p.p.)**, porque incorpora o achado do case 11 (voto tardio mais favorável ao Lula dentro de cada estado). O método "como 2022" é o mais favorável ao Lula, porque a reta final de 2022 foi especialmente forte para ele.
 
 ## Desfecho
-_diferença final real: ___ p.p. Qual método chegou mais perto?_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+| Método (estimativa às 20:14) | Estimou | Real | Erro |
+|---|---|---|---|
+| **Reta final como em 2022** | +1,50 | +1,87 | **−0,37** |
+| Projeção corrigida | +2,43 | +1,87 | +0,56 |
+| Projeção por estado | +2,65 | +1,87 | +0,78 |
+| Tendência de 2026 | +2,99 | +1,87 | +1,12 |
+
+As linhas não se cruzaram, como previsto. O método que mais acertou foi o **mais simples**: aplicar a reta final de 2022. Os métodos baseados nos dados de 2026 erraram todos para o mesmo lado (a favor do Flávio), por causa do viés do voto tardio.

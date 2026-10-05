@@ -4,7 +4,7 @@ titulo: Onde ainda faltam votos e para quem pesam
 hora: "19:14"
 tipo: analise
 manchete: "Às 19:14, a Bahia ainda tinha mais saldo a entregar (Lula +1,6 mi) que São Paulo inteiro (Flávio +1,2 mi)"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -84,4 +84,18 @@ O "quanto falta" sozinho engana. São Paulo tinha mais votos faltando que qualqu
 ## Desfecho
 **Checagem parcial (20:10, 87%):** a tendência de SP se confirmou. Nos votos que entraram depois das 19:14, a margem do Flávio em SP foi +9,8 p.p. (previsto +15,4): 548 mil de saldo em vez de 866 mil. BA, CE e PE deram ainda mais ao Lula que o previsto.
 
-_conferir o saldo real de BA e SP no fim_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+Saldo esperado às 19:14 x saldo real (de 19:14 até o fim):
+
+| Estado | Esperado | Real |
+|---|---|---|
+| Bahia | Lula +1,60 mi | Lula **+1,84 mi** |
+| São Paulo | Flávio +1,20 mi | Flávio **+0,77 mi** |
+| Ceará | Lula +0,83 mi | Lula +1,03 mi |
+| Pernambuco | Lula +0,81 mi | Lula +0,94 mi |
+| Rio de Janeiro | Flávio +0,70 mi | Flávio +0,60 mi |
+| Minas Gerais | Flávio +0,32 mi | Flávio +0,06 mi |
+| **Total do país** | **Lula +1,41 mi** | **Lula +3,26 mi** |
+
+A diferença projetada às 19:14 para o fim era Flávio +4,15 mi; a real foi **Flávio +2,22 mi**. O erro, de ~1,9 milhão de votos, foi todo na mesma direção: os estados do Lula entregaram mais que o esperado, e os do Flávio, menos (case 11).

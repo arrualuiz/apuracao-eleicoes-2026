@@ -4,7 +4,7 @@ titulo: Placar x projeção por estado
 hora: "18:18"
 tipo: analise
 manchete: "Placar 51,1% para o Flávio, projeção 49,0%: a projeção já indicava 2º turno duas horas e meia antes da confirmação"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -47,4 +47,13 @@ A limitação apareceu ao longo da noite: a projeção do Flávio caiu de 49,0% 
 ## Desfecho
 **Checagem parcial (20:10, 87%):** placar 48,31%. A projeção das 18:18 (49,0%) errou 0,7 p.p.; o placar das 18:18 (51,1%), 2,8 p.p. Mas a própria projeção caiu para 47,4%: o voto tardio dentro dos estados veio mais Lula (case 11).
 
-_comparar projeção das 18:18 com o resultado final_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+| Momento | Projeção Flávio | Projeção Lula | Erro Flávio | Erro Lula |
+|---|---|---|---|---|
+| 18:18 | 49,01% | 43,07% | +1,98 | −2,09 |
+| 19:14 | 47,73% | 44,33% | +0,70 | −0,83 |
+| 20:10 | 47,43% | 44,68% | +0,40 | −0,48 |
+| 21:32 | 47,09% | 45,09% | +0,06 | −0,07 |
+
+O placar das 18:18 errou o Flávio por +4,08 p.p.; a projeção da mesma hora, por +1,98, menos da metade. Mas a projeção **sempre errou para o mesmo lado** (Flávio acima, Lula abaixo) e só convergiu no fim: é o viés do voto tardio dentro dos estados (case 11).

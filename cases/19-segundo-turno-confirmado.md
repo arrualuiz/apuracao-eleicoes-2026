@@ -45,3 +45,5 @@ A noite que começou com a pergunta "o que significa o Flávio na frente com 12%
 
 ## Desfecho
 Fechado. 2º turno em 25/10/2026: Flávio Bolsonaro (PL) x Lula (PT).
+
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10. A última seção foi totalizada às 02:59:31.

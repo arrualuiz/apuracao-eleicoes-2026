@@ -59,4 +59,8 @@ Dados oficiais do TSE (dados abertos, 2002–2022), em `dados/historico/presiden
 - **Para 2026**, a história dá sinais nos dois sentidos: o líder do 1º turno (Flávio) tem o retrospecto a favor; o 2º colocado (Lula) tem a seu favor a diferença menor, ~2,4 p.p. contra 5,2 em 2022. O case 17 transforma isso em cenários.
 
 ## Desfecho
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+**Abstenção final do 1º turno de 2026: 21,08%** (33,47 milhões de eleitores), a **maior de um 1º turno da série** (2022: 20,95%). Brancos: 2,30 mi (1,84% do comparecimento); nulos: 3,67 mi (2,93%).
+
 _2º turno de 25/10: abstenção __%; Flávio ganhou __ mi e Lula __ mi entre os turnos._

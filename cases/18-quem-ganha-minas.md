@@ -62,4 +62,8 @@ A regra se sustenta: **Minas acertou todos os turnos desde 2002**. Em 2026, o Fl
 Cuidado: é uma **regularidade**, não uma lei. Ela acerta porque Minas se parece com a média do Brasil, não porque "decide" a eleição.
 
 ## Desfecho
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+**Minas, 1º turno final:** Flávio 48,24% x Lula 43,33% (margem de 4,91 p.p., contra 1,87 no Brasil). Com o 1º turno de 2026, Minas soma **13 acertos em 13 turnos** desde 2002, e ficou ~3 p.p. mais favorável ao Flávio que o país.
+
 _2º turno (25/10): quem ganhou em Minas, e Minas acertou de novo?_

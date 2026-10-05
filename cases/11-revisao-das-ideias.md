@@ -4,7 +4,7 @@ titulo: "Revisão às 20h10: o que se confirmou e o que mudou"
 hora: "20:10"
 tipo: analise
 manchete: "A projeção acertou a direção, mas errou para o mesmo lado: o voto apurado por último, dentro de cada estado, foi mais favorável ao Lula"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -79,4 +79,6 @@ Consultas no banco `dados/apuracao.sqlite`: placar e "quanto precisa" na coleta 
 ## Desfecho
 **Checagem 20:14 (89,1%, `analise/revisao.py`):** Flávio 48,14% x Lula 43,86%, diferença 4,53 mi. O último lote (2,5 mi de válidos) foi o mais favorável ao Lula da noite até ali: 52,0% x 41,1%. **Em 7 dos 8 maiores estados desse lote, os votos novos vieram mais Lula que o acumulado** (SP −4, RJ −3, MG −3, BA −5, CE −3, PE −6, GO −4 p.p.). O viés da projeção cresceu: nos 8 maiores estados, desde 19:14, ela previa um saldo de 488 mil para o Lula e o real foi de 1,14 mi (erro de 650 mil a favor do Flávio).
 
-_comparar no fim: placar final x projeção das 18:18, das 19:14 e das 20:10_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+Projeção do Flávio x final: 18:18 → 49,01% (+1,98); 19:14 → 47,73% (+0,70); 20:10 → 47,43% (+0,40). A projeção ficou **acima do resultado em todas as leituras** e só convergiu quando quase não faltavam votos. O viés do voto tardio se confirmou até o fim: de 19:14 até o final, o saldo real do Lula (3,26 mi) foi mais que o dobro do esperado (1,41 mi; case 08).

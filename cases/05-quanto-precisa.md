@@ -4,7 +4,7 @@ titulo: Quanto o Flávio precisa para vencer no 1º turno
 hora: "18:46"
 tipo: analise
 manchete: "Precisava de ~49,7% do que faltava; a partir das 18:46 os lotes ficaram abaixo da linha e não voltaram"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -61,4 +61,6 @@ O lote antecipou a tendência que o acumulado ainda escondia. Até ~18:41, o Fl�
 ## Desfecho
 **Checagem parcial (20:10, 87%):** de 11 lotes desde 18:46, 10 ficaram abaixo dos 49,7%. Agora ele precisaria de 60,7% do restante. 1º turno praticamente descartado. Confirmado às 20:57 (case 19).
 
-_a preencher_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+O Flávio terminou 2,97 p.p. abaixo dos 50% de que precisava. A partir das 18:46, nenhum lote relevante voltou a passar da linha. **Confirmado.**

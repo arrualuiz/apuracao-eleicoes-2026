@@ -4,7 +4,7 @@ titulo: "Reta final: ainda dá para chegar a 46 x 45?"
 hora: "21:32"
 tipo: analise
 manchete: "Com 99,37% apurado, nem com todos os votos restantes para o Lula o Flávio cai abaixo de 46,85%. O final deve ficar em ~47,1 x ~45,1"
-status: aberto
+status: fechado
 ---
 
 ## Em resumo
@@ -83,4 +83,12 @@ Comparando com o que foi estimado ao longo da noite:
 
 **Checagem às 22:17 (99,86%):** Flávio 47,06% x Lula 45,12%. Faltavam 685 seções (~165 mil válidos: BA 262, CE 123, MG 71, MA 51, AM 40, PI 35). Mais provável no fim: **47,04 x 45,14**; limite teórico (tudo para o Lula): 47,00 x 45,20. O Flávio não fica abaixo de 47%.
 
-_resultado final oficial: Flávio __% x Lula __%_
+**Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
+
+| Estimativa | Flávio | Lula | Erro |
+|---|---|---|---|
+| Mais provável às 21:32 | 47,09 | 45,09 | +0,06 / −0,07 |
+| Mais provável às 22:17 | 47,04 | 45,14 | +0,01 / −0,02 |
+| Limite às 21:32 (tudo para o Lula) | 46,85 | 45,36 | o Flávio ficou acima, como previsto |
+
+**46 x 45 de fato não aconteceu.** O resultado ficou a centésimos do cenário mais provável.
