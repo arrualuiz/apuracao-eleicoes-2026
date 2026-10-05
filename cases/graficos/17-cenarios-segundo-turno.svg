@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 204" width="720" height="204" role="img" aria-label="2º turno: diferença final conforme a divisão dos votos dos outros candidatos" style="font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+<title>2º turno: diferença final conforme a divisão dos votos dos outros candidatos</title>
+<text x="162.0" y="44.0" font-size="12" fill="#7d7c75" text-anchor="end" font-weight="400">Lula com 40% dos outros</text>
+<rect x="299.2" y="30.0" width="283.4" height="20.0" fill="#2a78d6" rx="3"/>
+<text x="588.6" y="44.0" font-size="11" fill="#7d7c75" text-anchor="start" font-weight="600">Flávio +4,0</text>
+<text x="162.0" y="72.0" font-size="12" fill="#7d7c75" text-anchor="end" font-weight="400">Lula com 50% dos outros</text>
+<rect x="299.2" y="58.0" width="170.7" height="20.0" fill="#2a78d6" rx="3"/>
+<text x="475.9" y="72.0" font-size="11" fill="#7d7c75" text-anchor="start" font-weight="600">Flávio +2,4</text>
+<text x="162.0" y="100.0" font-size="12" fill="#7d7c75" text-anchor="end" font-weight="400">Lula com 60% dos outros</text>
+<rect x="299.2" y="86.0" width="58.0" height="20.0" fill="#2a78d6" rx="3"/>
+<text x="363.2" y="100.0" font-size="11" fill="#7d7c75" text-anchor="start" font-weight="600">Flávio +0,8</text>
+<text x="162.0" y="128.0" font-size="12" fill="#7d7c75" text-anchor="end" font-weight="400">Lula com 65% dos outros</text>
+<rect x="299.2" y="114.0" width="1.6" height="20.0" fill="#9a998f" rx="3"/>
+<text x="306.8" y="128.0" font-size="11" fill="#7d7c75" text-anchor="start" font-weight="600">empate 0,0</text>
+<text x="162.0" y="156.0" font-size="12" fill="#7d7c75" text-anchor="end" font-weight="400">Lula com 70% dos outros</text>
+<rect x="244.4" y="142.0" width="54.8" height="20.0" fill="#e34948" rx="3"/>
+<text x="238.4" y="156.0" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="600">Lula +0,8</text>
+<line x1="299.2" y1="24.0" x2="299.2" y2="174.0" stroke="#7d7c75" stroke-width="1" opacity="0.6"/>
+<text x="400.0" y="198.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">diferença em p.p. (azul = Flávio vence, vermelho = Lula vence)</text>
+</svg>

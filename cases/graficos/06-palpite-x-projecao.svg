@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" role="img" aria-label="Palpite das 18:48 x projeção e placar do momento" style="font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+<title>Palpite das 18:48 x projeção e placar do momento</title>
+<line x1="52.0" y1="14.0" x2="72.0" y2="14.0" stroke="#2a78d6" stroke-width="2.5" opacity="1"/>
+<text x="78.0" y="18.0" font-size="12" fill="#7d7c75" text-anchor="start" font-weight="400">Flávio</text>
+<line x1="125.6" y1="14.0" x2="145.6" y2="14.0" stroke="#e34948" stroke-width="2.5" opacity="1"/>
+<text x="151.6" y="18.0" font-size="12" fill="#7d7c75" text-anchor="start" font-weight="400">Lula</text>
+<rect x="123.3" y="85.9" width="34.0" height="198.1" fill="#2a78d6" rx="3"/>
+<text x="140.3" y="80.9" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">47,0%</text>
+<rect x="159.3" y="107.0" width="34.0" height="177.0" fill="#e34948" rx="3"/>
+<text x="176.3" y="102.0" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">42,0%</text>
+<text x="158.3" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">Palpite</text>
+<text x="158.3" y="313.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">(18:48)</text>
+<rect x="336.0" y="81.0" width="34.0" height="203.0" fill="#2a78d6" rx="3"/>
+<text x="353.0" y="76.0" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">48,2%</text>
+<rect x="372.0" y="99.0" width="34.0" height="185.0" fill="#e34948" rx="3"/>
+<text x="389.0" y="94.0" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">43,9%</text>
+<text x="371.0" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">Projeção por estado</text>
+<text x="371.0" y="313.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">(18:46)</text>
+<rect x="548.7" y="71.5" width="34.0" height="212.5" fill="#2a78d6" rx="3"/>
+<text x="565.7" y="66.5" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">50,4%</text>
+<rect x="584.7" y="109.3" width="34.0" height="174.7" fill="#e34948" rx="3"/>
+<text x="601.7" y="104.3" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">41,4%</text>
+<text x="583.7" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">Placar</text>
+<text x="583.7" y="313.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">(18:46)</text>
+<line x1="52.0" y1="284.0" x2="690.0" y2="284.0" stroke="#7d7c75" stroke-width="1" opacity="0.6"/>
+</svg>

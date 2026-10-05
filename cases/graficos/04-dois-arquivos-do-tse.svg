@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380" role="img" aria-label="% de seções apuradas segundo cada arquivo do TSE" style="font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+<title>% de seções apuradas segundo cada arquivo do TSE</title>
+<line x1="52.0" y1="14.0" x2="72.0" y2="14.0" stroke="#2a78d6" stroke-width="2.5" opacity="1"/>
+<text x="78.0" y="18.0" font-size="12" fill="#7d7c75" text-anchor="start" font-weight="400">arquivo de votos (-u.json): o certo</text>
+<line x1="317.0" y1="14.0" x2="337.0" y2="14.0" stroke="#c8692e" stroke-width="2.5" opacity="1"/>
+<text x="343.0" y="18.0" font-size="12" fill="#7d7c75" text-anchor="start" font-weight="400">arquivo de andamento (-ab.json): adiantado</text>
+<line x1="52.0" y1="315.3" x2="610.0" y2="315.3" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="319.3" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">20%</text>
+<line x1="52.0" y1="273.9" x2="610.0" y2="273.9" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="277.9" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">30%</text>
+<line x1="52.0" y1="232.4" x2="610.0" y2="232.4" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="236.4" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">40%</text>
+<line x1="52.0" y1="191.0" x2="610.0" y2="191.0" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="195.0" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">50%</text>
+<line x1="52.0" y1="149.6" x2="610.0" y2="149.6" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="153.6" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">60%</text>
+<line x1="52.0" y1="108.1" x2="610.0" y2="108.1" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="112.1" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">70%</text>
+<line x1="52.0" y1="66.7" x2="610.0" y2="66.7" stroke="#cfcdc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="70.7" font-size="11" fill="#7d7c75" text-anchor="end" font-weight="400">80%</text>
+<text x="52.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:18</text>
+<text x="114.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:22</text>
+<text x="176.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:27</text>
+<text x="238.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:28</text>
+<text x="300.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:35</text>
+<text x="362.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:41</text>
+<text x="424.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:46</text>
+<text x="486.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">18:52</text>
+<text x="548.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">19:14</text>
+<text x="610.0" y="354.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">19:28</text>
+<line x1="52.0" y1="336.0" x2="610.0" y2="336.0" stroke="#7d7c75" stroke-width="1" opacity="0.5"/>
+<polyline points="52.0,317.2 114.0,307.1 176.0,296.8 238.0,282.6 300.0,266.0 362.0,246.5 424.0,225.9 486.0,202.4 548.0,129.7 610.0,129.7" fill="none" stroke="#2a78d6" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="610.0" cy="129.7" r="4" fill="#2a78d6"/>
+<polyline points="52.0,307.2 114.0,293.4 176.0,269.2 238.0,269.2 300.0,246.5 362.0,215.8 424.0,198.1 486.0,179.6 548.0,102.9 610.0,89.0" fill="none" stroke="#c8692e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="610.0" cy="89.0" r="4" fill="#c8692e"/>
+<text x="618.0" y="93.0" font-size="12" fill="#c8692e" text-anchor="start" font-weight="700">74,6%</text>
+<text x="618.0" y="133.7" font-size="12" fill="#2a78d6" text-anchor="start" font-weight="700">64,8%</text>
+<text x="331.0" y="372.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">coleta</text>
+<text x="12.0" y="32.0" font-size="11" fill="#7d7c75" text-anchor="start" font-weight="400">% das seções apuradas</text>
+</svg>
