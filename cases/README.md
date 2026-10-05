@@ -42,3 +42,4 @@ status: aberto | fechado
 | 17 | [Quem ganha o 2º turno? Cenários a partir do 1º](17-quem-ganha-o-segundo-turno.md) | 20:50 | análise |
 | 18 | [Quem ganha em Minas ganha o Brasil?](18-quem-ganha-minas.md) | 20:54 | análise |
 | 19 | [20h57: o TSE confirma o 2º turno](19-segundo-turno-confirmado.md) | 20:57 | bastidor |
+| 20 | [Reta final: ainda dá para chegar a 46 x 45?](20-reta-final.md) | 21:32 | análise |
