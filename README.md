@@ -39,6 +39,7 @@ notas.md   diário da apuração
 | `analise/analisar.py` | Análise no terminal: tendência, quanto falta, projeção |
 | `analise/variacao.py` | Estado a estado: o que entrou entre duas leituras, tendência do lote e saldo esperado do que falta |
 | `analise/revisao.py` | Confere as ideias da noite (os cases) contra a coleta mais recente |
+| `analise/graficos.py` | Gera os gráficos SVG dos cases em `cases/graficos/` a partir do banco |
 | `analise/exportar.py` | Exporta o banco para `dados/export/*.csv` (R, Python, Power BI…) e `site/dados.js` |
 | `analise/historico_tse.py` | Histórico oficial 2002–2022 (abstenção, votos por turno) a partir dos dados abertos do TSE |
 | `analise/banco.py` | Monta o banco SQLite `dados/apuracao.sqlite` a partir dos JSON brutos (incremental) |
