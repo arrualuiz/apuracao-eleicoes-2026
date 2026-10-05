@@ -20,7 +20,7 @@ python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID e
 ## Checklist ao voltar
 
 1. [x] Coleta encerrada com 100% (o PC suspendeu de 00:38 a 06:40; o coletor gravou o final ao acordar).
-2. [ ] **Mover o projeto para `~/dev/projetos/xx-noite-do-primeiro-turno-2026`** (só com o coletor parado): `bash mover-para-dev.sh --teste` e depois `bash mover-para-dev.sh`. O script (local, fora do git) também leva junto as anotações do assistente de código. Depois, abra a pasta nova no editor e ajuste o número `xx`.
+2. [x] **Mover o projeto para `~/dev/projetos/xx-noite-do-primeiro-turno-2026`** (só com o coletor parado): `bash mover-para-dev.sh --teste` e depois `bash mover-para-dev.sh`. O script (local, fora do git) também leva junto as anotações do assistente de código. Depois, abra a pasta nova no editor e ajuste o número `xx`.
 3. [x] **Fechar os desfechos dos cases** (`cases/*.md`, seção "Desfecho"), com o resultado final:
    - 01, 03: placar e projeção das 18:18 x final
    - 05, 06, 13: quanto o Flávio precisava; palpites 47 x 42 e 47 x 44 x final
