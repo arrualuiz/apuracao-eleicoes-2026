@@ -18,7 +18,7 @@
 <script src="dados.js?v=ad361494"></script>
 <script src="cases.js?v=a49e3ce1"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-<link rel="stylesheet" href="estilo.css?v=55b64ab2">
+<link rel="stylesheet" href="estilo.css?v=ae8ff809">
 </head>
 <body>
 
@@ -260,8 +260,9 @@ function desenhar() {
   const mostraProj = PASSOS.slice(0, i + 1).some(p => p.dataset.proj);
   const palpites = PASSOS.slice(0, i + 1).filter(p => p.dataset.palpite).map(p => ({ v: p.dataset.palpite.split(',').map(Number), rot: p.dataset.marca }));
 
-  const W = el.clientWidth || 500, H = W < 520 ? Math.round(W * .62) : Math.min(440, Math.round(W * .8));
-  const m = { t: 34, r: 92, b: 36, l: 38 };
+  const compacto = innerWidth <= 820;  // celular e tablet em pé: gráfico baixo, sem textos acessórios
+  const W = el.clientWidth || 500, H = compacto ? Math.max(130, Math.min(175, Math.round(W * .44))) : Math.min(440, Math.round(W * .8));
+  const m = compacto ? { t: 22, r: 84, b: 20, l: 32 } : { t: 34, r: 92, b: 36, l: 38 };
   const x = d3.scaleLinear().domain([10, 100]).range([m.l, W - m.r]);
   const y = d3.scaleLinear().domain([40, 54]).range([H - m.b, m.t]);
   const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`);
@@ -273,16 +274,17 @@ function desenhar() {
     svg.append('rect').attr('x', x0).attr('y', m.t).attr('width', x1 - x0).attr('height', H - m.t - m.b)
       .attr('fill', css('--grid')).attr('opacity', .6);
     const ym = y(46.5);  // meio do gráfico, longe das linhas dos candidatos
-    svg.append('text').attr('class', 'nota-graf').attr('text-anchor', 'middle')
+    if (!compacto) svg.append('text').attr('class', 'nota-graf').attr('text-anchor', 'middle')
       .attr('transform', `translate(${(x0 + x1) / 2 + 4},${ym}) rotate(-90)`).text('montando a coleta');
   }
-  svg.append('g').selectAll('line').data(y.ticks(7)).join('line').attr('class', 'gridline')
+  const ticksY = compacto ? [40, 45, 50] : y.ticks(7);
+  svg.append('g').selectAll('line').data(ticksY).join('line').attr('class', 'gridline')
     .attr('x1', m.l).attr('x2', W - m.r).attr('y1', d => y(d)).attr('y2', d => y(d));
   svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`)
-    .call(d3.axisBottom(x).tickValues([10, 25, 50, 75, 100]).tickFormat(d => d + '%').tickSizeOuter(0));
-  svg.append('text').attr('class', 'nota-graf').attr('x', (m.l + W - m.r) / 2).attr('y', H - 4).attr('text-anchor', 'middle').text('% das urnas apuradas');
+    .call(d3.axisBottom(x).tickValues(compacto ? [25, 50, 75, 100] : [10, 25, 50, 75, 100]).tickFormat(d => d + '%').tickSizeOuter(0));
+  if (!compacto) svg.append('text').attr('class', 'nota-graf').attr('x', (m.l + W - m.r) / 2).attr('y', H - 4).attr('text-anchor', 'middle').text('% das urnas apuradas');
   svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`)
-    .call(d3.axisLeft(y).ticks(7).tickFormat(d => d + '%').tickSize(0)).call(g => g.select('.domain').remove());
+    .call(d3.axisLeft(y).tickValues(ticksY).tickFormat(d => d + '%').tickSize(0)).call(g => g.select('.domain').remove());
   svg.append('line').attr('class', 'ref50').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(50)).attr('y2', y(50));
   svg.append('text').attr('class', 'nota-graf').attr('x', W - m.r + 6).attr('y', y(50) + 4).text('50%');
 
@@ -344,15 +346,16 @@ function desenhar() {
   if (u) {
     const titulo = ate === 'fim' && u.secoes >= 99.9 ? 'Resultado final · 100% das urnas'
       : `${u.h} · ${fmt(u.secoes, 1)}% apurado${u.manualmente ? ' · leitura manual (' + (u.fonte || 'print') + ')' : ''}`;
-    cab = `${titulo}<br>` +
+    const titCurto = ate === 'fim' && u.secoes >= 99.9 ? 'Final' : `${u.h} · ${fmt(u.secoes, 1)}%${u.manualmente ? ' · manual' : ''}`;
+    cab = (compacto ? `<span class="cab-tit">${titCurto}</span> ` : `${titulo}<br>`) +
       `<b style="color:var(--flavio)">${fmt(u.flavio)}%</b> &nbsp;x&nbsp; <b style="color:var(--lula)">${fmt(u.lula)}%</b>`;
     if (mostraProj && !u.manualmente) cab += `<span class="cab-sub">projeção por estado: ${fmt(u.proj_flavio, 1)}% x ${fmt(u.proj_lula, 1)}%</span>`;
     if (palpites.length) cab += `<span class="cab-sub">◇ palpite${palpites.length > 1 ? 's' : ''}: ${palpites.map(pp => pp.v.join(' x ')).join(' → ')}</span>`;
   }
   document.getElementById('placar').innerHTML = cab;
   const leg = document.getElementById('legenda-graf');
-  if (leg) leg.innerHTML = `<span><i class="lg cheia"></i>placar</span>` + (mostraProj ? `<span><i class="lg tracejada"></i>projeção por estado</span>` : '') +
-    `<span><i class="lg pontilhada"></i>antes da coleta automática</span>` + (palpites.length ? `<span>◇ palpites</span>` : '');
+  if (leg) leg.innerHTML = `<span><i class="lg cheia"></i>placar</span>` + (mostraProj ? `<span><i class="lg tracejada"></i>${compacto ? 'projeção' : 'projeção por estado'}</span>` : '') +
+    `<span><i class="lg pontilhada"></i>${compacto ? 'antes da coleta' : 'antes da coleta automática'}</span>` + (palpites.length ? `<span>◇ palpites</span>` : '');
 }
 
 // cada passo que entra no meio da tela vira o marco atual do gráfico
@@ -363,7 +366,7 @@ const obs = new IntersectionObserver(entradas => {
     atual = e.target;
     desenhar();
   }
-}, { rootMargin: innerWidth <= 820 ? '-68% 0px -28% 0px' : '-45% 0px -45% 0px' });  // no celular o gráfico ocupa o topo
+}, { rootMargin: innerWidth <= 820 ? '-50% 0px -45% 0px' : '-45% 0px -45% 0px' });  // no celular o gráfico ocupa só o topo
 PASSOS.forEach(p => obs.observe(p));
 
 // resultado: última leitura disponível em dados.js
