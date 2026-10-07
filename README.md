@@ -2,6 +2,8 @@
 
 O desenrolar da noite do primeiro turno da eleição para Presidente (04/10/2026), contado com dados: coleta automática direto da API pública do TSE, com histórico salvo a cada publicação, projeção por estado e um painel HTML que se atualiza sozinho.
 
+**🔗 Site:** https://arrualuiz.github.io/noite-do-primeiro-turno-2026/ (a noite em rolagem, o painel e as 20 análises)
+
 **Resultado do 1º turno (100% das seções):** Flávio Bolsonaro 47,03% x Lula 45,16%; 2º turno em 25/10/2026.
 
 O projeto foi feito **durante a noite da apuração**. Os CSVs em `dados/` são o registro real do que foi coletado, e o `notas.md` é o diário das observações feitas no caminho.
@@ -79,6 +81,7 @@ python3 analise/analisar.py                  # análise no terminal
 python3 analise/variacao.py                  # o que mudou por estado entre as 2 últimas coletas
 python3 analise/revisao.py                   # as ideias da noite ainda se confirmam?
 python3 analise/variacao.py --todas SP       # evolução de um estado em todas as coletas
+python3 site/publicar.py                     # monta a versão pública em docs/ (GitHub Pages)
 xdg-open painel/painel.html                  # painel (recarrega a cada minuto)
 ```
 

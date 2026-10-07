@@ -41,6 +41,7 @@ def main():
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fcfcfb'/%3E%3Cpath d='M5 24 L13 15 L19 19 L27 8' fill='none' stroke='%232a78d6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <title>'''
     html = html.replace("<title>", meta, 1)
     (DOCS / "index.html").write_text(html, encoding="utf-8")
