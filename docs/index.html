@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A apuração do 1º turno de 2026 contada com dados: coleta automática do TSE, projeção por estado, o que cada atualização mudou e 20 análises feitas ao vivo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A noite do primeiro turno · Eleições 2026">
+<meta property="og:description" content="A apuração do 1º turno de 2026 contada com dados: coleta automática do TSE, projeção por estado, o que cada atualização mudou e 20 análises feitas ao vivo.">
+<meta property="og:url" content="https://arrualuiz.github.io/noite-do-primeiro-turno-2026/">
+<meta property="og:image" content="https://arrualuiz.github.io/noite-do-primeiro-turno-2026/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<title>Noite do Primeiro Turno 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="dados.js"></script>
+<script src="cases.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="capa">
+  <div class="chapeu">Eleições 2026 · 1º turno · 04/10</div>
+  <h1>A noite do primeiro turno</h1>
+  <p>Às 18h07, com 12% das urnas apuradas, o placar mostrava Flávio Bolsonaro com folga sobre Lula. Quis entender o que aquele número realmente dizia e passei a registrar tudo. Esta é a noite contada pelos dados que coletei, pelas perguntas que fiz e pelos palpites que errei e acertei.</p>
+  <div class="rolar">role para baixo ↓</div>
+</header>
+
+<main class="historia">
+  <div class="grafico" aria-hidden="true">
+    <div class="placar sans" id="placar"></div>
+    <div id="chart"></div>
+  </div>
+
+  <div class="passos">
+    <!-- Um passo por marco. data-ate = até que horário o gráfico mostra a apuração. -->
+    <section class="passo" data-ate="18:18">
+      <div class="hora">18h13 · 12% apurado</div>
+      <h2>O placar dizia uma coisa…</h2>
+      <div class="numero">51,1%</div>
+      <p>Flávio na frente com folga. Mas o Sul já tinha muito mais urnas contadas que o Nordeste.</p>
+      <p class="ref">Case 01 · O placar parcial engana</p>
+    </section>
+
+    <section class="passo" data-ate="18:18">
+      <div class="hora">18h18 · 21% apurado</div>
+      <h2>…e a projeção, outra</h2>
+      <div class="numero">49,0%</div>
+      <p>Se cada estado terminasse votando como já tinha votado, o Flávio ficaria abaixo de 50%: 2º turno. Duas horas e meia antes da confirmação oficial.</p>
+      <p class="ref">Cases 02 e 03 · A fonte oficial e a projeção</p>
+    </section>
+
+    <section class="passo" data-ate="18:52">
+      <div class="hora">18h46 · 47% apurado</div>
+      <h2>O lote que virou a tendência</h2>
+      <p>Para vencer no 1º turno, o Flávio precisava de 49,7% dos votos que faltavam. O lote das 18h46 deu 48,8%: o primeiro claramente abaixo da linha. Antes disso, eu tinha achado e corrigido um erro no meu próprio % de urnas.</p>
+      <p class="ref">Cases 04 e 05</p>
+    </section>
+
+    <section class="passo" data-ate="18:52">
+      <div class="hora">18h48</div>
+      <h2>Meu palpite: 47 x 42</h2>
+      <p>Olhando o gráfico do UOL que compara 2026 com 2022. Acertei a direção; a soma não fechava (47 + 42 deixaria 11% para os outros, que tinham 8%).</p>
+      <p class="ref">Case 06 · Meu palpite</p>
+    </section>
+
+    <section class="passo" data-ate="19:14">
+      <div class="hora">19h14 · 70% apurado</div>
+      <h2>25 minutos de silêncio, depois 20 milhões de votos</h2>
+      <p>O TSE parou de publicar e voltou com um lote gigante. O Flávio caiu abaixo de 50% pela primeira vez. E o lote deu mais votos a ele, mas derrubou o percentual dele.</p>
+      <p class="ref">Cases 07, 08 e 09</p>
+    </section>
+
+    <section class="passo" data-ate="19:41">
+      <div class="hora">19h28</div>
+      <h2>Os estados andam na frente</h2>
+      <p>O arquivo nacional do TSE ficou 50 minutos parado. Somando os estados, eu via um placar ~20 pontos de apuração à frente do que os sites mostravam.</p>
+      <p class="ref">Case 10</p>
+    </section>
+
+    <section class="passo" data-ate="20:14">
+      <div class="hora">20h14 · 89% apurado</div>
+      <h2>O voto tardio é mais Lula, em todo lugar</h2>
+      <p>Até em São Paulo, os últimos votos vieram menos Flávio que os primeiros. A minha projeção errava sempre para o mesmo lado, e eu corrigi o método.</p>
+      <p class="ref">Cases 11 e 12</p>
+    </section>
+
+    <section class="passo" data-ate="20:30">
+      <div class="hora">20h27 · 91% apurado</div>
+      <h2>Palpite ajustado: 47 x 44</h2>
+      <p>Corrigi o ponto fraco do primeiro palpite. As projeções davam ~47,3 x ~44,8.</p>
+      <p class="ref">Case 13</p>
+    </section>
+
+    <section class="passo" data-ate="20:47">
+      <div class="hora">20h35 · 2018, 2022 e 2026</div>
+      <h2>Toda apuração começa com o mesmo viés</h2>
+      <p>Transcrevi a apuração minuto a minuto do 2º turno de 2018 e comparei com os dois turnos de 2022. Em todas, quem é mais forte no Sul e no Sudeste começa à frente e perde terreno quando o Nordeste entra. A reta final de cada eleição, aplicada a 2026, põe o Flávio entre +1,7 e +3,4 pontos.</p>
+      <p class="ref">Cases 14 e 15</p>
+    </section>
+
+    <section class="passo" data-ate="20:54">
+      <div class="hora">20h50 · e o 2º turno?</div>
+      <h2>Favorito, mas por pouco</h2>
+      <p>O líder do 1º turno venceu os seis 2º turnos desde 2002, mas em cinco o 2º colocado ganhou mais votos entre os turnos. Minas acertou 12 de 12, e o Flávio lidera lá.</p>
+      <p class="ref">Cases 16, 17 e 18</p>
+    </section>
+
+    <section class="passo" data-ate="20:58">
+      <div class="hora">20h57 · 97% apurado</div>
+      <h2>Está confirmado: vai ter 2º turno</h2>
+      <div class="numero">47,5% x 44,6%</div>
+      <p>O TSE marcou a eleição como matematicamente definida. A projeção por estado dizia isso desde as 18h18, duas horas e 39 minutos antes.</p>
+      <p class="ref">Case 19</p>
+    </section>
+
+    <section class="passo" data-ate="21:32">
+      <div class="hora">21h32 · 99,4% apurado</div>
+      <h2>Ainda dá para chegar a 46 x 45?</h2>
+      <div class="numero">46,85%</div>
+      <p>É o piso do Flávio mesmo se todos os votos restantes fossem para o Lula. Faltavam ~760 mil votos, a maioria na Bahia, em Minas e no Ceará. O final caminhava para 47 x 45.</p>
+      <p class="ref">Case 20 · Reta final</p>
+    </section>
+
+    <section class="passo" data-ate="99:99" id="passo-final">
+      <div class="hora" id="final-hora">Resultado</div>
+      <h2 id="final-titulo">Flávio x Lula no 2º turno</h2>
+      <div class="numero" id="final-numero"></div>
+      <p id="final-texto"></p>
+    </section>
+  </div>
+</main>
+
+<section class="analises">
+  <h2>As análises da noite</h2>
+  <p class="sans sub">Cada dúvida que tive durante a apuração virou uma análise: a pergunta, o que os dados mostraram, como calculei e a conclusão. Clique para abrir.</p>
+  <div id="lista-cases"></div>
+</section>
+
+<section class="metodo">
+  <h2>Os dados e o método</h2>
+  <p class="sub sans">Tudo o que está nesta página vem de dados públicos, coletados e tratados por mim durante a apuração.</p>
+
+  <div class="metodo-grid">
+    <div class="bloco">
+      <h3>De onde vêm os números</h3>
+      <p>O TSE publica a apuração em arquivos JSON abertos em <code>resultados.tse.jus.br</code>: um arquivo por estado (mais o exterior e o nacional), com votos de cada candidato, seções apuradas, eleitorado, brancos, nulos e abstenção. A eleição de Presidente no 1º turno de 2026 tem o código 6257.</p>
+    </div>
+    <div class="bloco">
+      <h3>Como coletei</h3>
+      <p>Um script em Python consultou os 29 arquivos a cada 3 minutos, das 18h18 até o fim, e só gravou quando algum deles mudou. Cada coleta ficou guardada como veio do TSE, com um print do g1 como registro visual. A partir disso, montei CSVs e um banco SQLite.</p>
+    </div>
+    <div class="bloco">
+      <h3>O que aprendi sobre os dados</h3>
+      <p>O arquivo nacional do TSE chega a ficar dezenas de minutos atrás dos estados. Por isso, o placar nacional aqui é a <strong>soma dos 27 estados e do exterior</strong>, que fica alguns minutos à frente do que os sites mostram. E nunca misturar arquivos: o de andamento e o de votos não andam juntos.</p>
+    </div>
+    <div class="bloco">
+      <h3>Projeção por estado</h3>
+      <p>O placar parcial reflete a ordem da apuração (Sul e Sudeste primeiro, Nordeste depois). Para corrigir isso, supus que o que falta de cada estado vota igual ao que já foi apurado nele e somei os estados. Depois, ajustei a projeção pela tendência dos lotes mais recentes.</p>
+    </div>
+    <div class="bloco">
+      <h3>Lotes</h3>
+      <p>Cada atualização do TSE é um lote: a diferença de votos entre duas coletas. Olhar o lote, e não o acumulado, mostrou as mudanças de tendência antes do placar.</p>
+    </div>
+    <div class="bloco">
+      <h3>Comparações históricas</h3>
+      <p>Resultados de 2002 a 2022 dos <strong>dados abertos do TSE</strong> (abstenção e votos por turno e estado), a curva de 2022 publicada pelo UOL e a evolução minuto a minuto do 2º turno de 2018, transcrita de um infográfico do g1.</p>
+    </div>
+  </div>
+
+  <p class="limites"><strong>Limites:</strong> as projeções são estimativas simples, não previsões oficiais. Elas não enxergam diferenças dentro de um estado (capital e interior) nem o efeito de campanhas. Os prints são de páginas de terceiros e servem só como registro do momento.</p>
+</section>
+
+<section class="fim">
+  <p class="sans links">
+    <a href="painel.html">Painel completo da noite</a> ·
+    <a href="https://github.com/arrualuiz/noite-do-primeiro-turno-2026">Código e dados no GitHub</a> ·
+    <a href="https://github.com/arrualuiz/noite-do-primeiro-turno-2026/blob/main/CONTEXTO.md">Contexto do projeto</a>
+  </p>
+  <p class="sans sub">Ferramentas: Python, SQLite, D3.js e, para estudo, R.</p>
+</section>
+
+<footer>Noite do Primeiro Turno 2026 · dados: TSE (resultados.tse.jus.br) · curva de 2022: UOL</footer>
+
+<script>
+const D = window.DADOS || { serie: [] };
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (v, d = 2) => v.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+let ateAtual = '18:18';
+
+function desenhar() {
+  const el = document.getElementById('chart');
+  el.innerHTML = '';
+  const W = el.clientWidth || 500, H = Math.min(420, Math.round(W * .75));
+  const m = { t: 12, r: 56, b: 34, l: 36 };
+  const serie = D.serie;
+  if (!serie.length) { el.textContent = 'Rode analise/exportar.py para gerar site/dados.js'; return; }
+  const visivel = serie.filter(p => p.h <= ateAtual);
+  const x = d3.scaleLinear().domain([0, 100]).range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([40, 54]).range([H - m.b, m.t]);
+  const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`);
+
+  svg.append('g').selectAll('line').data(y.ticks(7)).join('line').attr('class', 'gridline')
+    .attr('x1', m.l).attr('x2', W - m.r).attr('y1', d => y(d)).attr('y2', d => y(d));
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`)
+    .call(d3.axisBottom(x).ticks(5).tickFormat(d => d + '%').tickSizeOuter(0));
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`)
+    .call(d3.axisLeft(y).ticks(7).tickFormat(d => d + '%').tickSize(0)).call(g => g.select('.domain').remove());
+  svg.append('line').attr('class', 'ref50').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(50)).attr('y2', y(50));
+  svg.append('text').attr('class', 'axis').attr('x', W - m.r + 6).attr('y', y(50) + 4)
+    .style('fill', css('--muted')).style('font', '11px system-ui').text('50%');
+
+  const linha = k => d3.line().x(p => x(p.secoes)).y(p => y(p[k]));
+  for (const [k, cor, nome] of [['flavio', css('--flavio'), 'Flávio'], ['lula', css('--lula'), 'Lula']]) {
+    svg.append('path').datum(visivel).attr('d', linha(k)).attr('fill', 'none').attr('stroke', cor).attr('stroke-width', 2.5);
+    const p = visivel[visivel.length - 1];
+    if (p) {
+      svg.append('circle').attr('cx', x(p.secoes)).attr('cy', y(p[k])).attr('r', 5).attr('fill', cor)
+        .attr('stroke', css('--bg')).attr('stroke-width', 2);
+      svg.append('text').attr('class', 'lbl').attr('x', x(p.secoes) + 9).attr('y', y(p[k]) + 4).text(`${nome} ${fmt(p[k], 1)}%`);
+    }
+  }
+  const u = visivel[visivel.length - 1];
+  document.getElementById('placar').innerHTML = u
+    ? `${u.h} · ${fmt(u.secoes, 1)}% apurado<br><b style="color:var(--flavio)">${fmt(u.flavio)}%</b> &nbsp;x&nbsp; <b style="color:var(--lula)">${fmt(u.lula)}%</b>`
+    : '';
+}
+
+// cada passo que entra no meio da tela define até onde o gráfico vai
+const obs = new IntersectionObserver(entradas => {
+  for (const e of entradas) {
+    if (!e.isIntersecting) continue;
+    document.querySelectorAll('.passo').forEach(p => p.classList.toggle('ativo', p === e.target));
+    ateAtual = e.target.dataset.ate;
+    desenhar();
+  }
+}, { rootMargin: '-45% 0px -45% 0px' });
+document.querySelectorAll('.passo').forEach(p => obs.observe(p));
+
+// resultado: última leitura disponível em dados.js (100% quando a apuração terminar)
+(function () {
+  const u = D.serie[D.serie.length - 1];
+  if (!u) return;
+  const fim = u.secoes >= 99.9;
+  document.getElementById('final-hora').textContent = fim ? 'Resultado final do 1º turno' : `Última leitura · ${u.h} · ${fmt(u.secoes, 1)}% apurado`;
+  document.getElementById('final-numero').innerHTML = `<span style="color:var(--flavio)">${fmt(u.flavio)}%</span> x <span style="color:var(--lula)">${fmt(u.lula)}%</span>`;
+  document.getElementById('final-texto').textContent =
+    `Flávio Bolsonaro x Lula. Diferença de ${(u.dif_votos / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} milhões de votos. ` +
+    `Meu palpite era 47 x 44; a projeção das 18h18 era 49,0 x 43,1. 2º turno em 25 de outubro.`;
+})();
+
+// as análises (cases/*.md, exportados para cases.js)
+(function () {
+  const lista = document.getElementById('lista-cases');
+  const C = window.CASES || [];
+  // "~" nos cases significa "aproximadamente", não texto riscado
+  const md = t => (window.marked ? marked.parse(t.replace(/~/g, '\\~')) : '<pre>' + t.replace(/</g, '&lt;') + '</pre>');
+  lista.innerHTML = C.map(c => `<details class="case">
+      <summary><div class="meta">CASE ${c.numero} · ${c.hora} · ${c.tipo === 'bastidor' ? 'BASTIDOR' : 'ANÁLISE'}</div>
+        <div class="tit">${c.titulo}</div><div class="man">${c.manchete || ''}</div></summary>
+      <div class="case-corpo"></div></details>`).join('');
+  lista.querySelectorAll('details.case').forEach((d, i) => d.addEventListener('toggle', () => {
+    const corpo = d.querySelector('.case-corpo');
+    if (d.open && !corpo.innerHTML) corpo.innerHTML = md(C[i].md);
+  }));
+})();
+
+desenhar();
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(desenhar, 150); });
+</script>
+</body>
+</html>

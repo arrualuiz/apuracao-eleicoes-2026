@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" role="img" aria-label="Margem Flávio − Lula: prevista x real nos votos que entraram depois das 19:14" style="font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+<title>Margem Flávio − Lula: prevista x real nos votos que entraram depois das 19:14</title>
+<line x1="52.0" y1="14.0" x2="72.0" y2="14.0" stroke="#9a998f" stroke-width="2.5" opacity="1"/>
+<text x="78.0" y="18.0" font-size="12" fill="#7d7c75" text-anchor="start" font-weight="400">prevista (acumulado às 19:14)</text>
+<line x1="277.4" y1="14.0" x2="297.4" y2="14.0" stroke="#c8692e" stroke-width="2.5" opacity="1"/>
+<text x="303.4" y="18.0" font-size="12" fill="#7d7c75" text-anchor="start" font-weight="400">real (votos novos 19:14–20:10)</text>
+<rect x="63.0" y="54.2" width="27.9" height="68.6" fill="#9a998f" rx="3"/>
+<text x="76.9" y="49.2" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">+15,4</text>
+<rect x="92.9" y="79.5" width="27.9" height="43.4" fill="#c8692e" rx="3"/>
+<text x="106.8" y="74.5" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">+9,8</text>
+<text x="91.9" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">SP</text>
+<rect x="142.7" y="91.5" width="27.9" height="31.4" fill="#9a998f" rx="3"/>
+<text x="156.7" y="86.5" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">+7,1</text>
+<rect x="172.6" y="103.2" width="27.9" height="19.7" fill="#c8692e" rx="3"/>
+<text x="186.6" y="98.2" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">+4,4</text>
+<text x="171.6" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">MG</text>
+<rect x="222.5" y="58.4" width="27.9" height="64.5" fill="#9a998f" rx="3"/>
+<text x="236.4" y="53.4" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">+14,5</text>
+<rect x="252.4" y="62.2" width="27.9" height="60.7" fill="#c8692e" rx="3"/>
+<text x="266.3" y="57.2" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">+13,7</text>
+<text x="251.4" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">RJ</text>
+<rect x="302.2" y="122.9" width="27.9" height="154.5" fill="#9a998f" rx="3"/>
+<text x="316.2" y="290.4" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-34,8</text>
+<rect x="332.1" y="122.9" width="27.9" height="161.1" fill="#c8692e" rx="3"/>
+<text x="346.1" y="297.0" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-36,2</text>
+<text x="331.1" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">BA</text>
+<rect x="382.0" y="122.9" width="27.9" height="126.0" fill="#9a998f" rx="3"/>
+<text x="395.9" y="261.9" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-28,4</text>
+<rect x="411.9" y="122.9" width="27.9" height="140.3" fill="#c8692e" rx="3"/>
+<text x="425.8" y="276.2" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-31,6</text>
+<text x="410.9" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">CE</text>
+<rect x="461.7" y="122.9" width="27.9" height="132.5" fill="#9a998f" rx="3"/>
+<text x="475.7" y="268.4" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-29,8</text>
+<rect x="491.6" y="122.9" width="27.9" height="144.5" fill="#c8692e" rx="3"/>
+<text x="505.6" y="280.4" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-32,5</text>
+<text x="490.6" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">PE</text>
+<rect x="541.5" y="122.9" width="27.9" height="133.3" fill="#9a998f" rx="3"/>
+<text x="555.4" y="269.2" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-30,0</text>
+<rect x="571.4" y="122.9" width="27.9" height="141.9" fill="#c8692e" rx="3"/>
+<text x="585.3" y="277.8" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-31,9</text>
+<text x="570.4" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">MA</text>
+<rect x="621.2" y="122.9" width="27.9" height="10.8" fill="#9a998f" rx="3"/>
+<text x="635.2" y="146.7" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-2,4</text>
+<rect x="651.1" y="122.9" width="27.9" height="18.0" fill="#c8692e" rx="3"/>
+<text x="665.1" y="153.9" font-size="10" fill="#7d7c75" text-anchor="middle" font-weight="600">-4,1</text>
+<text x="650.1" y="300.0" font-size="11" fill="#7d7c75" text-anchor="middle" font-weight="400">PA</text>
+<line x1="52.0" y1="122.9" x2="690.0" y2="122.9" stroke="#7d7c75" stroke-width="1" opacity="0.6"/>
+</svg>
