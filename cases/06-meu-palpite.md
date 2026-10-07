@@ -15,6 +15,10 @@ status: fechado
 ## A pergunta
 Olhando o gráfico 2022 x 2026 do UOL, meu palpite é **Flávio 47% x Lula 42%**. Faz sentido?
 
+## O raciocínio do palpite
+- **Flávio 47%:** pelo gráfico do UOL que compara 2026 com 2022, as linhas pareciam seguir a forma de 2022, em que a direita perdeu terreno até o fim.
+- **Lula 42%:** eu esperava que Cury, Renan Santos e Caiado tivessem mais votos do que tiveram. Por isso deixei 11% para os outros candidatos. Eles terminaram com 7,8%, e essa diferença foi para o Lula.
+
 ## Para entender
 - Um palpite de resultado final pode ser testado com a mesma conta do case 05: **quanto cada candidato precisaria fazer nos votos que faltam** para terminar naquele número.
 - Se a exigência for muito diferente do que ele vem fazendo nos lotes, o palpite é improvável.
