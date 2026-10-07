@@ -79,7 +79,7 @@ Na maioria dos estados, os lotes recentes vieram mais favoráveis ao Lula que o 
 `analise/variacao.py` (compara duas coletas estado a estado; `--todas SP` mostra a série de um estado). Válidos que faltam por UF = válidos ÷ fração do eleitorado apurado − válidos. Saldo = válidos que faltam × (% Flávio − % Lula).
 
 ## Conclusão
-O "quanto falta" sozinho engana. São Paulo tinha mais votos faltando que qualquer outro estado, mas a Bahia, com metade dos votos e uma margem duas vezes maior, pesava mais. E a tendência **dentro** de São Paulo (cada lote menos Flávio) indicava que o saldo esperado de SP estava superestimado, ou seja, que a projeção ainda era otimista para ele. O case 11 confirmou isso.
+O "quanto falta" sozinho não basta. São Paulo tinha mais votos faltando que qualquer outro estado, mas a Bahia, com metade dos votos e uma margem duas vezes maior, pesava mais. E a tendência **dentro** de São Paulo (cada lote menos Flávio) indicava que o saldo esperado de SP estava superestimado, ou seja, que a projeção ainda era otimista para ele. O case 11 confirmou isso.
 
 ## Desfecho
 **Checagem parcial (20:10, 87%):** a tendência de SP se confirmou. Nos votos que entraram depois das 19:14, a margem do Flávio em SP foi +9,8 p.p. (previsto +15,4): 548 mil de saldo em vez de 866 mil. BA, CE e PE deram ainda mais ao Lula que o previsto.

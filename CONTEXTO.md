@@ -41,9 +41,9 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 
 ## 3. Principais achados
 
-1. **O placar parcial engana:** a ordem de apuração regional (Sul primeiro, Nordeste depois) inflou o Flávio no começo. 51,1% às 18:18 → 47,03% no resultado final.
+1. **O placar parcial não é o resultado:** a ordem de apuração regional (Sul primeiro, Nordeste depois) favoreceu o Flávio no começo. 51,1% às 18:18 → 47,03% no resultado final.
 2. **A projeção por estado antecipou o 2º turno** 2h39 antes da confirmação oficial (20:57). Às 18:18, ela errou o resultado final do Flávio por 1,98 p.p.; o placar da mesma hora, por 4,08.
-3. **Mas a projeção erra para o lado do Flávio:** dentro de cada estado, o voto apurado por último é mais Lula (SP: margem prevista +15,4, real +9,8). No fim, o erro acumulado desde 19:14 chegou a ~1,9 milhão de votos.
+3. **Mas a projeção erra para o lado do Flávio:** dentro de cada estado, o voto apurado por último é mais favorável ao Lula (SP: margem prevista +15,4, real +9,8). No fim, o erro acumulado desde 19:14 chegou a ~1,9 milhão de votos.
 4. **O que importa é o lote, não o acumulado:** a virada de tendência apareceu nos lotes (18:46) antes do placar (19:14).
 5. **Saldo x percentual:** até 19:14, os lotes davam saldo de votos ao Flávio e, ao mesmo tempo, derrubavam o percentual dele. Depois de 19:14, os lotes passaram a dar saldo ao Lula.
 6. **O TSE publica os estados antes do nacional:** somar as UFs dá um placar mais atual que o dos sites (g1/UOL mostram o arquivo nacional).
@@ -165,6 +165,6 @@ python3 coleta/status.py · python3 analise/revisao.py · xdg-open painel/painel
 ## 10. Perguntas abertas (para avaliar ou estudar)
 
 - Qual método de estimativa da diferença final chegou mais perto (case 12)?
-- O viés "voto tardio mais Lula dentro do estado" aparece também por município? (dados por município estão nos arquivos `-v.json`/zona do TSE, não coletados aqui)
+- O viés "voto tardio mais favorável ao Lula dentro do estado" aparece também por município? (dados por município estão nos arquivos `-v.json`/zona do TSE, não coletados aqui)
 - Uma projeção que use a tendência dos lotes, e não o acumulado, teria acertado antes?
 - Como a reta final de 2026 se compara à de 2022, ponto a ponto?

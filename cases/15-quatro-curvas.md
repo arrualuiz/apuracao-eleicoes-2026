@@ -10,21 +10,21 @@ status: aberto
 ## Em resumo
 - Encontrei a evolução **minuto a minuto do 2º turno de 2018** num infográfico do g1 (fonte TSE) e transcrevi as 320 linhas.
 - Com ela, comparei quatro apurações: 2018 (2º turno), 2022 (1º e 2º turnos) e 2026 (1º turno).
-- O padrão se repete em todas: o candidato da direita começa com vantagem maior que a final e perde terreno até o fim. O que muda é a intensidade e o momento.
+- O padrão se repete em todas: o candidato do PSL/PL começa com vantagem maior que a final e perde terreno até o fim. O que muda é a intensidade e o momento.
 
 ## A pergunta
 Quero lembrar como foram 2018, 2022 e 2026. As curvas parecem bem diferentes, e é nelas que eu quero me basear.
 
 ## Para entender
-- Em todas as curvas, "diferença" = candidato da direita − candidato do PT, em p.p.
+- Em todas as curvas, "diferença" = candidato do PSL/PL − candidato do PT, em p.p.
 - **"Quanto ainda faltava andar":** a diferença entre o valor naquele ponto e o resultado final. Mostra quanto do ajuste ainda estava por vir.
 - **Reta final:** o que acontece a partir de ~90% apurado.
 - Para 2018, o eixo é o **% dos votos válidos finais já contados**, que fica muito próximo do % de urnas apuradas.
 
 ## O que os dados mostraram
-![Diferença direita − PT ao longo de quatro apurações](graficos/15-quatro-apuracoes.svg)
+![Diferença PSL/PL − PT ao longo de quatro apurações](graficos/15-quatro-apuracoes.svg)
 
-**Como ler o gráfico:** cada linha é uma apuração. Roxo = 2018 2º turno (Bolsonaro − Haddad); cinza = 2022 1º turno; verde = 2022 2º turno (Bolsonaro − Lula); azul = 2026 1º turno (Flávio − Lula). Todas descem da esquerda para a direita, ou seja, a direita sempre perde terreno ao longo da apuração. A de 2018 desce rápido no início e fica quase plana; a cinza (2022, 1º turno) desce até o fim; a azul (2026) é a única que sobe no começo.
+**Como ler o gráfico:** cada linha é uma apuração. Roxo = 2018 2º turno (Bolsonaro − Haddad); cinza = 2022 1º turno; verde = 2022 2º turno (Bolsonaro − Lula); azul = 2026 1º turno (Flávio − Lula). Todas descem ao longo do eixo, ou seja, o candidato do PSL/PL sempre perde terreno ao longo da apuração. A de 2018 desce rápido no início e fica quase plana; a cinza (2022, 1º turno) desce até o fim; a azul (2026) é a única que sobe no começo.
 
 **Diferença por % apurado** (entre parênteses, quanto ainda faltava andar até o final):
 
@@ -44,7 +44,7 @@ Quero lembrar como foram 2018, 2022 e 2026. As curvas parecem bem diferentes, e 
 **As formas diferentes:**
 - **2º turno (2018 e 2022):** a maior parte do ajuste acontece até ~20% apurado; depois, a curva fica quase plana.
 - **2022, 1º turno:** o ajuste se espalha pela noite toda. Ainda faltavam 2,4 p.p. a partir de 90%.
-- **2026, 1º turno:** a direita **sobe** no começo (até 20%) e, depois, cai no ritmo do 1º turno de 2022.
+- **2026, 1º turno:** a vantagem do Flávio **sobe** no começo (até 20%) e, depois, cai no ritmo do 1º turno de 2022.
 
 **Aplicando a reta final de cada eleição aos +4,1 de 2026 com 90%:**
 
@@ -61,7 +61,7 @@ Quero lembrar como foram 2018, 2022 e 2026. As curvas parecem bem diferentes, e 
 - Para cada %, o ponto mais próximo de cada série (até 3 p.p. de distância).
 
 ## Conclusão
-As curvas parecem diferentes, mas contam a mesma história: **o começo da apuração favorece quem é forte no Sul e no Sudeste, e a reta final favorece quem é forte no Nordeste** (nessas eleições, a direita e o PT, respectivamente). Variam a intensidade e o momento.
+As curvas parecem diferentes, mas contam a mesma história: **o começo da apuração favorece quem é forte no Sul e no Sudeste, e a reta final favorece quem é forte no Nordeste** (nessas eleições, os candidatos do PSL/PL e do PT, respectivamente). Variam a intensidade e o momento.
 
 A faixa para 2026 (de +1,7 a +3,4, com centro em ~+2,5) coincide com as projeções do case 12 (~+2,4). **Três métodos independentes apontam para o mesmo lugar.**
 

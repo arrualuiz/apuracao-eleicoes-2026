@@ -38,7 +38,7 @@
 ## 19:14 — análise estado a estado (variacao.py, 18:52 → 19:14)
 - Saldo esperado do que falta: Lula +4,63 mi (BA +1,60 mi, CE +0,83, PE +0,81, MA +0,52) x Flávio +3,22 mi (SP +1,20 mi, RJ +0,70, SC +0,36, MG +0,32).
 - Diferença atual: Flávio +5,56 mi → projetada no fim: Flávio +4,15 mi.
-- **SP:** cada lote novo vem menos Flávio que o acumulado (lotes de 55x35 → 51x39). Se continuar, o saldo de SP para o Flávio fica abaixo do 1,2 mi projetado.
+- **SP:** cada lote novo vem menos favorável ao Flávio que o acumulado (lotes de 55x35 → 51x39). Se continuar, o saldo de SP para o Flávio fica abaixo do 1,2 mi projetado.
 - Na maioria dos estados, os lotes recentes vieram mais favoráveis ao Lula que o acumulado (PI −6, GO −5, AM −11, MA −4).
 
 ## 20:06 — 85,4% apurado · o nacional do TSE alcança os estados
@@ -51,7 +51,7 @@
 ## 20:14 — 89,1% apurado
 - Flávio 48,14% x Lula 43,86%, diferença 4,53 mi (era 5,0 mi às 20:06).
 - Lote das 20:14 (2,5 mi de válidos): **Lula 52,0% x Flávio 41,1%**, o mais favorável ao Lula da noite.
-- Em 7 dos 8 maiores estados do lote, os votos novos vieram mais Lula que o acumulado: o voto tardio é mais Lula em todo lugar, não só no Nordeste.
+- Em 7 dos 8 maiores estados do lote, os votos novos vieram mais favoráveis ao Lula que o acumulado: o voto tardio é mais favorável ao Lula em todo lugar, não só no Nordeste.
 - Projeção por estado 47,4% x 44,7% e caindo; o erro da projeção a favor do Flávio já é de ~650 mil votos desde 19:14.
 
 ## 20:57 — 97,2% apurado · 2º turno confirmado

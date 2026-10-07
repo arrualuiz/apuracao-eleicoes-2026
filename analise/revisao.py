@@ -71,7 +71,7 @@ def linha(case, ideia, agora, veredito):
 
 
 print(f"{'':<4}{'ideia':<42}{'agora':<48}veredito")
-linha("01", "placar parcial engana (51,09% c/ 12%)", f"Flávio {pf_a:.2f}% (caiu {51.09 - pf_a:.2f} p.p.)", "✅")
+linha("01", "placar parcial ≠ resultado (51,09% c/ 12%)", f"Flávio {pf_a:.2f}% (caiu {51.09 - pf_a:.2f} p.p.)", "✅")
 e_proj, e_plac = abs(p18_f - pf_a), abs(x18["f"] / x18["vv"] * 100 - pf_a)
 linha("03", "projeção 18:18 (49,0%) x placar 18:18", f"erro projeção {e_proj:.2f} x placar {e_plac:.2f} p.p.", "✅" if e_proj < e_plac else "❌")
 linha("03b", "a projeção também desce?", f"18:18 {p18_f:.2f}% → agora {proj_f:.2f}%", "⚠️ sim" if proj_f < p18_f - .3 else "estável")
@@ -88,7 +88,7 @@ x, y = estado(c1914, "SP"), estado(ult, "SP")
 dsp = y["vv"] - x["vv"]
 m_prev = (x["f"] - x["l"]) / x["vv"] * 100
 m_real = ((y["f"] - x["f"]) - (y["l"] - x["l"])) / dsp * 100 if dsp else 0
-linha("08", "SP cada vez menos Flávio", f"margem prevista {m_prev:+.1f} x real {m_real:+.1f} (desde 19:14)", "✅" if m_real < m_prev else "❌")
+linha("08", "SP cada vez menos favorável ao Flávio", f"margem prevista {m_prev:+.1f} x real {m_real:+.1f} (desde 19:14)", "✅" if m_real < m_prev else "❌")
 if lote:
     linha("09", "lotes agora dão saldo a quem?", f"último lote: {'Flávio' if lote[0] > lote[1] else 'Lula'} +{abs(lote[0] - lote[1]):.1f} p.p.", "")
 

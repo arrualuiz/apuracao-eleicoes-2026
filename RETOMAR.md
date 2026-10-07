@@ -35,7 +35,7 @@ python3 -u coleta/coletar.py --a-cada 180 --print --git --parar-no-fim   # PID e
 ## Ideias pendentes (próximas etapas)
 
 - **1º turno de 2018** (a comparação mais direta com 2026): reconstruir a curva pelos boletins de urna do TSE (hora de recebimento de cada seção). Validar primeiro em 2022, contra a curva do UOL. Ver o case 14.
-- **Projeção por município**, para corrigir o viés "voto tardio mais Lula dentro do estado" (case 11).
+- **Projeção por município**, para corrigir o viés "voto tardio mais favorável ao Lula dentro do estado" (case 11).
 - **2º turno, 25/10/2026**: código TSE **6258**. Antes, separar a pasta de dados por turno e trocar `1turno` → `2turno` nas URLs do UOL em `coleta/coletar.py`. Referências já guardadas: 2º turno de 2018 (`dados/historico/2018-t2-g1-minuto.csv`) e de 2022 (`dados/uol-historico-2022-t2.json`, local).
 - **Pesquisas de 2º turno** e apoios de Cury, Caiado e Renan Santos, para testar os cenários do case 17.
 - **Matéria em R**: instalar o R (`sudo apt install r-base r-cran-tidyverse r-cran-rsqlite r-cran-dbi`), rodar `R/01-explorar-apuracao.R` (ainda não testado) e virar um relatório Quarto.

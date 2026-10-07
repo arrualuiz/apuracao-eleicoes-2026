@@ -8,12 +8,12 @@ status: fechado
 ---
 
 ## Em resumo
-- Se o placar engana por causa da ordem de apuração (case 01), dá para corrigir: supor que o que falta de cada estado vota igual ao que já foi apurado nele.
+- Se o placar parcial reflete a ordem da apuração (case 01), dá para corrigir isso: supor que o que falta de cada estado vota igual ao que já foi apurado nele.
 - Feita assim, a **projeção por estado** dava o Flávio com ~49% desde a primeira coleta (18:18), quando o placar mostrava 51%: indicava 2º turno.
 - Ao longo da noite, o placar desceu em direção à projeção. Mas a projeção também desceu um pouco, porque o voto tardio dentro de cada estado foi diferente (case 11).
 
 ## A pergunta
-Se o placar engana por causa da ordem de apuração, dá para corrigir esse viés e estimar onde a eleição termina?
+Se o placar parcial reflete a ordem da apuração, dá para corrigir esse viés e estimar onde a eleição termina?
 
 ## Para entender
 - **Projeção por estado:** para cada estado, pego os votos já apurados e "completo" o que falta na mesma proporção. Depois somo os estados.
@@ -45,7 +45,7 @@ Uma correção simples, feita só por estado, antecipou em mais de duas horas o 
 A limitação apareceu ao longo da noite: a projeção do Flávio caiu de 49,0% para ~47,1%. Ela supõe que o restante de cada estado vota igual ao já apurado, e isso não se confirmou: **dentro de cada estado, os votos apurados por último foram mais favoráveis ao Lula** (case 11). Uma projeção melhor precisaria olhar município ou zona eleitoral.
 
 ## Desfecho
-**Checagem parcial (20:10, 87%):** placar 48,31%. A projeção das 18:18 (49,0%) errou 0,7 p.p.; o placar das 18:18 (51,1%), 2,8 p.p. Mas a própria projeção caiu para 47,4%: o voto tardio dentro dos estados veio mais Lula (case 11).
+**Checagem parcial (20:10, 87%):** placar 48,31%. A projeção das 18:18 (49,0%) errou 0,7 p.p.; o placar das 18:18 (51,1%), 2,8 p.p. Mas a própria projeção caiu para 47,4%: o voto tardio dentro dos estados veio mais favorável ao Lula (case 11).
 
 **Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
 

@@ -23,7 +23,7 @@ status: aberto | fechado
 
 | # | Case | Hora | Tipo |
 |---|---|---|---|
-| 01 | [O placar parcial engana](01-placar-parcial-engana.md) | 18:13 | análise |
+| 01 | [O placar parcial não é o resultado](01-placar-parcial-nao-e-o-resultado.md) | 18:13 | análise |
 | 02 | [Print ou API? Achando a fonte oficial](02-print-ou-api.md) | 18:16 | bastidor |
 | 03 | [Placar x projeção por estado](03-placar-x-projecao.md) | 18:18 | análise |
 | 04 | [Posso confiar? O bug do % de urnas](04-posso-confiar.md) | 18:45 | bastidor |

@@ -3,7 +3,7 @@
 
 Uso: python3 analise/graficos.py
 Cada case referencia o seu gráfico em Markdown: ![descrição](graficos/NN-nome.svg)
-Cores legíveis em fundo claro e escuro (azul = Flávio/direita, vermelho = Lula/PT).
+Cores legíveis em fundo claro e escuro, nas cores dos partidos: azul = PL (Flávio), vermelho = PT (Lula).
 """
 import csv
 import json
@@ -336,7 +336,7 @@ def g13(c):
 def g14(c):
     s22 = [(x, b - l) for x, b, l in uol22()]
     s26 = [(float(r["secoes_pct"]), float(r["pct_flavio"]) - float(r["pct_lula"])) for r in nacional()]
-    return linhas("14-diferenca-2022-x-2026.svg", "Diferença (direita − Lula) ao longo da apuração: 2022 x 2026",
+    return linhas("14-diferenca-2022-x-2026.svg", "Diferença PL − PT ao longo da apuração: 2022 x 2026",
                   [("2026: Flávio − Lula", AZUL, s26, None), ("2022: Bolsonaro − Lula", CINZA, s22, None)],
                   "% das urnas apuradas", "pontos percentuais", (0, 100), (-8, 12), refs=[(0, "empate")],
                   ticks_y=range(-8, 13, 4), ticks_x=range(0, 101, 10), fmt_x=lambda v: f"{v}%",
@@ -351,7 +351,7 @@ def g15(c):
     s22t2 = [(p[0], p[t.index("candidate22Percent")] - p[t.index("candidate13Percent")]) for p in d2["series"] if p[0] > 1]
     s22 = [(x, b - l) for x, b, l in uol22() if x > 1]
     s26 = [(float(r["secoes_pct"]), float(r["pct_flavio"]) - float(r["pct_lula"])) for r in nacional()]
-    return linhas("15-quatro-apuracoes.svg", "Diferença direita − PT ao longo de quatro apurações",
+    return linhas("15-quatro-apuracoes.svg", "Diferença PSL/PL − PT ao longo de quatro apurações",
                   [("2018 2º turno", "#4a3aa7", s18, None), ("2022 1º turno", CINZA, s22, None),
                    ("2022 2º turno", "#1baf7a", s22t2, None), ("2026 1º turno", AZUL, s26, None)],
                   "% apurado", "pontos percentuais", (0, 100), (-8, 26), refs=[(0, "empate")],

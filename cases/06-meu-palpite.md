@@ -10,13 +10,13 @@ status: fechado
 ## Em resumo
 - Olhando o gráfico do UOL que compara 2026 com 2022, arrisquei um resultado final: **Flávio 47% x Lula 42%**.
 - A direção estava certa: o Flávio cairia abaixo de 50% e haveria 2º turno.
-- Mas os números pediam algo improvável: o Flávio teria de despencar nos votos restantes, e os outros candidatos teriam de crescer de 8% para 11%.
+- Mas os números pediam algo improvável: o Flávio teria de cair bem abaixo do que vinha fazendo nos votos restantes, e os outros candidatos teriam de crescer de 8% para 11%.
 
 ## A pergunta
 Olhando o gráfico 2022 x 2026 do UOL, meu palpite é **Flávio 47% x Lula 42%**. Faz sentido?
 
 ## O raciocínio do palpite
-- **Flávio 47%:** pelo gráfico do UOL que compara 2026 com 2022, as linhas pareciam seguir a forma de 2022, em que a direita perdeu terreno até o fim.
+- **Flávio 47%:** pelo gráfico do UOL que compara 2026 com 2022, as linhas pareciam seguir a forma de 2022, em que o candidato do PL perdeu terreno até o fim.
 - **Lula 42%:** eu esperava que Cury, Renan Santos e Caiado tivessem mais votos do que tiveram. Por isso deixei 11% para os outros candidatos. Eles terminaram com 7,8%, e essa diferença foi para o Lula.
 
 ## Para entender

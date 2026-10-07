@@ -1,6 +1,6 @@
 ---
 numero: 01
-titulo: O placar parcial engana
+titulo: O placar parcial não é o resultado
 hora: "18:13"
 tipo: analise
 manchete: "Com 12% apurado, o Sul e o Centro-Oeste já tinham ~40% contado, o Nordeste ~15% e São Paulo e Rio menos de 8%"

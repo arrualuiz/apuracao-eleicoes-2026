@@ -25,13 +25,13 @@ Placar às 20:10 (soma das UFs, 87,1% das seções): **Flávio 48,31% x Lula 43,
 
 | Ideia (case) | Na hora | Às 20:10 | Veredito |
 |---|---|---|---|
-| 01. O placar parcial engana | Flávio 51,09% com 12% apurado | 48,31% | ✅ caiu 2,8 p.p. |
+| 01. O placar parcial não é o resultado | Flávio 51,09% com 12% apurado | 48,31% | ✅ caiu 2,8 p.p. |
 | 03. Projeção por estado | 18:18: projeção 49,0% x placar 51,1% | placar 48,3% | ✅ projeção errou 0,7 p.p.; o placar da hora, 2,8 |
 | 03. (continuação) | projeção 49,0% às 18:18 | projeção 47,4% às 20:10 | ⚠️ a projeção também caiu 1,6 p.p. |
 | 05. Quanto precisa para o 1º turno | 49,7% do restante | **60,7%** | ✅ desde 18:46, 10 de 11 lotes abaixo da linha |
 | 06. Palpite Flávio 47% | exigia 44,7% do restante | exige 38,7% (lotes recentes: 36–45%) | 🟡 ficou plausível |
 | 06. Palpite Lula 42% | exigia 42,4% do restante | já tem 43,66% | ❌ não deve acontecer |
-| 08. SP cada vez menos Flávio | lotes de SP caindo (55 → 51) | margem real +9,8 x prevista +15,4 | ✅ SP rendeu 548 mil, não 866 mil |
+| 08. SP cada vez menos favorável ao Flávio | lotes de SP caindo (55 → 51) | margem real +9,8 x prevista +15,4 | ✅ SP rendeu 548 mil, não 866 mil |
 | 09. Lotes com saldo do Flávio derrubando o % dele | até 19:14 | desde 19:14, os lotes dão saldo ao Lula | 🔄 a fase mudou |
 | 10. Estados à frente do nacional | soma das UFs ~20 p.p. à frente | nacional alcançou às 20:04 | ✅ |
 
@@ -77,7 +77,7 @@ Consultas no banco `dados/apuracao.sqlite`: placar e "quanto precisa" na coleta 
 - **Palpite:** o 47% do Flávio ficou plausível; o 42% do Lula já tinha ficado para trás.
 
 ## Desfecho
-**Checagem 20:14 (89,1%, `analise/revisao.py`):** Flávio 48,14% x Lula 43,86%, diferença 4,53 mi. O último lote (2,5 mi de válidos) foi o mais favorável ao Lula da noite até ali: 52,0% x 41,1%. **Em 7 dos 8 maiores estados desse lote, os votos novos vieram mais Lula que o acumulado** (SP −4, RJ −3, MG −3, BA −5, CE −3, PE −6, GO −4 p.p.). O viés da projeção cresceu: nos 8 maiores estados, desde 19:14, ela previa um saldo de 488 mil para o Lula e o real foi de 1,14 mi (erro de 650 mil a favor do Flávio).
+**Checagem 20:14 (89,1%, `analise/revisao.py`):** Flávio 48,14% x Lula 43,86%, diferença 4,53 mi. O último lote (2,5 mi de válidos) foi o mais favorável ao Lula da noite até ali: 52,0% x 41,1%. **Em 7 dos 8 maiores estados desse lote, os votos novos vieram mais favoráveis ao Lula que o acumulado** (SP −4, RJ −3, MG −3, BA −5, CE −3, PE −6, GO −4 p.p.). O viés da projeção cresceu: nos 8 maiores estados, desde 19:14, ela previa um saldo de 488 mil para o Lula e o real foi de 1,14 mi (erro de 650 mil a favor do Flávio).
 
 **Resultado final do 1º turno (100% das seções, TSE 05/10 02:59):** Flávio Bolsonaro **47,03%** (56.104.503 votos) x Lula **45,16%** (53.879.538), diferença de 2.224.965 votos (1,87 p.p.). 2º turno em 25/10.
 
