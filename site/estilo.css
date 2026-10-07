@@ -118,3 +118,27 @@ footer { color: var(--muted); font: 13px system-ui, sans-serif; text-align: cent
 
 /* gráficos dentro das análises */
 .case-corpo img { display: block; max-width: 100%; height: auto; margin: 12px 0; background: #fcfcfb; border-radius: 8px; padding: 6px; }
+
+/* gráfico da rolagem: anotações, cabeçalho e legenda */
+.nota-graf { font: 11px system-ui, sans-serif; fill: var(--muted); }
+.marca { font: 700 12px system-ui, sans-serif; fill: var(--accent); }
+.grafico .placar .cab-sub { display: block; font-size: 13px; font-weight: 500; color: var(--muted); margin-top: 2px; }
+.grafico .placar { min-height: 84px; }
+.legenda-graf { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.legenda-graf span { display: inline-flex; align-items: center; gap: 6px; }
+.legenda-graf .lg { display: inline-block; width: 22px; height: 0; border-top: 2.5px solid var(--text-2); }
+.legenda-graf .lg.tracejada { border-top-style: dashed; opacity: .7; }
+.legenda-graf .lg.pontilhada { border-top-style: dotted; }
+.passo.final .conclusoes { margin: 8px 0 0; padding-left: 20px; color: var(--text-2); }
+.passo.final .conclusoes li { margin: 6px 0; }
+.passo.final { min-height: 100vh; }
+
+/* celular: área do gráfico acompanha o conteúdo e cobre o texto que passa por baixo */
+@media (max-width: 820px) {
+  .grafico { height: auto; padding: 8px 0 6px; border-bottom: 1px solid var(--border); }
+  .grafico .placar { min-height: 0; font-size: 13px; }
+  .grafico .placar b { font-size: 21px; }
+  .grafico .placar .cab-sub { font-size: 12px; }
+  .legenda-graf { font-size: 11px; gap: 2px 12px; }
+  .passo { min-height: 95vh; justify-content: flex-end; padding-bottom: 6vh; }
+}

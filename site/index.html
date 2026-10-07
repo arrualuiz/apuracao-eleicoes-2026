@@ -7,9 +7,9 @@
 <!--
   Esqueleto do site de rolagem. Como funciona:
   - site/dados.js (gerado por analise/exportar.py) define window.DADOS com a série da noite.
-  - Cada <section class="passo"> tem data-ate="HH:MM": ao rolar até ela, o gráfico fixo
-    mostra a apuração só até aquele horário.
-  - Para adicionar um marco: copie uma <section class="passo">, troque data-ate e o texto.
+  - Cada <section class="passo"> tem data-ate ("AAAA-MM-DD HH:MM" ou "fim"): ao rolar até ela, o gráfico fixo
+    mostra a apuração até aquele momento, com o rótulo data-marca. data-proj mostra a projeção; data-palpite, os palpites.
+  - Para adicionar um marco: copie uma <section class="passo">, troque os atributos e o texto.
   - site/cases.js (também gerado pelo exportador) traz as análises de cases/*.md.
   - Os prints vêm de ../prints/ (só locais; no GitHub eles somem sem quebrar a página).
   Abre direto no navegador (file://), sem servidor.
@@ -33,90 +33,100 @@
   <div class="grafico" aria-hidden="true">
     <div class="placar sans" id="placar"></div>
     <div id="chart"></div>
+    <div class="legenda-graf sans" id="legenda-graf"></div>
   </div>
 
   <div class="passos">
-    <!-- Um passo por marco. data-ate = até que horário o gráfico mostra a apuração. -->
-    <section class="passo" data-ate="18:18">
+    <!-- Um passo por marco: data-ate (data e hora), data-marca (rótulo no gráfico), data-proj (mostra a projeção), data-palpite (Flávio,Lula). -->
+    <section class="passo" data-ate="2026-10-04 18:13" data-marca="18h13 · primeira leitura">
       <div class="hora">18h13 · 12% apurado</div>
       <h2>O placar dizia uma coisa…</h2>
       <div class="numero">51,1%</div>
-      <p>Flávio na frente com folga. Mas o Sul já tinha muito mais urnas contadas que o Nordeste.</p>
-      <figure class="print"><a href="../prints/1813-uol-placar-12,45.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/1813-uol-placar-12,45.png" alt="UOL às 18h13: o print que começou tudo" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>UOL às 18h13: o print que começou tudo · <span>clique para ampliar</span></figcaption></figure>
-      <figure class="print"><a href="../prints/1813-uol-estados.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/1813-uol-estados.png" alt="Andamento por estado: Paraná adiantado, Bahia e São Paulo quase sem apurar" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>Andamento por estado: Paraná adiantado, Bahia e São Paulo quase sem apurar · <span>clique para ampliar</span></figcaption></figure>
+      <p>Primeira leitura, ainda à mão, pelo print do UOL: <strong>Flávio 51,1% x Lula 40,7%</strong>. Se terminasse assim, não haveria 2º turno.</p>
+      <p>Mas o placar dependia de onde as urnas já tinham sido contadas: o Paraná tinha ~39% apurado; Bahia, São Paulo e Rio, menos de 5%.</p>
+      <figure class="print"><a href="../prints/1813-uol-placar-12,45.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/1813-uol-placar-12,45.png" alt="UOL às 18h13: o print que começou tudo" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>UOL às 18h13: o print que começou tudo · <span>clique para ampliar</span></figcaption></figure>
+      <figure class="print"><a href="../prints/1813-uol-estados.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/1813-uol-estados.png" alt="Andamento por estado: Paraná adiantado, Bahia e São Paulo quase sem apurar" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>Andamento por estado: Paraná adiantado, Bahia e São Paulo quase sem apurar · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 01 · O placar parcial engana</p>
     </section>
 
-    <section class="passo" data-ate="18:18">
+    <section class="passo" data-ate="2026-10-04 18:18" data-marca="18h18 · projeção: 49%" data-proj="1">
       <div class="hora">18h18 · 21% apurado</div>
       <h2>…e a projeção, outra</h2>
       <div class="numero">49,0%</div>
-      <p>Se cada estado terminasse votando como já tinha votado, o Flávio ficaria abaixo de 50%: 2º turno. Duas horas e meia antes da confirmação oficial.</p>
+      <p>Em cinco minutos, troquei os prints pela fonte oficial: os arquivos do TSE, consultados a cada 3 minutos. O trecho pontilhado do gráfico é esse intervalo, enquanto eu montava a coleta.</p>
+      <p>Na primeira coleta, projetei cada estado pelo que já tinha sido apurado nele. Resultado: <strong>Flávio 49,0%</strong>, abaixo dos 50%. Era 2º turno, 2h39 antes da confirmação oficial.</p>
       <p class="ref">Cases 02 e 03 · A fonte oficial e a projeção</p>
     </section>
 
-    <section class="passo" data-ate="18:52">
+    <section class="passo" data-ate="2026-10-04 18:46" data-marca="18h46 · lote abaixo da linha" data-proj="1">
       <div class="hora">18h46 · 47% apurado</div>
       <h2>O lote que virou a tendência</h2>
-      <p>Para vencer no 1º turno, o Flávio precisava de 49,7% dos votos que faltavam. O lote das 18h46 deu 48,8%: o primeiro claramente abaixo da linha. Antes disso, eu tinha achado e corrigido um erro no meu próprio % de urnas.</p>
+      <p>Para vencer no 1º turno, o Flávio precisava de 49,7% dos votos que ainda faltavam. Até as 18h41 ele vinha nessa faixa. O lote das 18h46 deu <strong>48,1%</strong>, e nenhum lote relevante voltou a passar da linha.</p>
+      <p>No caminho, achei um erro no meu próprio cálculo: eu misturava dois arquivos do TSE e o % de urnas saía inflado. Como tinha guardado os dados originais, recalculei tudo em minutos.</p>
       <p class="ref">Cases 04 e 05</p>
     </section>
 
-    <section class="passo" data-ate="18:52">
+    <section class="passo" data-ate="2026-10-04 18:48" data-marca="18h48 · palpite 47 x 42" data-proj="1" data-palpite="47,42">
       <div class="hora">18h48</div>
-      <h2>Meu palpite: 47 x 42</h2>
-      <p>Olhando o gráfico do UOL que compara 2026 com 2022. Acertei a direção; a soma não fechava (47 + 42 deixaria 11% para os outros, que tinham 8%).</p>
-      <figure class="print"><a href="../prints/1848-uol-evolucao-2022x2026.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/1848-uol-evolucao-2022x2026.png" alt="O gráfico em que me baseei para o palpite" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>O gráfico em que me baseei para o palpite · <span>clique para ampliar</span></figcaption></figure>
+      <h2>Meu primeiro palpite: 47 x 42</h2>
+      <p>Pelo gráfico do UOL que compara 2026 com 2022, apostei que o Flávio cairia para <strong>47%</strong>.</p>
+      <p>Para o Lula, cravei 42% porque esperava mais votos para Cury, Renan Santos e Caiado: 47 + 42 deixava 11% para os outros. Eles terminaram com 7,8%, e essa diferença acabou indo para o Lula. O Flávio, acertei.</p>
+      <figure class="print"><a href="../prints/1848-uol-evolucao-2022x2026.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/1848-uol-evolucao-2022x2026.png" alt="O gráfico em que me baseei para o palpite" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>O gráfico em que me baseei para o palpite · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 06 · Meu palpite</p>
     </section>
 
-    <section class="passo" data-ate="19:14">
+    <section class="passo" data-ate="2026-10-04 19:14" data-marca="19h14 · abaixo de 50%" data-proj="1">
       <div class="hora">19h14 · 70% apurado</div>
       <h2>25 minutos de silêncio, depois 20 milhões de votos</h2>
-      <p>O TSE parou de publicar e voltou com um lote gigante. O Flávio caiu abaixo de 50% pela primeira vez. E o lote deu mais votos a ele, mas derrubou o percentual dele.</p>
+      <p>O TSE parou de publicar e voltou com o maior lote da noite. O Flávio caiu abaixo de 50% pela primeira vez.</p>
+      <p>Detalhe curioso: esse lote deu 431 mil votos a mais para ele, mas com margem menor que a média dele, por isso derrubou o percentual. A partir daí, quase todo lote deu saldo ao Lula.</p>
       <p class="ref">Cases 07, 08 e 09</p>
     </section>
 
-    <section class="passo" data-ate="19:41">
+    <section class="passo" data-ate="2026-10-04 19:41" data-marca="19h28 · estados à frente" data-proj="1">
       <div class="hora">19h28</div>
       <h2>Os estados andam na frente</h2>
-      <p>O arquivo nacional do TSE ficou 50 minutos parado. Somando os estados, eu via um placar ~20 pontos de apuração à frente do que os sites mostravam.</p>
+      <p>O arquivo nacional do TSE ficou 50 minutos parado, enquanto os estados continuavam publicando.</p>
+      <p>Passei a somar os 27 estados e o exterior. Por quase uma hora, eu via a apuração ~20 pontos à frente do que os grandes portais mostravam.</p>
       <p class="ref">Case 10</p>
     </section>
 
-    <section class="passo" data-ate="20:14">
+    <section class="passo" data-ate="2026-10-04 20:14" data-marca="20h14 · voto tardio" data-proj="1">
       <div class="hora">20h14 · 89% apurado</div>
-      <h2>O voto tardio é mais Lula, em todo lugar</h2>
-      <p>Até em São Paulo, os últimos votos vieram menos Flávio que os primeiros. A minha projeção errava sempre para o mesmo lado, e eu corrigi o método.</p>
-      <figure class="print"><a href="../prints/2016-uol-evolucao-2022x2026.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2016-uol-evolucao-2022x2026.png" alt="As linhas se aproximam, mas não se cruzam" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>As linhas se aproximam, mas não se cruzam · <span>clique para ampliar</span></figcaption></figure>
+      <h2>O voto tardio é diferente</h2>
+      <p>Até em São Paulo, os últimos votos vieram menos favoráveis ao Flávio que os primeiros. A projeção por estado errava sempre para o mesmo lado: note como a linha tracejada fica acima do resultado o tempo todo.</p>
+      <p>Corrigi o método usando a tendência dos lotes mais recentes. No fim, o viés somou ~1,9 milhão de votos.</p>
+      <figure class="print"><a href="../prints/2016-uol-evolucao-2022x2026.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2016-uol-evolucao-2022x2026.png" alt="As linhas se aproximam, mas não se cruzam" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>As linhas se aproximam, mas não se cruzam · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 11 e 12</p>
     </section>
 
-    <section class="passo" data-ate="20:30">
+    <section class="passo" data-ate="2026-10-04 20:26" data-marca="20h27 · palpite 47 x 44" data-proj="1" data-palpite="47,44">
       <div class="hora">20h27 · 91% apurado</div>
       <h2>Palpite ajustado: 47 x 44</h2>
-      <p>Corrigi o ponto fraco do primeiro palpite. As projeções davam ~47,3 x ~44,8.</p>
-      <figure class="print"><a href="../prints/2027-uol-placar-91,06.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2027-uol-placar-91,06.png" alt="UOL às 20h27" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>UOL às 20h27 · <span>clique para ampliar</span></figcaption></figure>
+      <p>Revisei a premissa sobre os outros candidatos e ajustei o palpite para <strong>47 x 44</strong>. As projeções davam ~47,3 x ~44,8.</p>
+      <figure class="print"><a href="../prints/2027-uol-placar-91,06.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2027-uol-placar-91,06.png" alt="UOL às 20h27" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>UOL às 20h27 · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 13</p>
     </section>
 
-    <section class="passo" data-ate="20:47">
+    <section class="passo" data-ate="2026-10-04 20:37" data-marca="20h35 · 2018, 2022, 2026" data-proj="1">
       <div class="hora">20h35 · 2018, 2022 e 2026</div>
       <h2>Toda apuração começa com o mesmo viés</h2>
-      <p>Transcrevi a apuração minuto a minuto do 2º turno de 2018 e comparei com os dois turnos de 2022. Em todas, quem é mais forte no Sul e no Sudeste começa à frente e perde terreno quando o Nordeste entra. A reta final de cada eleição, aplicada a 2026, põe o Flávio entre +1,7 e +3,4 pontos.</p>
-      <figure class="print"><a href="../prints/2018-t2-g1-grafico-evolucao.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2018-t2-g1-grafico-evolucao.png" alt="2018, 2º turno: Bolsonaro na frente 10 minutos após o início" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>2018, 2º turno: Bolsonaro na frente 10 minutos após o início · <span>clique para ampliar</span></figcaption></figure>
+      <p>Transcrevi a apuração minuto a minuto do 2º turno de 2018 e comparei com os dois turnos de 2022. Em todas, quem é mais forte no Sul e no Sudeste começa à frente e perde terreno quando o Nordeste entra.</p>
+      <p>Aplicando a reta final de cada eleição a 2026, o Flávio terminaria entre +1,7 e +3,4 pontos. Terminou com <strong>+1,87</strong>: o método mais simples foi o mais preciso da noite.</p>
+      <figure class="print"><a href="../prints/2018-t2-g1-grafico-evolucao.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2018-t2-g1-grafico-evolucao.png" alt="2018, 2º turno: Bolsonaro na frente 10 minutos após o início" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>2018, 2º turno: Bolsonaro na frente 10 minutos após o início · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 14 e 15</p>
     </section>
 
-    <section class="passo" data-ate="20:54">
+    <section class="passo" data-ate="2026-10-04 20:51" data-marca="20h50 · e o 2º turno?" data-proj="1">
       <div class="hora">20h50 · e o 2º turno?</div>
       <h2>Favorito, mas por pouco</h2>
-      <p>O líder do 1º turno venceu os seis 2º turnos desde 2002, mas em cinco o 2º colocado ganhou mais votos entre os turnos. Minas acertou 12 de 12, e o Flávio lidera lá.</p>
-      <figure class="print"><a href="../prints/2100-g1-mapa-minas-gerais-94,07-segundo-turno.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2100-g1-mapa-minas-gerais-94,07-segundo-turno.png" alt="Minas Gerais: o norte vota como o Nordeste, o Triângulo como São Paulo" loading="lazy" onerror="this.closest(\'figure\').remove()"></a><figcaption>Minas Gerais: o norte vota como o Nordeste, o Triângulo como São Paulo · <span>clique para ampliar</span></figcaption></figure>
+      <p>O líder do 1º turno venceu os seis 2º turnos desde 2002, mas em cinco o 2º colocado ganhou mais votos entre os turnos.</p>
+      <p>E Minas, que acertou o vencedor em todos os turnos desde 2002, deu o Flávio na frente (48,2 x 43,3 no final).</p>
+      <figure class="print"><a href="../prints/2100-g1-mapa-minas-gerais-94,07-segundo-turno.png" target="_blank" title="ver o print em tamanho real"><img src="../prints/2100-g1-mapa-minas-gerais-94,07-segundo-turno.png" alt="Minas Gerais: o norte vota como o Nordeste, o Triângulo como São Paulo" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>Minas Gerais: o norte vota como o Nordeste, o Triângulo como São Paulo · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 16, 17 e 18</p>
     </section>
 
-    <section class="passo" data-ate="20:58">
+    <section class="passo" data-ate="2026-10-04 20:58" data-marca="20h57 · 2º turno confirmado" data-proj="1">
       <div class="hora">20h57 · 97% apurado</div>
       <h2>Está confirmado: vai ter 2º turno</h2>
       <div class="numero">47,5% x 44,6%</div>
@@ -124,19 +134,28 @@
       <p class="ref">Case 19</p>
     </section>
 
-    <section class="passo" data-ate="21:32">
+    <section class="passo" data-ate="2026-10-04 21:32" data-marca="21h32 · piso de 46,85%" data-proj="1">
       <div class="hora">21h32 · 99,4% apurado</div>
       <h2>Ainda dá para chegar a 46 x 45?</h2>
       <div class="numero">46,85%</div>
-      <p>É o piso do Flávio mesmo se todos os votos restantes fossem para o Lula. Faltavam ~760 mil votos, a maioria na Bahia, em Minas e no Ceará. O final caminhava para 47 x 45.</p>
+      <p>Não. Mesmo se todos os votos restantes fossem para o Lula, o Flávio não cairia abaixo de 46,85%. Faltavam ~760 mil votos, a maioria na Bahia, em Minas e no Ceará.</p>
+      <p>Previsão às 21h32: 47,09 x 45,09. Final: 47,03 x 45,16.</p>
       <p class="ref">Case 20 · Reta final</p>
     </section>
 
-    <section class="passo" data-ate="99:99" id="passo-final">
+    <section class="passo final" data-ate="fim" data-marca="resultado final" data-proj="1" id="passo-final">
       <div class="hora" id="final-hora">Resultado</div>
-      <h2 id="final-titulo">Flávio x Lula no 2º turno</h2>
+      <h2>Flávio x Lula no 2º turno</h2>
       <div class="numero" id="final-numero"></div>
       <p id="final-texto"></p>
+      <ul class="conclusoes">
+        <li><strong>O placar parcial superestimou o líder em 4 pontos</strong> (51,1% às 18h18); a projeção por estado, em 2.</li>
+        <li><strong>Somar os estados</strong> deu um placar até ~20 pontos de apuração à frente do que os portais mostravam.</li>
+        <li><strong>O voto apurado por último foi diferente dentro de cada estado:</strong> a projeção errou ~1,9 milhão de votos, sempre para o mesmo lado.</li>
+        <li><strong>O método mais simples foi o mais preciso:</strong> a reta final de 2022 estimou +1,5 ponto de diferença; o real foi +1,87.</li>
+        <li><strong>Meus palpites:</strong> acertei o Flávio duas vezes (47%). No Lula, 42 → 44 → 45,16 real: eu superestimei os outros candidatos.</li>
+        <li><strong>Guardar o dado bruto</strong> salvou a noite duas vezes: todo erro de cálculo pôde ser refeito.</li>
+      </ul>
     </section>
   </div>
 </main>
@@ -193,71 +212,148 @@
 <footer>Noite do Primeiro Turno 2026 · dados: TSE (resultados.tse.jus.br) · curva de 2022: UOL</footer>
 
 <script>
-const D = window.DADOS || { serie: [] };
+const D = window.DADOS || { serie: [], manual: [] };
+const S = D.serie || [], M = D.manual || [];
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const fmt = (v, d = 2) => v.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+const PASSOS = [...document.querySelectorAll('.passo')];
+let atual = PASSOS[0];
 
-let ateAtual = '18:18';
+// último ponto (coleta do TSE ou leitura manual) até um instante "AAAA-MM-DD HH:MM" ou "fim"
+function pontosAte(ate) {
+  const lim = ate === 'fim' ? '9999' : ate;
+  return { auto: S.filter(p => p.dt <= lim), manual: M.filter(p => p.dt <= lim) };
+}
+function pontoEm(ate) {
+  const { auto, manual } = pontosAte(ate);
+  return auto.length ? auto[auto.length - 1] : (manual.length ? { ...manual[manual.length - 1], manualmente: true } : null);
+}
 
 function desenhar() {
   const el = document.getElementById('chart');
   el.innerHTML = '';
-  const W = el.clientWidth || 500, H = Math.min(420, Math.round(W * .75));
-  const m = { t: 12, r: 56, b: 34, l: 36 };
-  const serie = D.serie;
-  if (!serie.length) { el.textContent = 'Rode analise/exportar.py para gerar site/dados.js'; return; }
-  const visivel = serie.filter(p => p.h <= ateAtual);
-  const x = d3.scaleLinear().domain([0, 100]).range([m.l, W - m.r]);
+  if (!S.length) { el.textContent = 'Rode analise/exportar.py para gerar site/dados.js'; return; }
+  const i = Math.max(0, PASSOS.indexOf(atual));
+  const ate = atual.dataset.ate;
+  const { auto, manual } = pontosAte(ate);
+  const mostraProj = PASSOS.slice(0, i + 1).some(p => p.dataset.proj);
+  const palpites = PASSOS.slice(0, i + 1).filter(p => p.dataset.palpite).map(p => ({ v: p.dataset.palpite.split(',').map(Number), rot: p.dataset.marca }));
+
+  const W = el.clientWidth || 500, H = W < 520 ? Math.round(W * .62) : Math.min(440, Math.round(W * .8));
+  const m = { t: 34, r: 92, b: 36, l: 38 };
+  const x = d3.scaleLinear().domain([10, 100]).range([m.l, W - m.r]);
   const y = d3.scaleLinear().domain([40, 54]).range([H - m.b, m.t]);
   const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`);
+  const cor = { flavio: css('--flavio'), lula: css('--lula') };
 
+  // faixa: o intervalo em que a coleta automática ainda estava sendo montada
+  if (M.length) {
+    const x0 = x(M[0].secoes), x1 = x(S[0].secoes);
+    svg.append('rect').attr('x', x0).attr('y', m.t).attr('width', x1 - x0).attr('height', H - m.t - m.b)
+      .attr('fill', css('--grid')).attr('opacity', .6);
+    const ym = y(46.5);  // meio do gráfico, longe das linhas dos candidatos
+    svg.append('text').attr('class', 'nota-graf').attr('text-anchor', 'middle')
+      .attr('transform', `translate(${(x0 + x1) / 2 + 4},${ym}) rotate(-90)`).text('montando a coleta');
+  }
   svg.append('g').selectAll('line').data(y.ticks(7)).join('line').attr('class', 'gridline')
     .attr('x1', m.l).attr('x2', W - m.r).attr('y1', d => y(d)).attr('y2', d => y(d));
   svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`)
-    .call(d3.axisBottom(x).ticks(5).tickFormat(d => d + '%').tickSizeOuter(0));
+    .call(d3.axisBottom(x).tickValues([10, 25, 50, 75, 100]).tickFormat(d => d + '%').tickSizeOuter(0));
+  svg.append('text').attr('class', 'nota-graf').attr('x', (m.l + W - m.r) / 2).attr('y', H - 4).attr('text-anchor', 'middle').text('% das urnas apuradas');
   svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`)
     .call(d3.axisLeft(y).ticks(7).tickFormat(d => d + '%').tickSize(0)).call(g => g.select('.domain').remove());
   svg.append('line').attr('class', 'ref50').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(50)).attr('y2', y(50));
-  svg.append('text').attr('class', 'axis').attr('x', W - m.r + 6).attr('y', y(50) + 4)
-    .style('fill', css('--muted')).style('font', '11px system-ui').text('50%');
+  svg.append('text').attr('class', 'nota-graf').attr('x', W - m.r + 6).attr('y', y(50) + 4).text('50%');
+
+  // marco atual: linha vertical com o rótulo
+  const pAtual = pontoEm(ate);
+  if (pAtual) {
+    const xa = x(pAtual.secoes);
+    svg.append('line').attr('x1', xa).attr('x2', xa).attr('y1', m.t - 6).attr('y2', H - m.b).attr('stroke', css('--accent'))
+      .attr('stroke-width', 1).attr('stroke-dasharray', '3 3');
+    svg.append('text').attr('class', 'marca').attr('x', xa).attr('y', m.t - 12)
+      .attr('text-anchor', xa > W * .62 ? 'end' : (xa < W * .25 ? 'start' : 'middle')).text(atual.dataset.marca || '');
+  }
 
   const linha = k => d3.line().x(p => x(p.secoes)).y(p => y(p[k]));
-  for (const [k, cor, nome] of [['flavio', css('--flavio'), 'Flávio'], ['lula', css('--lula'), 'Lula']]) {
-    svg.append('path').datum(visivel).attr('d', linha(k)).attr('fill', 'none').attr('stroke', cor).attr('stroke-width', 2.5);
-    const p = visivel[visivel.length - 1];
-    if (p) {
-      svg.append('circle').attr('cx', x(p.secoes)).attr('cy', y(p[k])).attr('r', 5).attr('fill', cor)
+  const rotulos = [];
+  for (const k of ['flavio', 'lula']) {
+    const nome = k === 'flavio' ? 'Flávio' : 'Lula';
+    // projeção por estado (tracejada)
+    if (mostraProj && auto.length) {
+      svg.append('path').datum(auto).attr('d', d3.line().x(p => x(p.secoes)).y(p => y(p['proj_' + k])))
+        .attr('fill', 'none').attr('stroke', cor[k]).attr('stroke-width', 1.6).attr('stroke-dasharray', '6 4').attr('opacity', .6);
+    }
+    // leitura manual + trecho pontilhado até a primeira coleta automática
+    if (manual.length) {
+      const pm = manual[manual.length - 1];
+      if (auto.length) svg.append('line').attr('x1', x(pm.secoes)).attr('y1', y(pm[k])).attr('x2', x(auto[0].secoes)).attr('y2', y(auto[0][k]))
+        .attr('stroke', cor[k]).attr('stroke-width', 2.2).attr('stroke-dasharray', '1.5 5').attr('stroke-linecap', 'round');
+      svg.append('circle').attr('cx', x(pm.secoes)).attr('cy', y(pm[k])).attr('r', 4).attr('fill', css('--bg')).attr('stroke', cor[k]).attr('stroke-width', 2);
+    }
+    // placar (linha cheia)
+    if (auto.length) svg.append('path').datum(auto).attr('d', linha(k)).attr('fill', 'none').attr('stroke', cor[k]).attr('stroke-width', 2.6);
+    // marcos já passados: pequenos pontos sobre o placar
+    for (const p of PASSOS.slice(0, i)) {
+      const q = pontoEm(p.dataset.ate);
+      if (q && q !== pAtual) svg.append('circle').attr('cx', x(q.secoes)).attr('cy', y(q[k])).attr('r', 3)
+        .attr('fill', css('--bg')).attr('stroke', cor[k]).attr('stroke-width', 1.5);
+    }
+    if (pAtual) {
+      svg.append('circle').attr('cx', x(pAtual.secoes)).attr('cy', y(pAtual[k])).attr('r', 5.5).attr('fill', cor[k])
         .attr('stroke', css('--bg')).attr('stroke-width', 2);
-      svg.append('text').attr('class', 'lbl').attr('x', x(p.secoes) + 9).attr('y', y(p[k]) + 4).text(`${nome} ${fmt(p[k], 1)}%`);
+      rotulos.push({ y: y(pAtual[k]) + 4, x: x(pAtual.secoes) + 9, t: `${nome} ${fmt(pAtual[k], 1)}%`, c: cor[k] });
     }
   }
-  const u = visivel[visivel.length - 1];
-  document.getElementById('placar').innerHTML = u
-    ? `${u.h} · ${fmt(u.secoes, 1)}% apurado<br><b style="color:var(--flavio)">${fmt(u.flavio)}%</b> &nbsp;x&nbsp; <b style="color:var(--lula)">${fmt(u.lula)}%</b>`
-    : '';
+  // palpites: losangos vazados sobre a linha dos 100%
+  palpites.forEach((pp, j) => {
+    const ultimo = j === palpites.length - 1;
+    [['flavio', pp.v[0]], ['lula', pp.v[1]]].forEach(([k, v]) => {
+      svg.append('path').attr('d', d3.symbol(d3.symbolDiamond, 70)()).attr('transform', `translate(${x(100)},${y(v)})`)
+        .attr('fill', 'none').attr('stroke', cor[k]).attr('stroke-width', 1.8).attr('opacity', ultimo ? 1 : .45);
+    });
+  });
+  rotulos.sort((a, b) => a.y - b.y);
+  for (let j = 1; j < rotulos.length; j++) rotulos[j].y = Math.max(rotulos[j].y, rotulos[j - 1].y + 15);
+  rotulos.forEach(r => svg.append('text').attr('class', 'lbl').attr('x', Math.min(r.x, W - m.r + 4)).attr('y', r.y).style('fill', r.c).text(r.t));
+
+  // cabeçalho do gráfico
+  const u = pAtual;
+  let cab = '';
+  if (u) {
+    const titulo = ate === 'fim' && u.secoes >= 99.9 ? 'Resultado final · 100% das urnas'
+      : `${u.h} · ${fmt(u.secoes, 1)}% apurado${u.manualmente ? ' · leitura manual (' + (u.fonte || 'print') + ')' : ''}`;
+    cab = `${titulo}<br>` +
+      `<b style="color:var(--flavio)">${fmt(u.flavio)}%</b> &nbsp;x&nbsp; <b style="color:var(--lula)">${fmt(u.lula)}%</b>`;
+    if (mostraProj && !u.manualmente) cab += `<span class="cab-sub">projeção por estado: ${fmt(u.proj_flavio, 1)}% x ${fmt(u.proj_lula, 1)}%</span>`;
+    if (palpites.length) cab += `<span class="cab-sub">◇ palpite${palpites.length > 1 ? 's' : ''}: ${palpites.map(pp => pp.v.join(' x ')).join(' → ')}</span>`;
+  }
+  document.getElementById('placar').innerHTML = cab;
+  const leg = document.getElementById('legenda-graf');
+  if (leg) leg.innerHTML = `<span><i class="lg cheia"></i>placar</span>` + (mostraProj ? `<span><i class="lg tracejada"></i>projeção por estado</span>` : '') +
+    `<span><i class="lg pontilhada"></i>antes da coleta automática</span>` + (palpites.length ? `<span>◇ palpites</span>` : '');
 }
 
-// cada passo que entra no meio da tela define até onde o gráfico vai
+// cada passo que entra no meio da tela vira o marco atual do gráfico
 const obs = new IntersectionObserver(entradas => {
   for (const e of entradas) {
     if (!e.isIntersecting) continue;
-    document.querySelectorAll('.passo').forEach(p => p.classList.toggle('ativo', p === e.target));
-    ateAtual = e.target.dataset.ate;
+    PASSOS.forEach(p => p.classList.toggle('ativo', p === e.target));
+    atual = e.target;
     desenhar();
   }
-}, { rootMargin: '-45% 0px -45% 0px' });
-document.querySelectorAll('.passo').forEach(p => obs.observe(p));
+}, { rootMargin: innerWidth <= 820 ? '-68% 0px -28% 0px' : '-45% 0px -45% 0px' });  // no celular o gráfico ocupa o topo
+PASSOS.forEach(p => obs.observe(p));
 
-// resultado: última leitura disponível em dados.js (100% quando a apuração terminar)
+// resultado: última leitura disponível em dados.js
 (function () {
-  const u = D.serie[D.serie.length - 1];
+  const u = S[S.length - 1];
   if (!u) return;
   const fim = u.secoes >= 99.9;
-  document.getElementById('final-hora').textContent = fim ? 'Resultado final do 1º turno' : `Última leitura · ${u.h} · ${fmt(u.secoes, 1)}% apurado`;
+  document.getElementById('final-hora').textContent = fim ? 'Resultado final do 1º turno · 100% das urnas' : `Última leitura · ${u.h} · ${fmt(u.secoes, 1)}% apurado`;
   document.getElementById('final-numero').innerHTML = `<span style="color:var(--flavio)">${fmt(u.flavio)}%</span> x <span style="color:var(--lula)">${fmt(u.lula)}%</span>`;
   document.getElementById('final-texto').textContent =
-    `Flávio Bolsonaro x Lula. Diferença de ${(u.dif_votos / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} milhões de votos. ` +
-    `Meu palpite era 47 x 44; a projeção das 18h18 era 49,0 x 43,1. 2º turno em 25 de outubro.`;
+    `Flávio Bolsonaro x Lula, diferença de ${(u.dif_votos / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} milhões de votos. 2º turno em 25 de outubro. O que a noite ensinou:`;
 })();
 
 // as análises (cases/*.md, exportados para cases.js)
