@@ -24,7 +24,7 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 | 18:13 | 12,45% | Primeiro registro manual (prints UOL/g1) |
 | 18:18 | 20,8% | Início da coleta automática do TSE. **Projeção por estado já dava 49,0%: 2º turno** |
 | 18:45 | — | Bug descoberto: % de urnas inflado (lido do arquivo errado). Corrigido com os brutos |
-| 18:46 | 47,1% | Primeiro lote claramente abaixo do que o Flávio precisava (48,8% x 49,7% necessários) |
+| 18:46 | 47,1% | Primeiro lote claramente abaixo do que o Flávio precisava (48,1% recalculado; 48,8% na leitura da hora; precisava de 49,7%) |
 | 18:48 | — | Palpite do autor: **Flávio 47% x Lula 42%** |
 | 19:14 | 69,8% | TSE volta de 25 min de pausa com lote gigante (20,6 mi de válidos). Flávio abaixo de 50% |
 | 19:28 | 73,6% | Descoberta: os estados publicam antes do nacional. Coletor passa a somar as UFs |
@@ -41,8 +41,8 @@ Projeto pessoal de jornalismo de dados feito **ao vivo**, durante a apuração d
 
 ## 3. Principais achados
 
-1. **O placar parcial engana:** a ordem de apuração regional (Sul primeiro, Nordeste depois) inflou o Flávio no começo. 51,1% às 18:18 → 48,0% às 20:21.
-2. **A projeção por estado antecipou o 2º turno** mais de uma hora antes do placar. Erro de 0,9 p.p., contra 3,0 do placar da mesma hora.
+1. **O placar parcial engana:** a ordem de apuração regional (Sul primeiro, Nordeste depois) inflou o Flávio no começo. 51,1% às 18:18 → 47,03% no resultado final.
+2. **A projeção por estado antecipou o 2º turno** 2h39 antes da confirmação oficial (20:57). Às 18:18, ela errou o resultado final do Flávio por 1,98 p.p.; o placar da mesma hora, por 4,08.
 3. **Mas a projeção erra para o lado do Flávio:** dentro de cada estado, o voto apurado por último é mais Lula (SP: margem prevista +15,4, real +9,8). No fim, o erro acumulado desde 19:14 chegou a ~1,9 milhão de votos.
 4. **O que importa é o lote, não o acumulado:** a virada de tendência apareceu nos lotes (18:46) antes do placar (19:14).
 5. **Saldo x percentual:** até 19:14, os lotes davam saldo de votos ao Flávio e, ao mesmo tempo, derrubavam o percentual dele. Depois de 19:14, os lotes passaram a dar saldo ao Lula.
