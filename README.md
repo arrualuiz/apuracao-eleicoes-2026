@@ -126,11 +126,15 @@ Instalar R no Ubuntu: `sudo apt install r-base r-cran-tidyverse r-cran-rsqlite r
 ## Lições da noite
 
 - **O TSE publica dois arquivos que não andam juntos.** O `-ab.json` (andamento) fica alguns minutos **à frente** do `-u.json` (votos). No começo eu lia o % de urnas do primeiro e os votos do segundo, e o % apurado ficava inflado (44% em vez de 36,6%). A correção foi ler tudo do mesmo arquivo. Como os JSON brutos estavam guardados, deu para recalcular o histórico inteiro.
-- **O placar parcial engana.** Com cerca de 20% apurado, o placar dava 51% para o líder, mas a projeção por estado já dava ~49%, porque o Sul estava muito mais apurado que o Nordeste.
+- **O placar parcial não é o resultado.** Com cerca de 20% apurado, o placar dava 51% para o líder, mas a projeção por estado já dava ~49%, porque o Sul estava muito mais apurado que o Nordeste.
 - **Os estados andam na frente do nacional.** O TSE publica cada estado antes de consolidar o arquivo nacional, que chegou a ficar 50 minutos parado. Somar as UFs deu um placar até ~20 pontos de apuração à frente do que os sites mostravam.
 - **O voto apurado por último é diferente dentro de cada estado.** A projeção por estado errou sempre a favor do mesmo candidato: de 19:14 até o fim, o saldo real do Lula foi de 3,26 milhões de votos, contra 1,41 milhão esperado.
 - **O método mais simples acertou mais.** Para a diferença final, aplicar a reta final de 2022 estimou +1,50 p.p.; o real foi +1,87. As projeções com dados de 2026 ficaram entre +2,4 e +3,0.
 - **Guardar o bruto compensa.** Todo erro de processamento pôde ser corrigido depois, sem perder dados.
+
+## Abordagem
+
+Este é um exercício de dados, não de opinião: as análises descrevem como a apuração aconteceu, não qual resultado seria melhor. Os candidatos aparecem na ordem do resultado, e as cores seguem as dos partidos (azul para o PL, vermelho para o PT), como nos portais de apuração.
 
 ## Limitações
 
