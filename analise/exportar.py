@@ -71,7 +71,7 @@ def main():
         linha = [horario[cid], cid, round(sec, 3), vv, f, l, round(f / vv * 100, 3), round(l / vv * 100, 3),
                  f - l, round((f - l) / vv * 100, 3), round(pf / pv * 100, 3), round(pl / pv * 100, 3)]
         nacional.append(linha)
-        serie.append({"h": horario[cid][11:16], "secoes": linha[2], "flavio": linha[6], "lula": linha[7],
+        serie.append({"h": horario[cid][11:16], "dt": horario[cid][:16], "secoes": linha[2], "flavio": linha[6], "lula": linha[7],
                       "proj_flavio": linha[10], "proj_lula": linha[11], "dif_votos": f - l})
     escrever("nacional.csv", ["horario", "coleta_id", "secoes_pct", "validos", "votos_flavio", "votos_lula",
                               "pct_flavio", "pct_lula", "dif_votos", "dif_pp", "proj_flavio", "proj_lula"], nacional)
@@ -99,8 +99,14 @@ def main():
     SITE.parent.mkdir(exist_ok=True)
     lotes_br = [{"de": l[0][11:16], "ate": l[1][11:16], "validos": l[3], "saldo": l[7], "pf": l[8], "pl": l[9]}
                 for l in lotes if l[2] == "BR"]
+    # leituras feitas à mão antes da coleta automática (prints dos sites), para o início do gráfico do site
+    manual = [{"h": r["horario"][11:16], "dt": r["horario"][:16], "secoes": float(r["urnas_pct"]),
+               "flavio": float(r["flavio_pct"]), "lula": float(r["lula_pct"]), "fonte": r["nota"].split(";")[0]}
+              for r in csv.DictReader(open(RAIZ / "dados" / "snapshots.csv", encoding="utf-8"))
+              if not r["nota"].startswith("TSE")]
     SITE.write_text("// gerado por analise/exportar.py — não editar à mão\nwindow.DADOS = "
-                    + json.dumps({"serie": serie, "lotes": lotes_br}, ensure_ascii=False) + ";\n", encoding="utf-8")
+                    + json.dumps({"serie": serie, "manual": manual, "lotes": lotes_br}, ensure_ascii=False) + ";\n",
+                    encoding="utf-8")
     con.close()
     exportar_cases()
     print(f"exportar: {len(coletas)} coletas → dados/export/ (7 CSVs), site/dados.js e site/cases.js")
