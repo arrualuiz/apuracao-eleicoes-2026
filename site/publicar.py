@@ -7,6 +7,7 @@ Copia o site, o painel, os gráficos e os prints usados pelo site para docs/, aj
 caminhos para que tudo funcione a partir da raiz publicada. docs/preview.png (imagem de
 compartilhamento) é gerada à parte.
 """
+import hashlib
 import re
 import shutil
 from pathlib import Path
@@ -37,6 +38,7 @@ def main():
             shutil.copy(RAIZ / "prints" / nome, DOCS / "prints" / nome)
     html = html.replace("../prints/", "prints/")
     html = html.replace('href="../painel/painel.html"', 'href="painel.html"')
+    html = html.replace("../cases/graficos/", "graficos/")
     html = html.replace('href="../CONTEXTO.md"', f'href="{REPO}/blob/main/CONTEXTO.md"')
     meta = f'''<meta name="description" content="{DESCRICAO}">
 <meta property="og:type" content="website">
@@ -50,11 +52,16 @@ def main():
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fcfcfb'/%3E%3Cpath d='M5 24 L13 15 L19 19 L27 8' fill='none' stroke='%232a78d6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <title>'''
     html = html.replace("<title>", meta, 1)
-    (DOCS / "index.html").write_text(html, encoding="utf-8")
     for nome in ("estilo.css", "dados.js"):
         shutil.copy(SITE / nome, DOCS / nome)
     casos = (SITE / "cases.js").read_text(encoding="utf-8").replace("](../cases/graficos/", "](graficos/")
     (DOCS / "cases.js").write_text(casos, encoding="utf-8")
+    # versão no endereço de cada arquivo: muda quando o conteúdo muda, e o navegador
+    # não mistura um HTML novo com CSS/JS antigos guardados em cache
+    for nome in ("estilo.css", "dados.js", "cases.js"):
+        v = hashlib.sha1((DOCS / nome).read_bytes()).hexdigest()[:8]
+        html = html.replace(f'"{nome}"', f'"{nome}?v={v}"')
+    (DOCS / "index.html").write_text(html, encoding="utf-8")
 
     # gráficos dos cases
     if (DOCS / "graficos").exists():

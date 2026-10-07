@@ -15,10 +15,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fcfcfb'/%3E%3Cpath d='M5 24 L13 15 L19 19 L27 8' fill='none' stroke='%232a78d6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <title>Noite do Primeiro Turno 2026</title>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="dados.js"></script>
-<script src="cases.js"></script>
+<script src="dados.js?v=ad361494"></script>
+<script src="cases.js?v=a49e3ce1"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="estilo.css?v=55b64ab2">
 </head>
 <body>
 
@@ -44,6 +44,7 @@
       <div class="numero">51,1%</div>
       <p>Primeira leitura, ainda à mão, pelo print do UOL: <strong>Flávio 51,1% x Lula 40,7%</strong>. Se terminasse assim, não haveria 2º turno.</p>
       <p>Mas o placar dependia de onde as urnas já tinham sido contadas: o Paraná tinha ~39% apurado; Bahia, São Paulo e Rio, menos de 5%.</p>
+      <figure class="grafico-case"><a href="graficos/01-apurado-por-estado-1818.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/01-apurado-por-estado-1818.svg" alt="Seções apuradas por estado às 18h18: Sul e Centro-Oeste na frente, Nordeste e Sudeste atrás" loading="lazy"></a><figcaption>Seções apuradas por estado às 18h18: Sul e Centro-Oeste na frente, Nordeste e Sudeste atrás · <span>case 01 · clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/1813-uol-placar-12,45.png" target="_blank" title="ver o print em tamanho real"><img src="prints/1813-uol-placar-12,45.png" alt="UOL às 18h13: o print que começou tudo" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>UOL às 18h13: o print que começou tudo · <span>clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/1813-uol-estados.png" target="_blank" title="ver o print em tamanho real"><img src="prints/1813-uol-estados.png" alt="Andamento por estado: Paraná adiantado, Bahia e São Paulo quase sem apurar" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>Andamento por estado: Paraná adiantado, Bahia e São Paulo quase sem apurar · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 01 · O placar parcial não é o resultado</p>
@@ -55,6 +56,7 @@
       <div class="numero">49,0%</div>
       <p>Em cinco minutos, troquei os prints pela fonte oficial: os arquivos do TSE, consultados a cada 3 minutos. O trecho pontilhado do gráfico é esse intervalo, enquanto eu montava a coleta.</p>
       <p>Na primeira coleta, projetei cada estado pelo que já tinha sido apurado nele. Resultado: <strong>Flávio 49,0%</strong>, abaixo dos 50%. Era 2º turno, 2h39 antes da confirmação oficial.</p>
+      <figure class="grafico-case"><a href="graficos/03-placar-x-projecao.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/03-placar-x-projecao.svg" alt="Placar x projeção por estado ao longo da noite" loading="lazy"></a><figcaption>Placar x projeção por estado ao longo da noite · <span>case 03 · clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 02 e 03 · A fonte oficial e a projeção</p>
     </section>
 
@@ -63,6 +65,8 @@
       <h2>O lote que virou a tendência</h2>
       <p>Para vencer no 1º turno, o Flávio precisava de 49,7% dos votos que ainda faltavam. Até as 18h41 ele vinha nessa faixa. O lote das 18h46 deu <strong>48,1%</strong>, e nenhum lote relevante voltou a passar da linha.</p>
       <p>No caminho, achei um erro no meu próprio cálculo: eu misturava dois arquivos do TSE e o % de urnas saía inflado. Como tinha guardado os dados originais, recalculei tudo em minutos.</p>
+      <figure class="grafico-case"><a href="graficos/05-flavio-em-cada-lote.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/05-flavio-em-cada-lote.svg" alt="Quanto o Flávio fez em cada lote x os 49,7% de que precisava" loading="lazy"></a><figcaption>Quanto o Flávio fez em cada lote x os 49,7% de que precisava · <span>case 05 · clique para ampliar</span></figcaption></figure>
+      <figure class="grafico-case"><a href="graficos/04-dois-arquivos-do-tse.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/04-dois-arquivos-do-tse.svg" alt="O erro que achei: o % de urnas de cada arquivo do TSE" loading="lazy"></a><figcaption>O erro que achei: o % de urnas de cada arquivo do TSE · <span>case 04 · clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 04 e 05</p>
     </section>
 
@@ -71,6 +75,7 @@
       <h2>Meu primeiro palpite: 47 x 42</h2>
       <p>Pelo gráfico do UOL que compara 2026 com 2022, apostei que o Flávio cairia para <strong>47%</strong>.</p>
       <p>Para o Lula, cravei 42% porque esperava mais votos para Cury, Renan Santos e Caiado: 47 + 42 deixava 11% para os outros. Eles terminaram com 7,8%, e essa diferença acabou indo para o Lula. O Flávio, acertei.</p>
+      <figure class="grafico-case"><a href="graficos/06-palpite-x-projecao.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/06-palpite-x-projecao.svg" alt="O palpite x a projeção e o placar do momento" loading="lazy"></a><figcaption>O palpite x a projeção e o placar do momento · <span>case 06 · clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/1848-uol-evolucao-2022x2026.png" target="_blank" title="ver o print em tamanho real"><img src="prints/1848-uol-evolucao-2022x2026.png" alt="O gráfico em que me baseei para o palpite" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>O gráfico em que me baseei para o palpite · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 06 · Meu palpite</p>
     </section>
@@ -80,6 +85,8 @@
       <h2>25 minutos de silêncio, depois 20 milhões de votos</h2>
       <p>O TSE parou de publicar e voltou com o maior lote da noite. O Flávio caiu abaixo de 50% pela primeira vez.</p>
       <p>Detalhe curioso: esse lote deu 431 mil votos a mais para ele, mas com margem menor que a média dele, por isso derrubou o percentual. A partir daí, quase todo lote deu saldo ao Lula.</p>
+      <figure class="grafico-case"><a href="graficos/07-votos-novos-por-coleta.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/07-votos-novos-por-coleta.svg" alt="Votos novos em cada coleta: o lote gigante das 19h14" loading="lazy"></a><figcaption>Votos novos em cada coleta: o lote gigante das 19h14 · <span>case 07 · clique para ampliar</span></figcaption></figure>
+      <figure class="grafico-case"><a href="graficos/09-saldo-de-cada-lote.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/09-saldo-de-cada-lote.svg" alt="Saldo de cada atualização: azul até 19h14, vermelho depois" loading="lazy"></a><figcaption>Saldo de cada atualização: azul até 19h14, vermelho depois · <span>case 09 · clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 07, 08 e 09</p>
     </section>
 
@@ -88,6 +95,7 @@
       <h2>Os estados andam na frente</h2>
       <p>O arquivo nacional do TSE ficou 50 minutos parado, enquanto os estados continuavam publicando.</p>
       <p>Passei a somar os 27 estados e o exterior. Por quase uma hora, eu via a apuração ~20 pontos à frente do que os grandes portais mostravam.</p>
+      <figure class="grafico-case"><a href="graficos/10-estados-x-nacional.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/10-estados-x-nacional.svg" alt="% apurado: soma dos estados x arquivo nacional do TSE" loading="lazy"></a><figcaption>% apurado: soma dos estados x arquivo nacional do TSE · <span>case 10 · clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 10</p>
     </section>
 
@@ -96,6 +104,8 @@
       <h2>O voto tardio é diferente</h2>
       <p>Até em São Paulo, os últimos votos vieram menos favoráveis ao Flávio que os primeiros. A projeção por estado errava sempre para o mesmo lado: note como a linha tracejada fica acima do resultado o tempo todo.</p>
       <p>Corrigi o método usando a tendência dos lotes mais recentes. No fim, o viés somou ~1,9 milhão de votos.</p>
+      <figure class="grafico-case"><a href="graficos/11-margem-prevista-x-real.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/11-margem-prevista-x-real.svg" alt="Margem prevista x real nos votos que chegaram depois das 19h14" loading="lazy"></a><figcaption>Margem prevista x real nos votos que chegaram depois das 19h14 · <span>case 11 · clique para ampliar</span></figcaption></figure>
+      <figure class="grafico-case"><a href="graficos/08-saldo-esperado-por-estado.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/08-saldo-esperado-por-estado.svg" alt="Onde ainda faltavam votos às 19h14, e para quem pesavam" loading="lazy"></a><figcaption>Onde ainda faltavam votos às 19h14, e para quem pesavam · <span>case 08 · clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/2016-uol-evolucao-2022x2026.png" target="_blank" title="ver o print em tamanho real"><img src="prints/2016-uol-evolucao-2022x2026.png" alt="As linhas se aproximam, mas não se cruzam" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>As linhas se aproximam, mas não se cruzam · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 11 e 12</p>
     </section>
@@ -104,6 +114,7 @@
       <div class="hora">20h27 · 91% apurado</div>
       <h2>Palpite ajustado: 47 x 44</h2>
       <p>Revisei a premissa sobre os outros candidatos e ajustei o palpite para <strong>47 x 44</strong>. As projeções davam ~47,3 x ~44,8.</p>
+      <figure class="grafico-case"><a href="graficos/13-palpites-e-projecoes.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/13-palpites-e-projecoes.svg" alt="Palpites x projeções x placar às 20h26" loading="lazy"></a><figcaption>Palpites x projeções x placar às 20h26 · <span>case 13 · clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/2027-uol-placar-91,06.png" target="_blank" title="ver o print em tamanho real"><img src="prints/2027-uol-placar-91,06.png" alt="UOL às 20h27" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>UOL às 20h27 · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 13</p>
     </section>
@@ -113,6 +124,8 @@
       <h2>Toda apuração começa com o mesmo viés</h2>
       <p>Transcrevi a apuração minuto a minuto do 2º turno de 2018 e comparei com os dois turnos de 2022. Em todas, quem é mais forte no Sul e no Sudeste começa à frente e perde terreno quando o Nordeste entra.</p>
       <p>Aplicando a reta final de cada eleição a 2026, o Flávio terminaria entre +1,7 e +3,4 pontos. Terminou com <strong>+1,87</strong>: o método mais simples foi o mais preciso da noite.</p>
+      <figure class="grafico-case"><a href="graficos/15-quatro-apuracoes.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/15-quatro-apuracoes.svg" alt="Quatro apurações: 2018, 2022 (dois turnos) e 2026" loading="lazy"></a><figcaption>Quatro apurações: 2018, 2022 (dois turnos) e 2026 · <span>case 15 · clique para ampliar</span></figcaption></figure>
+      <figure class="grafico-case"><a href="graficos/14-diferenca-2022-x-2026.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/14-diferenca-2022-x-2026.svg" alt="2022 x 2026: curvas paralelas da metade em diante" loading="lazy"></a><figcaption>2022 x 2026: curvas paralelas da metade em diante · <span>case 14 · clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/2018-t2-g1-grafico-evolucao.png" target="_blank" title="ver o print em tamanho real"><img src="prints/2018-t2-g1-grafico-evolucao.png" alt="2018, 2º turno: Bolsonaro na frente 10 minutos após o início" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>2018, 2º turno: Bolsonaro na frente 10 minutos após o início · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 14 e 15</p>
     </section>
@@ -122,6 +135,8 @@
       <h2>Favorito, mas por pouco</h2>
       <p>O líder do 1º turno venceu os seis 2º turnos desde 2002, mas em cinco o 2º colocado ganhou mais votos entre os turnos.</p>
       <p>E Minas, que acertou o vencedor em todos os turnos desde 2002, deu o Flávio na frente (48,2 x 43,3 no final).</p>
+      <figure class="grafico-case"><a href="graficos/17-cenarios-segundo-turno.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/17-cenarios-segundo-turno.svg" alt="2º turno: o resultado conforme a divisão dos votos dos outros candidatos" loading="lazy"></a><figcaption>2º turno: o resultado conforme a divisão dos votos dos outros candidatos · <span>case 17 · clique para ampliar</span></figcaption></figure>
+      <figure class="grafico-case"><a href="graficos/18-minas-x-brasil.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/18-minas-x-brasil.svg" alt="Minas x Brasil: a vantagem do vencedor em cada turno desde 2002" loading="lazy"></a><figcaption>Minas x Brasil: a vantagem do vencedor em cada turno desde 2002 · <span>case 18 · clique para ampliar</span></figcaption></figure>
       <figure class="print"><a href="prints/2100-g1-mapa-minas-gerais-94,07-segundo-turno.png" target="_blank" title="ver o print em tamanho real"><img src="prints/2100-g1-mapa-minas-gerais-94,07-segundo-turno.png" alt="Minas Gerais: o norte vota como o Nordeste, o Triângulo como São Paulo" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>Minas Gerais: o norte vota como o Nordeste, o Triângulo como São Paulo · <span>clique para ampliar</span></figcaption></figure>
       <p class="ref">Cases 16, 17 e 18</p>
     </section>
@@ -131,6 +146,7 @@
       <h2>Está confirmado: vai ter 2º turno</h2>
       <div class="numero">47,5% x 44,6%</div>
       <p>O TSE marcou a eleição como matematicamente definida. A projeção por estado dizia isso desde as 18h18, duas horas e 39 minutos antes.</p>
+      <figure class="grafico-case"><a href="graficos/19-matematicamente-definido.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/19-matematicamente-definido.svg" alt="O momento em que o TSE marcou a eleição como definida" loading="lazy"></a><figcaption>O momento em que o TSE marcou a eleição como definida · <span>case 19 · clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 19</p>
     </section>
 
@@ -140,6 +156,7 @@
       <div class="numero">46,85%</div>
       <p>Não. Mesmo se todos os votos restantes fossem para o Lula, o Flávio não cairia abaixo de 46,85%. Faltavam ~760 mil votos, a maioria na Bahia, em Minas e no Ceará.</p>
       <p>Previsão às 21h32: 47,09 x 45,09. Final: 47,03 x 45,16.</p>
+      <figure class="grafico-case"><a href="graficos/20-o-que-faltava-1132.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/20-o-que-faltava-1132.svg" alt="O que faltava apurar às 21h32, por estado" loading="lazy"></a><figcaption>O que faltava apurar às 21h32, por estado · <span>case 20 · clique para ampliar</span></figcaption></figure>
       <p class="ref">Case 20 · Reta final</p>
     </section>
 
@@ -148,6 +165,7 @@
       <h2>Flávio x Lula no 2º turno</h2>
       <div class="numero" id="final-numero"></div>
       <p id="final-texto"></p>
+      <figure class="grafico-case"><a href="graficos/12-estimativas-da-diferenca-final.svg" target="_blank" title="ver o gráfico em tamanho real"><img src="graficos/12-estimativas-da-diferenca-final.svg" alt="As estimativas da diferença final feitas às 20h14 (real: +1,87)" loading="lazy"></a><figcaption>As estimativas da diferença final feitas às 20h14 (real: +1,87) · <span>case 12 · clique para ampliar</span></figcaption></figure>
       <ul class="conclusoes">
         <li><strong>O placar parcial superestimou o líder em 4 pontos</strong> (51,1% às 18h18); a projeção por estado, em 2.</li>
         <li><strong>Somar os estados</strong> deu um placar até ~20 pontos de apuração à frente do que os portais mostravam.</li>
@@ -224,7 +242,8 @@ let atual = PASSOS[0];
 // último ponto (coleta do TSE ou leitura manual) até um instante "AAAA-MM-DD HH:MM" ou "fim"
 function pontosAte(ate) {
   const lim = ate === 'fim' ? '9999' : ate;
-  return { auto: S.filter(p => p.dt <= lim), manual: M.filter(p => p.dt <= lim) };
+  const quando = p => p.dt || ((p.h >= '12:00' ? '2026-10-04 ' : '2026-10-05 ') + p.h);  // dados.js antigo não tinha dt
+  return { auto: S.filter(p => quando(p) <= lim), manual: M.filter(p => quando(p) <= lim) };
 }
 function pontoEm(ate) {
   const { auto, manual } = pontosAte(ate);

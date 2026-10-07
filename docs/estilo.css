@@ -142,3 +142,10 @@ footer { color: var(--muted); font: 13px system-ui, sans-serif; text-align: cent
   .legenda-graf { font-size: 11px; gap: 2px 12px; }
   .passo { min-height: 95vh; justify-content: flex-end; padding-bottom: 6vh; }
 }
+
+/* gráficos dos cases dentro dos cards da rolagem */
+figure.grafico-case { margin: 12px 0 16px; }
+figure.grafico-case img { display: block; width: 100%; max-width: 560px; height: auto; background: #fcfcfb;
+  border: 1px solid var(--border); border-radius: 8px; padding: 6px; }
+figure.grafico-case figcaption { font: 12px system-ui, sans-serif; color: var(--muted); margin-top: 4px; }
+figure.grafico-case figcaption span { opacity: .7; }
