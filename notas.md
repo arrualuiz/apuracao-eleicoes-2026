@@ -53,3 +53,29 @@
 - Lote das 20:14 (2,5 mi de válidos): **Lula 52,0% x Flávio 41,1%**, o mais favorável ao Lula da noite.
 - Em 7 dos 8 maiores estados do lote, os votos novos vieram mais Lula que o acumulado: o voto tardio é mais Lula em todo lugar, não só no Nordeste.
 - Projeção por estado 47,4% x 44,7% e caindo; o erro da projeção a favor do Flávio já é de ~650 mil votos desde 19:14.
+
+## 20:57 — 97,2% apurado · 2º turno confirmado
+- O arquivo nacional do TSE passa a marcar a eleição como matematicamente definida (`md = s`) na versão das 20:57:34.
+- Placar (soma UFs, 20:58): **Flávio 47,47% x Lula 44,64%**. Último lote: Lula 53,6% x Flávio 39,9%.
+- A projeção por estado indicava 2º turno desde 18:18, 2h39 antes.
+
+## 21:32 — 99,37% apurado · reta final
+- Flávio 47,15% x Lula 45,01%. Faltam 3.152 seções (~760 mil válidos), concentradas em BA, MG e CE.
+- 46 x 45 já não é possível: mesmo com tudo para o Lula, o Flávio não cai abaixo de 46,85%. Mais provável: 47,09 x 45,09.
+
+## 22:00–22:17 — 99,74% a 99,86%
+- 22:00: placar 47,09 x 45,09, igual ao "mais provável" das 21:32.
+- 22:17: 47,06 x 45,12; faltam 685 seções. Mais provável no fim: 47,04 x 45,14.
+
+## 00:12 — 99,99% apurado
+- Faltam 14 seções. Flávio 47,03% x Lula 45,16%.
+- O computador suspendeu das 00:38 às 06:40; o coletor retomou ao acordar.
+
+## 02:59 — 100% apurado · resultado final do 1º turno
+- Última seção totalizada às 02:59:31 (gravada pelo coletor às 06:41).
+- **Flávio Bolsonaro 47,03% (56.104.503) x Lula 45,16% (53.879.538)**; diferença de 2.224.965 votos (1,87 p.p.).
+- Cury 2,89%, Renan Santos 2,24%, Caiado 2,18%, Zema 0,27%.
+- Abstenção de 21,08%, a maior de um 1º turno desde 2002.
+- Palpites: 47 x 42 (18:48) e 47 x 44 (20:27) acertaram o Flávio e erraram o Lula por 3,2 e 1,2 p.p.
+- Método mais preciso da noite para a diferença final: aplicar a reta final de 2022 (+1,50 estimado x +1,87 real).
+- 2º turno em 25/10/2026.
