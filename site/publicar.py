@@ -3,9 +3,9 @@
 
 Uso: python3 site/publicar.py
 
-Copia o site, o painel e os gráficos para docs/, ajustando os caminhos para que tudo
-funcione a partir da raiz publicada. Os prints dos sites (telas de terceiros, só locais)
-ficam de fora. docs/preview.png (imagem de compartilhamento) é gerada à parte.
+Copia o site, o painel, os gráficos e os prints usados pelo site para docs/, ajustando os
+caminhos para que tudo funcione a partir da raiz publicada. docs/preview.png (imagem de
+compartilhamento) é gerada à parte.
 """
 import re
 import shutil
@@ -29,7 +29,13 @@ def main():
     # site
     html = (SITE / "index.html").read_text(encoding="utf-8")
     html = re.sub(r"<!--.*?-->\n?", "", html, count=1, flags=re.S)           # comentário de desenvolvimento
-    html = re.sub(r'\s*<figure class="print">.*?</figure>', "", html, flags=re.S)  # prints só locais
+    # prints dos sites: copiados para docs/prints/ (só os que o site usa)
+    usados = sorted(set(re.findall(r'\.\./prints/([^"]+\.png)', html)))
+    (DOCS / "prints").mkdir(exist_ok=True)
+    for nome in usados:
+        if (RAIZ / "prints" / nome).exists():
+            shutil.copy(RAIZ / "prints" / nome, DOCS / "prints" / nome)
+    html = html.replace("../prints/", "prints/")
     html = html.replace('href="../painel/painel.html"', 'href="painel.html"')
     html = html.replace('href="../CONTEXTO.md"', f'href="{REPO}/blob/main/CONTEXTO.md"')
     meta = f'''<meta name="description" content="{DESCRICAO}">
